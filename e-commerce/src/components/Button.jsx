@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Button = ({title}) => {
+const Button = ({title, padding}) => {
   return (
-    <button className="btn px-4" style={style}> {title} </button>
+    <button className={`btn ${padding}`} style={style}> {title} </button>
   )
 }
 
@@ -10,6 +10,7 @@ const Button = ({title}) => {
 const style = {
     backgroundColor: "var(--primary_color)",
     border: "none",
+    borderRadius:  "10px",
     color: "white",
     boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
     fontFamily: "Nunito"
