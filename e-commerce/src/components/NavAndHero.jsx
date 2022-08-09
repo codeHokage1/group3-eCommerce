@@ -1,13 +1,11 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import NavBar from './NavBar';
 
 const NavAndHero = () => {
   return (
     <div>
       <div className='hero'>
+        <NavBar />
         <section className='hero-content'>
           <h1>Affordable <br /> Produce from <br /> local markets</h1>
           <p>

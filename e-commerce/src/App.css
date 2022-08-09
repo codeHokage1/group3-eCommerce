@@ -20,6 +20,13 @@ body{
 .bonus-top a{
     color: white;
 }
+.navbar-container{
+    display: flex;
+}
+.navbar-brand{
+    margin-right: auto !important;
+    color: red !important;
+}
 .hero{
     /* background-image: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(233, 226, 226, 0)) ,url("../src/images/hero.png");
     background-image: linear-gradient(to right, black , white), url("../src/images/hero.png"); */
