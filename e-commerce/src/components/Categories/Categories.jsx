@@ -43,7 +43,7 @@ const Categories = () => {
     }
 
     return (
-        <div>
+        <div className="py-2">
             {/* <h2> Single Item</h2> */}
         <Slider {...settings}>
           <div className='px-1'>
