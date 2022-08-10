@@ -7,7 +7,6 @@ import Home from './pages/Home';
 import Account from './pages/Account';
 import Checkout from './pages/Checkout';
 import Help from './pages/Help';
-import OffCanvas from './components/OffCanvas';
 
 
 function App() {
