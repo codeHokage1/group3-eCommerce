@@ -3,7 +3,8 @@
 
 :root {
   --primary_color: #FF7E07;
-  --sky_blue: #D1EFCD
+  --sky_blue: #D1EFCD; 
+  --pink: #FFC1C1;
 }
 
 body {

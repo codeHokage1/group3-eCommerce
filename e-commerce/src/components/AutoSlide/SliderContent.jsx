@@ -1,4 +1,5 @@
 import React from "react";
+import DiscountBadge from "../DiscountBadge";
 
 function SliderContent({ activeIndex, sliderImage }) {
   return (
@@ -12,6 +13,7 @@ function SliderContent({ activeIndex, sliderImage }) {
           {/* <img className="slide-image" src={slide.urls} alt="" /> */}
           {/* <h2 className="slide-title">{slide.title}</h2> */}
           <p className="slide-text">{slide.description}</p>
+          <DiscountBadge title="20%" />
         </div>
       ))}
     </section>
