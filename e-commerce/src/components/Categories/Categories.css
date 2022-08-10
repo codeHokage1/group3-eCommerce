@@ -1,0 +1,39 @@
+
+.slick-prev {
+    left: 3% !important;
+    z-index: 99;
+  }
+  .slick-next {
+    right: 3% !important;
+    z-index: 99;
+  }
+  
+  
+  /* REACT SLICK ARROW CUSTOM CSS */
+  .react__slick__slider__parent {
+    position: relative;
+  }
+  
+  .react__slick__slider__parent .slick-prev,
+  .react__slick__slider__parent .slick-next {
+    position: absolute;
+    top: 40%;
+  }
+  .react__slick__slider__parent .slick-prev {
+    color: black;
+    z-index: 1;
+  }
+  .react__slick__slider__parent .slick-next {
+    /* border-radius: 50%; */
+    color: blue;
+    z-index: 1;
+  }
+  
+  .react__slick__slider__parent .slick-prev:before, .slick-next:before {
+    color: #565956;
+  
+  }
+  .react__slick__slider__parent .slick-next:before {
+    color: #565956;
+    
+  }
