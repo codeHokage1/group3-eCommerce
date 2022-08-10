@@ -1,11 +1,9 @@
 import React from 'react';
-import NavBar from './NavBar';
 
-const NavAndHero = () => {
+const Hero = () => {
   return (
     <div>
       <div className='hero'>
-        <NavBar />
         <section className='hero-content'>
           <h1>Affordable <br /> Produce from <br /> local markets</h1>
           <p>
@@ -20,8 +18,11 @@ const NavAndHero = () => {
         </section>
 
       </div>
+      <div>
+        
+      </div>
     </div>
   )
 }
 
-export default NavAndHero
+export default Hero
