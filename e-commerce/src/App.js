@@ -1,5 +1,4 @@
 import './App.css';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import BonusTop from './components/BonusTop';
 import NavBar from './components/NavBar';
@@ -8,7 +7,6 @@ import Home from './pages/Home';
 import Account from './pages/Account';
 import Checkout from './pages/Checkout';
 import Help from './pages/Help';
-
 
 
 function App() {
@@ -30,11 +28,3 @@ function App() {
 }
 
 export default App;
-
-
-{/* <div className="App">
-<Categories />
-<PopularStalls />
-<StartShopping />
-<AutoSlide />
-</div> */}
