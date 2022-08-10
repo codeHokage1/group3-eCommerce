@@ -1,4 +1,4 @@
-/* .App {
+.App {
   text-align: center;
 }
 
@@ -35,12 +35,12 @@
   to {
     transform: rotate(360deg);
   }
-} */
+}
 
 
 
 
-*{
+/* *{
     box-sizing: border-box;
 }
 body{
@@ -242,10 +242,6 @@ body{
     .brandAndLinks{
         position: relative !important;
     }
-    /* .links{
-        position: absolute;
-        right: 0;
-    } */
     .brandAndLinks ul li{
         font-size: 14pt !important;    
     }
@@ -355,6 +351,6 @@ body{
         font-size: 9pt;
     }
     
-}
+} */
 
 
