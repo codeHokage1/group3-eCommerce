@@ -8,12 +8,9 @@ function App() {
   return (
     <div className="App">
       <Categories />
-     <PopularStalls />
-     <StartShopping />
-     <div className="d-flex">
-        <AutoSlide />
-        <AutoSlide />
-      </div> 
+      <PopularStalls />
+      <StartShopping />
+      <AutoSlide />
     </div>
   );
 }
