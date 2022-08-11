@@ -1,0 +1,139 @@
+*{
+   
+}
+
+div{
+    width: 100%;
+    margin: auto;
+    height: 100%;
+}
+
+.label{
+ 
+
+   
+
+}
+
+
+
+
+
+.nav-wrapper{
+  text-align: center;
+ 
+}
+
+
+
+h1{
+    font-family: 'Playfair Display';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 30px;
+        /* or 62% */
+    
+    
+        color: #565956;
+}
+
+.head{
+    background-color: #FF7E07;
+    width: 100%;
+    height: 40px;
+    font-size: 13px;
+   color:  #441111;
+   text-align: center;
+   padding: 5px;
+}
+
+
+.container{
+    display: block;
+    text-align: center;
+    margin: auto;
+    background-color: white;
+   
+  width: 40%;
+    margin-top: 3%;
+border-radius: 10px;
+padding-top: 50px;
+padding-bottom: 20px;
+
+}
+
+.login {
+    background-color: #FF7E07 !important;
+    border: 1px solid #FF7E07 !important;
+    border-radius: 13px !important;
+    width: 439px;
+     height: 50px;
+     border: none;
+}
+
+.btn-google, .btn-facebook {
+   border: 1px solid #565956 !important;
+    border-radius: 13px !important;
+    width: 439px;
+    height: 50px;
+    border: none;
+}
+
+.get-started{
+    font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 30px;
+        text-decoration-line: underline;
+        color: #565956;
+}
+
+.get-started2{
+    font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 13px;
+        /* or 118% */
+    
+        text-align: center;
+        letter-spacing: 0.06em;
+    
+        color: #565956;
+}
+
+
+
+body {
+  width:100%;
+  width:100%;
+  
+}
+
+.Menu{
+    color: white;
+    display: inline-flex;
+    text-align: right;
+    margin: 7px;
+  
+}
+
+.btn-google {
+    color: #545454;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 1px #ddd;
+}
+
+
+
+button,input{
+    width: 439px;
+    height: 50px;
+    border: 0.5px solid lightslategray;
+    border-radius:  13px;
+    padding: 15px;
+
+   
+}
