@@ -7,6 +7,10 @@
   --pink: #FFC1C1;
 }
 
+.App {
+  text-align: center;
+}
+
 body {
   margin: 0;
   font-family: Playfair Display !important
