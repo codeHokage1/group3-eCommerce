@@ -1,4 +1,5 @@
 import React from 'react';
+import './BonusTop.css';
 
 const BonusTop = () => {
   return (

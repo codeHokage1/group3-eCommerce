@@ -9,6 +9,7 @@ import { BiSearchAlt as SearchLogo } from "react-icons/bi";
 import { Link } from 'react-router-dom';
 
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import './NavBar.css';
 
 
 const NavBar = () => {
