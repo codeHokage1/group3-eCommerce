@@ -19,7 +19,7 @@ function AutoSlide(props) {
   }, [activeIndex]);
 
   return (
-    <div className="d-flex bg_autoslide">
+    <div className="d-flex bg_autoslide mobile-slides">
       <div className="slider-container my-4">
         <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
         <DiscountBadge value="-20%"/>

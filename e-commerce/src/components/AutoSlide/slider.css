@@ -13,7 +13,7 @@
   position: relative;
   margin: auto;
   overflow: hidden;
-  border-radius: 15px
+  border-radius: 15px;
 }
 
 .active {
@@ -124,4 +124,15 @@
 
 .play-pause {
   color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .mobile-slides{
+    display: flex !important;
+    flex-direction: column !important;
+  }
+  .slider-container{
+    height: var(--heights);
+    width: 300px;
+  }
 }

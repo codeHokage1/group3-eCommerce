@@ -13,30 +13,30 @@ const PopularStalls = () => {
   return (
     <div className='popular_stalls pt-3 pb-5 px-5 '>
       <h5 className="primary">Popular stalls you can order from </h5>
-      <div className='d-flex justify-content-around flex-wrap'>
+      <div className='d-flex justify-content-around flex-wrap mobile-view'>
            <div>
-           <div className="py-2 my-3"> <img src={pic1} alt="" width="200px" /> </div>
+           <div className="py-2 my-3 stall-item"> <img src={pic1} alt="" /> </div>
              <Button title="Iya Risi Store" btnClass="px-4" />
            </div>
            <div>
-           <div className="py-2 my-3"> <img src={pic2} alt="" width="200px" /> </div>
+           <div className="py-2 my-3 stall-item"> <img src={pic2} alt=""  /> </div>
              <Button title="Naija Mart" btnClass="px-4"/>
            </div>
            <div>
-           <div className="py-2 my-3"> <img src={pic3} alt="" width="200px" /> </div>
+           <div className="py-2 my-3 stall-item"> <img src={pic3} alt=""  /> </div>
              <Button title="Iya Calabar" btnClass="px-4"/>
            </div>
            <div>
-           <div className="py-2 my-3"> <img src={pic4} alt="" width="200px" /> </div>
+           <div className="py-2 my-3 stall-item"> <img src={pic4} alt=""  /> </div>
              <Button title="Thrive Market" btnClass="px-4"/>
            </div>
            <div>
-           <div className="py-2 my-3"> <img src={pic5} alt="" width="200px" /> </div>
+           <div className="py-2 my-3 stall-item"> <img src={pic5} alt="" /> </div>
              <Button title="Wine Palace" btnClass="px-4"/>
            </div>
            <div>
-           <div className="py-2 my-3"> <img src={pic6} alt="" width="200px" /> </div>
-             <Button title="Night Market" btnClass="px-4"/>
+           <div className="py-2 my-3 stall-item" > <img src={pic6} alt=""  /> </div>
+             <Button title="Night Market" btnClass="px-4 stall-button"/>
            </div>
       </div>
     </div>

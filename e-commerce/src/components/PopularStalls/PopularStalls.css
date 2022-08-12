@@ -12,7 +12,22 @@
     border-radius: 50%;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
 }
+.stall-item > img{
+    width: 200px;
+}
 
 .popularstalls_button {
     background-color: red;
+}
+
+@media screen and (max-width: 768px) {
+    .mobile-view{
+        display: grid !important;
+        grid-template-columns: auto auto !important;
+        column-gap: 20px;
+    }
+    .stall-item > img{
+        width: 150px;
+    }
+    
 }
