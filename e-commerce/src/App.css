@@ -1,11 +1,11 @@
 *{
-   
+ 
 }
 
 div{
     width: 100%;
     margin: auto;
-    height: 100%;
+    height:auto;
 }
 
 .label{
@@ -16,11 +16,13 @@ div{
 }
 
 
-
+.myBody{
+    background-size:contain;
+}
 
 
 .nav-wrapper{
-  text-align: center;
+  text-align: right;
  
 }
 

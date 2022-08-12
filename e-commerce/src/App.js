@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <Header />
-      <body style={{ backgroundImage: `url(${img})` }}>
+      <body className="myBody" style={{ backgroundImage: `url(${img})` }}>
         <div>
           <BrowserRouter>
             <Navbar />
