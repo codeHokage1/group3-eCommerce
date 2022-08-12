@@ -5,24 +5,40 @@ import Navbar from "./components/Nabar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import img from "./pages/fruit-gb.png";
 import Header from "./components/Header";
+import "./pages/form.css";
 
 function App() {
   return (
-    <>
+    // <>
+    //   <Header />
+    //   <body className="myBody" style={{ backgroundImage: `url(${img})` }}>
+    //     <div>
+    //       <BrowserRouter>
+    //         <Navbar />
+    //         <Routes>
+    //           <Route path="/home" element={""} />
+    //           <Route path="/addlist" element={""} />
+    //         </Routes>
+    //         <LoginPage />
+    //       </BrowserRouter>
+    //     </div>
+    //   </body>
+    // </>
+
+    <body className="myBody" style={{ backgroundImage: `url(${img})` }}>
       <Header />
-      <body className="myBody" style={{ backgroundImage: `url(${img})` }}>
-        <div>
-          <BrowserRouter>
-            <Navbar />
-            <Routes>
-              <Route path="/home" element={""} />
-              <Route path="/addlist" element={""} />
-            </Routes>
-            <LoginPage />
-          </BrowserRouter>
-        </div>
-      </body>
-    </>
+
+      <div>
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
+            <Route path="/home" element={""} />
+            <Route path="/addlist" element={""} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+      <LoginPage />
+    </body>
   );
 }
 
