@@ -1,0 +1,77 @@
+.categoryCard {
+  border-radius: 6px !important;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+  margin-right: 100px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  height: 100%;
+}
+.discountdiv {
+  float: right;
+  display: flex;
+  position: absolute;
+  margin-top: 12px;
+  margin-right: 12px !important;
+}
+.discountbadge {
+  width: 38px;
+  height: 15px;
+  background: #ffc1c1;
+  border-radius: 8px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 15px;
+  color: #643333;
+  text-align: center;
+  margin: 0;
+}
+
+.catimage {
+  height: 208px;
+  margin: 30px auto;
+}
+
+.catDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.catname {
+  width: 98px;
+  height: 98px;
+  background: #ff7e07;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.navandname {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 20px;
+  position: absolute;
+  bottom: 0;
+  align-items: end;
+  margin: 15px 0px;
+}
+.slick-dots {
+  position: absolute;
+  bottom: 0 !important;
+  left: 0 !important;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}

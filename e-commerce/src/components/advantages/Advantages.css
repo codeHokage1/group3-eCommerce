@@ -1,0 +1,50 @@
+.advantages {
+  background: #ff7e07;
+  border-radius: 6px !important;
+
+  position: relative;
+  display: flex;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  box-sizing: border-box;
+  margin-right: 100px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  height: 93%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.advtext {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 22px;
+  letter-spacing: 0.03em;
+  color: #404040;
+  padding-top: 20px;
+}
+
+.catname {
+  width: 98px;
+  height: 98px;
+  background: #ff7e07;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.navandname {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0px 20px;
+  position: absolute;
+  bottom: 0;
+  align-items: end;
+  margin: 15px 0px;
+}
