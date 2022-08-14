@@ -1,19 +1,32 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import '../advantages/Advantages.css'
-import hand from '../../images/hand.png'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
-const Advantages = () => {
+const Advantages = ({ advimages, title }) => {
+  const settings = {
+    infinite: true,
+    dots: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    lazyLoad: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrow: false,
+  }
   return (
-    <>
-      <Card className="advantages">
-        <img src={hand} />
-        <p className="advtext">Low cost shipping</p>
-        <div className="navandname">
-          <div className="sliderdiv">hello</div>
-        </div>
-      </Card>
-    </>
+    <Slider {...settings}>
+      {advimages.map((item) => {
+        return (
+          <Card className="advantages" key={item.id}>
+            <img src={item.src} />
+            <p className="advtext">{title}</p>
+          </Card>
+        )
+      })}
+    </Slider>
   )
 }
 

@@ -1,20 +1,16 @@
 .advantages {
   background: #ff7e07;
   border-radius: 6px !important;
-
-  position: relative;
-  display: flex;
+  display: flex !important;
   width: 100%;
-  display: flex;
-  align-items: flex-end;
   box-sizing: border-box;
   margin-right: 100px;
-  box-sizing: border-box;
   margin-top: 20px;
-  height: 93%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 52px;
+  padding-bottom: 10px;
 }
 
 .advtext {
@@ -30,7 +26,7 @@
 .catname {
   width: 98px;
   height: 98px;
-  background: #ff7e07;
+  background: #ff7e07d4;
   color: #fff;
   text-align: center;
   border-radius: 50%;
@@ -47,4 +43,8 @@
   bottom: 0;
   align-items: end;
   margin: 15px 0px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #fff !important;
 }

@@ -19,6 +19,9 @@ const Home = () => {
         <PopularStalls />
         <StartShopping />
         <AutoSlide />
+        <FoodContainer title="Food items" />
+        <StoreHeading />
+        <FruitContainer title="Fruits" />
       </div>
     </main>
   )

@@ -55,6 +55,11 @@
   display: flex;
   justify-content: center;
 }
+
+.db {
+  right: 22px !important;
+  position: absolute;
+}
 .navandname {
   display: flex;
   justify-content: space-between;
@@ -72,6 +77,32 @@
   display: block;
   width: 100%;
   padding: 0;
-  margin: 0;
+  margin: 10px 20px !important;
   list-style: none;
+  text-align: justify !important;
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.slick-next {
+  display: none !important;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ec903a !important;
+}
+
+.slick-dots li button:before {
+  line-height: 0 !important;
+}
+
+.slick-dots li button:before {
+  font-size: 14px !important;
+  margin: 0 !important;
+}
+
+.slick-dots li {
+  margin: 0;
 }
