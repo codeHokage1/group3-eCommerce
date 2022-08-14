@@ -8,6 +8,6 @@ The system is also designed with Ease of Usage and Navigation as a primary conce
 * Agoro Hakeem
 * Okunsebor Joan
 * Olayode Oluwafemi
-* Onajirin Oluwakemi
+* Onajinrin Oluwakemi
 * Shobande James
 * Sodiq Farihan
