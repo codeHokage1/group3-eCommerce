@@ -2,7 +2,7 @@ import React from 'react'
 
 const DiscountBadge = ({value}) => {
   return (
-    <p className='badge px-4 py-2 rounded-pill text-dark' style={style}>{value}</p>
+    <p className='badge px-3 py-2 rounded-pill text-dark' style={style}>{value}</p>
   )
 }
 

@@ -19,40 +19,42 @@ function AutoSlide(props) {
   }, [activeIndex]);
 
   return (
-    <div className="d-flex bg_autoslide mobile-slides">
-      <div className="slider-container my-4">
-        <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
-        <DiscountBadge value="-20%"/>
-        {/* <Arrows
-          prevSlide={() =>
-            setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
-          }
-          nextSlide={() =>
-            setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
-          }
-        /> */}
-        <Dots
-          activeIndex={activeIndex}
-          sliderImage={sliderImage}
-          onclick={(activeIndex) => setActiveIndex(activeIndex)}
-        />
-      </div>
-      <div className="slider-container my-4">
-        <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
-        <DiscountBadge value="-20%"/>
-        {/* <Arrows
-          prevSlide={() =>
-            setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
-          }
-          nextSlide={() =>
-            setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
-          }
-        /> */}
-        <Dots
-          activeIndex={activeIndex}
-          sliderImage={sliderImage}
-          onclick={(activeIndex) => setActiveIndex(activeIndex)}
-        />
+    <div className="bg_autoslide mobile-slides">
+      <div class="container d-sm-flex justify-content-between">
+        <div className="slider-container my-4 ">
+          <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
+          <DiscountBadge value="-20%"/>
+          {/* <Arrows
+            prevSlide={() =>
+              setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
+            }
+            nextSlide={() =>
+              setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
+            }
+          /> */}
+          <Dots
+            activeIndex={activeIndex}
+            sliderImage={sliderImage}
+            onclick={(activeIndex) => setActiveIndex(activeIndex)}
+          />
+        </div>
+        <div className="slider-container my-4">
+          <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
+          <DiscountBadge value="-20%"/>
+          {/* <Arrows
+            prevSlide={() =>
+              setActiveIndex(activeIndex < 1 ? len : activeIndex - 1)
+            }
+            nextSlide={() =>
+              setActiveIndex(activeIndex === len ? 0 : activeIndex + 1)
+            }
+          /> */}
+          <Dots
+            activeIndex={activeIndex}
+            sliderImage={sliderImage}
+            onclick={(activeIndex) => setActiveIndex(activeIndex)}
+          />
+        </div>
       </div>
     </div>
   );

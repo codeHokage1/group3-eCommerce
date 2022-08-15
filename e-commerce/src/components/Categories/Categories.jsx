@@ -7,12 +7,14 @@ import "./Categories.css"
 const Categories = () => {
   
     const settings = {
-      arrows: true,
+        arrows: true,
         dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 6,
         slidesToScroll: 1, 
+        autoplay: true,
+      autoplaySpeed: 1000,
         className: 'react__slick__slider__parent', 
         responsive: [
         {

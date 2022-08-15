@@ -3,15 +3,15 @@
 }
 
 :root {
-  --heights: 30vh;
-  --widths: 100%;
+  --heights: 40vh;
+  --widths: 95%;
 }
 
 .slider-container {
   height: 50%;
-  width: 45%;
+  width: 55%;
   position: relative;
-  margin: auto;
+  /* margin: auto; */
   overflow: hidden;
   border-radius: 15px;
 }
@@ -91,7 +91,7 @@
   position: absolute;
   display: flex;
   top: 85%;
-  left: 30%;
+  right: 30%;
   justify-content: center;
   z-index: 200;
 }
@@ -132,7 +132,7 @@
     flex-direction: column !important;
   }
   .slider-container{
-    height: var(--heights);
-    width: 300px;
+    height: 50%;
+  width: 100%;
   }
 }
