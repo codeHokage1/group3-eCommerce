@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import Account from './pages/Account';
 import Checkout from './pages/Checkout';
 import Help from './pages/Help';
+import Footer2 from './components/Footer2/Footer2';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path={'/cart'} element={<Checkout />} />
             <Route path={'/help'} element={<Help />} />
           </Routes>
+      <Footer2 />
       </BrowserRouter>
   );
 }
