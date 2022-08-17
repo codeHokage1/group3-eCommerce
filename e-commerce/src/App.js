@@ -4,7 +4,7 @@ import BonusTop from './components/BonusTop/BonusTop';
 import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Account from './pages/Account';
+import Account from './pages/Account/Account';
 import Checkout from './pages/Checkout';
 import Help from './pages/Help';
 import Footer2 from './components/Footer2/Footer2';
