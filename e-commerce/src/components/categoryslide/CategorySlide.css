@@ -83,11 +83,11 @@
 }
 
 .slick-arrow {
-  display: none !important;
+  display: none;
 }
 
 .slick-next {
-  display: none !important;
+  display: none;
 }
 
 .slick-dots li.slick-active button:before {

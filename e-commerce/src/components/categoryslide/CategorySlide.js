@@ -14,7 +14,7 @@ const CategorySlide = ({ images, title }) => {
     slidesToScroll: 1,
     lazyLoad: true,
     autoplay: true,
-    autoplaySpeed: 4000,
+    autoplaySpeed: 3000,
     arrow: false,
   }
   return (

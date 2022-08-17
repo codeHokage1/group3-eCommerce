@@ -9,6 +9,10 @@ import Categories from '../components/Categories/Categories'
 import PopularStalls from '../components/PopularStalls/PopularStalls'
 import StartShopping from '../components/StartShopping'
 import AutoSlide from '../components/AutoSlide/AutoSlide'
+import LiveStock from '../components/livestock/LiveStock'
+import Baking from '../components/baking/Baking'
+import FrozenFood from '../components/frozenfood/FrozenFood'
+import BeverageSnack from '../components/beveragesnack/BeverageSnack'
 
 const Home = () => {
   return (
@@ -20,7 +24,7 @@ const Home = () => {
         <StartShopping />
         <AutoSlide />
         <FoodContainer title="Food items" />
-        <StoreHeading />
+        <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
         <FruitContainer title="Fruits" />
       </div>
     </main>
