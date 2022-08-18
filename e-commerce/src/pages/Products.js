@@ -1,4 +1,11 @@
 import React from 'react'
+import LiveStock from '../components/livestock/LiveStock'
+import Baking from '../components/baking/Baking'
+import FrozenFood from '../components/frozenfood/FrozenFood'
+import BeverageSnack from '../components/beveragesnack/BeverageSnack'
+import StoreHeading from '../components/storeheading/StoreHeading'
+import FoodContainer from '../components/foodcontainer/FoodContainer'
+import FruitContainer from '../components/fruitscontainer/FruitContainer'
 
 const Products = () => {
   return (
