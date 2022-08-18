@@ -1,10 +1,10 @@
 import React from 'react'
 import '../storeheading/StoreHeading.css'
 
-const StoreHeading = () => {
+const StoreHeading = ({ narative }) => {
   return (
     <div className="marketdiv clearfix">
-      <p className="markettitle">YOUR FAVORITE STORE FOR WHOLESALE MARKEt</p>
+      <p className="markettitle">{narative}</p>
     </div>
   )
 }

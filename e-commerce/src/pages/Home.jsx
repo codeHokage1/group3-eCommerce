@@ -20,7 +20,7 @@ const Home = () => {
         <StartShopping />
         <AutoSlide />
         <FoodContainer title="Food items" />
-        <StoreHeading />
+        <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
         <FruitContainer title="Fruits" />
         <Footer />
       </div>
