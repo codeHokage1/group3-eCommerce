@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { MdOutlineAccountCircle as UserLogo } from 'react-icons/md'
 import { FaRegQuestionCircle as HelpLogo } from 'react-icons/fa'
 import { FaBars } from 'react-icons/fa'
-
+import { TbApple } from 'react-icons/tb'
 import { TbShoppingCart as CartLogo } from 'react-icons/tb'
 import { BiSearchAlt as SearchLogo } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
@@ -22,33 +22,33 @@ const NavBar = () => {
     <nav className="navbar">
       <div className="brandAndLinks">
         <h1 className="navbar-brand">
-          <Link to="/" className="link">
+          <Link to="/" className="link brand-link">
             Group3 Ltd.
           </Link>
         </h1>
         <ul className="links">
           <li>
             <Link to="/products" className="link">
-              <UserLogo />
+              <TbApple  className='link-logo'/>
               <span className="mobile-remove">Products</span>
             </Link>
           </li>
 
           <li>
             <Link to="/account" className="link">
-              <UserLogo />
+              <UserLogo className='link-logo' />
               <span className="mobile-remove">Account</span>
             </Link>
           </li>
           <li>
             <Link to="/help" className="link">
-              <HelpLogo />
+              <HelpLogo className='link-logo' />
               <span className="mobile-remove">Help</span>
             </Link>
           </li>
           <li>
             <Link to="/cart" className="link">
-              <CartLogo />
+              <CartLogo className='link-logo' />
               <span className="mobile-remove">Cart</span>
             </Link>
           </li>

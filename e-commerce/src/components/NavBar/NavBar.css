@@ -39,6 +39,9 @@ body{
 .navbar .link{
     text-decoration: none;
     color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 .navbar-brand{
     margin-right: 300px !important;
@@ -49,6 +52,9 @@ body{
 }
 .brandAndLinks{
     margin-right: auto !important;
+}
+.link-logo{
+    font-size: 20px;
 }
 .search > form{
     display: flex !important;
