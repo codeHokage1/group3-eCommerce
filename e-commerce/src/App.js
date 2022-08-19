@@ -1,30 +1,16 @@
 import "./App.css";
 import LoginPage from "./pages/LoginPage";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Navbar from "./components/Nabar";
+import Navbar from "./components/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import img from "./pages/fruit-gb.png";
 import Header from "./components/Header";
-import "./pages/form.css";
+//import "./pages/form.css";
+import SignUp from "./pages/SignUp";
+import "./pages/signup.css";
 
 function App() {
   return (
-    // <>
-    //   <Header />
-    //   <body className="myBody" style={{ backgroundImage: `url(${img})` }}>
-    //     <div>
-    //       <BrowserRouter>
-    //         <Navbar />
-    //         <Routes>
-    //           <Route path="/home" element={""} />
-    //           <Route path="/addlist" element={""} />
-    //         </Routes>
-    //         <LoginPage />
-    //       </BrowserRouter>
-    //     </div>
-    //   </body>
-    // </>
-
     <body className="myBody" style={{ backgroundImage: `url(${img})` }}>
       <Header />
 
@@ -37,7 +23,8 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
-      <LoginPage />
+      {/* <LoginPage /> */}
+      <SignUp />
     </body>
   );
 }
