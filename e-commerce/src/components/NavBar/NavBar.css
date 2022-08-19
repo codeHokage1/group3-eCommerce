@@ -43,6 +43,16 @@ body{
     align-items: center;
     gap: 5px;
 }
+.nav-help{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.nav-help:hover{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
 .navbar-brand{
     margin-right: 300px !important;
     font-size: 20pt !important;

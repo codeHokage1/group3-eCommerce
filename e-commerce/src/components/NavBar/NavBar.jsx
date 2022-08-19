@@ -6,6 +6,8 @@ import { TbApple } from 'react-icons/tb'
 import { TbShoppingCart as CartLogo } from 'react-icons/tb'
 import { BiSearchAlt as SearchLogo } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import './NavBar.css'
@@ -41,10 +43,17 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/help" className="link">
-              <HelpLogo className='link-logo' />
-              <span className="mobile-remove">Help</span>
-            </Link>
+                <Dropdown>
+                  <Dropdown.Toggle variant="secondary" className='nav-help' id="dropdown-basic">
+                      <HelpLogo className='link-logo' />&nbsp;&nbsp;
+                      <span className="mobile-remove">Help</span>
+                  </Dropdown.Toggle>
+
+                  <Dropdown.Menu>
+                    <Dropdown.Item href="#/action-1">Contact Custmer Care</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
           </li>
           <li>
             <Link to="/cart" className="link">
