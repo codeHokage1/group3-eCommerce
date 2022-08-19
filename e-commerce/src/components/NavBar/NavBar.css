@@ -41,7 +41,7 @@ body{
     color: white;
 }
 .navbar-brand{
-    margin-right: 350px !important;
+    margin-right: 300px !important;
     font-size: 20pt !important;
     font-family: 'Julius Sans One', sans-serif;
     font-weight: bolder;
@@ -119,7 +119,7 @@ body{
         font-size: 14pt !important;    
     }
     .navbar-brand{
-        margin-right: 120px !important;
+        margin-right: 100px !important;
         font-family: 'Julius Sans One', sans-serif;
         font-weight: bolder;
         color: white;
