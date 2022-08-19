@@ -1,0 +1,191 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+
+.navbar, .brandAndLinks, .brandAndLinks ul{
+    display: flex !important;
+    align-items: center;
+    justify-items: center;
+    margin: 0;
+}
+.navbar{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/hero.png");
+    padding: 20px 50px !important;
+    margin: 0;
+    position: relative;
+    border-bottom: #FF7E07 2px solid;
+}
+.brandAndLinks ul{
+    list-style-type: none;
+    justify-items: space-around;
+    gap: 40px !important;
+}
+.brandAndLinks ul li{
+    display: flex !important;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    gap: 20px !important;
+    font-size: 14pt !important;
+    color: white;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+}
+.navbar .link{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.nav-help{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.nav-help:hover{
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+.navbar-brand{
+    margin-right: 300px !important;
+    font-size: 20pt !important;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bolder;
+    color: white;
+}
+.brandAndLinks{
+    margin-right: auto !important;
+}
+.link-logo{
+    font-size: 20px;
+}
+.search > form{
+    display: flex !important;
+}
+.search{
+    display: flex !important;
+    margin-right: 50px !important;
+}
+.menu-button{
+    display: none;
+}
+.mobile-only{
+    display: none;
+}
+.products-mobile{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: #FF7E07;
+}
+.products-mobile li {
+    margin-bottom: 10px;
+    width: 100%;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+}
+.menu-button:hover{
+    border: #FF7E07 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+.search-button{
+    font-size: 12pt;
+    background: #FF7E07;
+    border-radius: 5px 0px 0px 5px;
+    color: white;
+    padding: 5px;
+    border: 0;
+    outline: 0;
+    width: 50px;
+    cursor: pointer;
+}
+.search-input{
+    border-radius: 0 5px 5px 0;
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    font-size: 10pt;
+    font-family: 'Nunito Sans', sans-serif;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .mobile-remove{
+        display: none !important;
+    }
+    .navbar{
+        flex-direction: column;
+        padding: 10px 20px !important;
+    }
+
+    .brandAndLinks{
+        position: relative !important;
+    }
+    .brandAndLinks ul li{
+        font-size: 14pt !important;    
+    }
+    .navbar-brand{
+        margin-right: 100px !important;
+        font-family: 'Julius Sans One', sans-serif;
+        font-weight: bolder;
+        color: white;
+        font-size: 12pt !important;
+
+    }
+    .brandAndLinks ul{
+        gap: 15px !important;
+        right: 0px !important;
+    }
+    .link-logo{
+        font-size: 20pt;
+    }
+    .search{
+        display: flex !important;
+        width: 100%;
+        margin-right: 0;
+    }
+    .search-button{
+        font-size: 11pt;
+        background: #FF7E07;
+        border-radius: 5px 0px 0px 5px;
+        color: white;
+        padding: 5px !important;
+        border: 0;
+        outline: 0;
+        width: 30px !important;
+    }
+    .search-input{
+        border-radius: 0 5px 5px 0;
+        padding: 5px !important;
+        font-size: 11pt !important;
+        width: 100%;
+    }
+    .search{
+        position: relative !important;
+
+    }
+    .menu-button{
+        display: block;
+        position: absolute;
+        right: 10px;
+        color: white;
+        font-size: 25px
+    }
+    .mobile-menu-body{
+        background-color: #FF7E07;
+        color: white;
+    }
+    .expanded{
+        display: block;
+    }
+}

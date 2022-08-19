@@ -10,10 +10,15 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
+<<<<<<< HEAD
     "react-icon": "^1.0.0",
+=======
+>>>>>>> 915cfa3b4f0c38ba1f8b18ca0fd65752426bc0e4
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
