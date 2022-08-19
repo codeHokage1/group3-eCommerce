@@ -8,6 +8,7 @@ import Account from '../src/pages/Account/Account'
 import Checkout from '../src/pages/Checkout'
 import Help from '../src/pages/Help'
 import Products from './pages/Products'
+import SingleProduct from './pages/SingleProductPage';
 import Footer2 from './components/Footer2/Footer2'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path={'/cart'} element={<Checkout />} />
         <Route path={'/help'} element={<Help />} />
         <Route path={'/products'} element={<Products />} />
+        <Route path={'/products/:id'} element={<SingleProduct />} />
       </Routes>
       <Footer2 />
     </BrowserRouter>
