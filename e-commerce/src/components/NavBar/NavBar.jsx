@@ -42,11 +42,11 @@ const NavBar = () => {
               <span className="mobile-remove">Account</span>
             </Link>
           </li>
-          <li>
-                <Dropdown>
+          <li className='mobile-remove'>
+                <Dropdown className='mobile-remove'>
                   <Dropdown.Toggle variant="secondary" className='nav-help' id="dropdown-basic">
-                      <HelpLogo className='link-logo' />&nbsp;&nbsp;
-                      <span className="mobile-remove">Help</span>
+                      <HelpLogo className='link-logo' />
+                      <span className="mobile-remove">&nbsp;Help</span>
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
@@ -88,8 +88,21 @@ const NavBar = () => {
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Group3 Ltd.</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>
+        <Offcanvas.Body className='mobile-menu-body'>
           <ul className="products-mobile">
+            <li>
+                  <Dropdown>
+                    <Dropdown.Toggle variant="secondary" className='nav-help' id="dropdown-basic">
+                        <HelpLogo />
+                        <span className='help-mobile'>&nbsp;Help</span>
+                    </Dropdown.Toggle>
+
+                    <Dropdown.Menu>
+                      <Dropdown.Item href="#/action-1">Contact Custmer Care</Dropdown.Item>
+                      <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
+                    </Dropdown.Menu>
+                  </Dropdown>
+            </li>
             <li> Vegetables</li>
             <li> Vegetables</li>
             <li> Vegetables</li>
