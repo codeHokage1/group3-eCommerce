@@ -1,5 +1,5 @@
 import React from "react";
-import AutoSlide from "../AutoSlide/AutoSlide";
+import AutoSlide2 from "../AutoSlide2/AutoSlide2";
 import exchange from "../../images/assets/exchange.png";
 import hand from "../../images/assets/hand.png";
 import wine from "../../images/assets/wine.png";
@@ -43,7 +43,7 @@ const Footer = () => {
           <p className="pb-4 mb-3 nav justify-content-center border-bottom border-white fw-bold">
             Customer review
           </p>
-          <AutoSlide />
+          <AutoSlide2 />
         </div>
       </footer>
       <footer className="bg-light py-4">
