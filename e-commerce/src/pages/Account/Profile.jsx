@@ -4,12 +4,12 @@ import "./profile.css";
 
 const Profile = () => {
   return (
-    <main className="myBody">
-      <div className="formContainer">
+    <main className="profile-body">
+      <div className="profile-form">
         <h1> User's Profile</h1>
 
         <p className="myspan">
-          if you are a new memeber or dont have an account kindly create a new
+          if you are a new member or dont have an account kindly create a new
           account
         </p>
 
@@ -25,14 +25,14 @@ const Profile = () => {
 
           <p />
           <input
-            className="inputname"
+            className="profile-name"
             type="text"
             name="FirstName"
             value=""
             placeholder=""
           />
           <p />
-          <div className="g-radio">
+          <div className="profile-radio">
             <input type="radio" id="radio1" name="male" value="Male" />
             <label className="r-label">Male</label>
             <input type="radio" id="radio2" name="female" value="Female" />
@@ -46,15 +46,15 @@ const Profile = () => {
           </div>
           <p />
           <input
-            className="inputname"
+            className="profile-name"
             type="text"
             name="email"
             value=""
             placeholder=""
           />
           <p />
-          <div className="row">
-            <div className="column">
+          <div className="profile-row">
+            <div className="profile-column">
               <label for="FirstName" className="">
                 Contact
               </label>
@@ -70,7 +70,7 @@ const Profile = () => {
               />
             </div>
 
-            <div className="column">
+            <div className="prfoile-column">
               <label for="FirstName" className="">
                 Address
               </label>
@@ -100,7 +100,7 @@ const Profile = () => {
             &nbsp; I agree with <a href="">Terms and Conditions</a>
           </div>
 
-          <Button className="login" size="" variant="primary">
+          <Button className="profile-login" size="" variant="primary">
             Create
           </Button>
           <p />
