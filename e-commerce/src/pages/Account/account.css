@@ -40,12 +40,21 @@ body{
     width: 400px;
 }
 
+
+ label {
+  
+ padding-bottom: 10px;
+}
+
+
+
 .input-email, .account-button{
     width: 400px;
     border: 0;
     outline: 0;
     border-radius: 10px !important;
     height: 40px;
+    
 }
 .input-email{
     border: 1px solid #d9d9d9;
@@ -93,11 +102,12 @@ body{
     }
     
     .input-email, .account-button{
-        width: 300px;
+        width: 260px;
         border: 0;
         outline: 0;
         border-radius: 10px !important;
         height: 40px;
+        padding: 10px;
     }
     .input-email{
         border: 1px solid #d9d9d9;
