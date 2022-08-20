@@ -1,0 +1,70 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+.tracking{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
+    /* height: 500px; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    width: 100%;
+    padding: 50px;
+}
+.track-container{
+    background-color: #F8F7F7;
+    width: 70%;
+    /* text-align: center; */
+    border-radius: 20px;
+    padding: 30px;
+    margin: 0 auto;
+}
+.track-container h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 30px;
+    padding: 30px;
+}
+.order-container{
+}
+.order-header{
+    background-color: black !important;
+}
+.order-body{
+    width: 60%;
+    margin: 0 auto;
+    font-family: 'Nunito Sans';
+}
+.order-row{
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    margin-bottom: 10px;
+}
+.order-flag{
+    margin-right: auto;
+    font-size: 14pt;
+    font-size: bolder;
+    text-decoration: underline;
+}
+.order-content{
+    font-family: monospace;
+    font-size: 12pt;
+    font-weight: bold;
+}
+.delivery-status{
+    list-style: none;
+    padding-left: 0;
+}
+.stat-title{
+    margin-right: auto;
+}
+.condition{
+    font-size: 16pt;
+}

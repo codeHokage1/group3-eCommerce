@@ -5,12 +5,14 @@ import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../src/pages/Home";
 import Account from "../src/pages/Account/Account";
+import Profile from "./pages/Account/Profile";
 import Checkout from "../src/pages/Checkout";
 import Help from "../src/pages/Help";
 import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProductPage";
+import DeliveryTracking from "./pages/Delivery/DeliveryTracking";
 import Footer2 from "./components/Footer2/Footer2";
-import Profile from "./pages/Account/Profile";
+
 
 function App() {
   return (
@@ -24,6 +26,7 @@ function App() {
         <Route path={"/help"} element={<Help />} />
         <Route path={"/products"} element={<Products />} />
         <Route path={"/products/:id"} element={<SingleProduct />} />
+        <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
       </Routes>
 
