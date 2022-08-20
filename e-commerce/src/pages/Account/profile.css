@@ -135,7 +135,8 @@ width: 100%;
 }
 
 .column label {
-  text-align: left;  width: 100%;
+  text-align: left;  
+  width: 100%;
 margin-left: 20px;
 }
 
@@ -208,9 +209,10 @@ margin-left: 20px;
 }
 
 .g-radio label{
-  margin-top: -20px;
+  margin-top: 10px;
     
 }
+
 
 
 .longin button {
