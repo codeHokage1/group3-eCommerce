@@ -28,7 +28,6 @@ const CategorySlide = ({ images, title }) => {
 
             <div className="catDiv">
               <img src={item.src} alt={item.alt} className="catimage" />
-              {console.log('imag e is ', item.src)}
             </div>
             <div className="navandname">
               <div className="sliderdiv"></div>
