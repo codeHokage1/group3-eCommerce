@@ -20,7 +20,7 @@ const ProductPageHero = () => {
                                 <h1 className="p-sm-5 p-4 display-5 fw-bold">BEST PLACE TO SHOP FOR YOUR GROCERIES </h1>
                             </div>
                         </div>
-
+                        {/* <div className="box"> </div> */}
                     </div>
                 </div>
             </div>
