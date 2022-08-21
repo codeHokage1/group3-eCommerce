@@ -6,13 +6,6 @@ const ProductPageHero = () => {
     return (
         <div className="container">
             <div className="d-sm-flex justify-content-between">
-                {/* <div className='row col-sm-6'>
-                    {Data.map((data) => {
-                        return (
-                            <p className='border border-success col-6'> {data.title}</p>
-                        )
-                    })}
-                </div> */}
                 <div class="col-sm-5 d-sm-flex justify-content-between flex-wrap text-center">
                     {Data.map((data) => {
                         return (
