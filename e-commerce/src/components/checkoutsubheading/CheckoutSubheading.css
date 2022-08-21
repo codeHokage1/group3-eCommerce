@@ -1,0 +1,9 @@
+.subheading {
+  height: 45px;
+  background: #ff7e07;
+  border-radius: 8px;
+  color: #fff;
+  padding-top: 10px;
+  padding-left: 40px;
+  text-transform: uppercase;
+}
