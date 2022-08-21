@@ -2,16 +2,17 @@ import React from 'react'
 
 const DiscountBadge = ({value}) => {
   return (
-    <p className='badge px-3 py-2 rounded-pill text-dark' style={style}>{value}</p>
+    <p className='badge px-2 py-1 rounded-pill text-dark' style={style}>{value}</p>
   )
 }
 
 const style = {
     backgroundColor: "var(--pink)",
     fontFamily: "Nunito", 
-    position: "absolute", 
-    top: "10%", 
-    right: "5%"
+    position: "relative", 
+    // top: "50%", 
+    left: "40%", 
+    fontSize: "xx-small"
 }
 
 export default DiscountBadge

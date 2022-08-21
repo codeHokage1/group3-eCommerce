@@ -6,10 +6,14 @@ import BeverageSnack from '../components/beveragesnack/BeverageSnack'
 import StoreHeading from '../components/storeheading/StoreHeading'
 import FoodContainer from '../components/foodcontainer/FoodContainer'
 import FruitContainer from '../components/fruitscontainer/FruitContainer'
+import Autoslide from '../components/Autoslide/Autoslide'
+import ProductPageHero from '../components/ProductPageHero/ProductPageHero'
 
 const Products = () => {
   return (
     <>
+      <ProductPageHero />
+      <Autoslide />
       <FoodContainer title="Food items" />
       <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
       <FruitContainer title="Fruits" />

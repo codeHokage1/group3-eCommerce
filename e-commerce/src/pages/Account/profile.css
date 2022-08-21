@@ -46,7 +46,7 @@ body {
     height: 40px;
     border-radius: 10px;
     border: 0.5px solid lightslategray;
- 
+
     padding: 15px;
 
 
@@ -59,7 +59,7 @@ body {
 
     max-width: 250px;
     height: 40px;
-  
+
     border: 0.5px solid lightslategray;
     border-radius: 10px;
     padding-left: 10px;
@@ -73,8 +73,8 @@ body {
 
     width: 60px;
     padding-left: -200px;
-align-items:baseline;
-align-content: center;
+    align-items: baseline;
+    align-content: center;
 
 }
 
@@ -82,53 +82,53 @@ align-content: center;
 
 @media screen and (max-width: 768px) {
     .nBody {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
-            /* height: 500px; */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            width: 100%;
-            padding: 50px;
-        }
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
+        /* height: 500px; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        padding: 50px;
+    }
 
 
-                .formContainer {
-                    background-color: #F8F7F7;
-                    width: 320px;
-                    text-align: center;
-                    border-radius: 20px;
-                    padding: 30px;
-                    margin: 0px auto;
-                }
-        
-                .formContainer h1 {
-                    font-family: 'Playfair Display', serif;
-                    font-size: 20px;
-                    font-weight: 700;
-                    line-height: 30px;
-                    padding: 30px;
-                }
+    .formContainer {
+        background-color: #F8F7F7;
+        width: 320px;
+        text-align: center;
+        border-radius: 20px;
+        padding: 30px;
+        margin: 0px auto;
+    }
 
-.g-contact {
-margin-left: -12px;
-min-width: 260px;
-}
+    .formContainer h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        padding: 30px;
+    }
 
-  .g-select {
-      margin-left: -12px;
-      min-width: 260px;
-  }
+    .g-contact {
+        margin-left: -12px;
+        min-width: 260px;
+    }
 
-  .column label{
-  float: left;
-  margin-top: auto;
-    text-align: left;
-    height: 10px;
-    margin-left: 0px !important;
-  }
+    .g-select {
+        margin-left: -12px;
+        min-width: 260px;
+    }
 
- 
+    .column label {
+        float: left;
+        margin-top: auto;
+        text-align: left;
+        height: 10px;
+        margin-left: 0px !important;
+    }
+
+
 
 
 
@@ -162,13 +162,13 @@ min-width: 260px;
     font-size: 14px;
 
     color: #565956;
- 
+
     width: 100%;
     min-width: 40px;
     max-width: 439px;
     margin: auto;
 
-  
+
 
 }
 
@@ -179,34 +179,34 @@ min-width: 260px;
     font-size: 14px;
     line-height: 30px;
     color: #565956;
-   
+
     width: 100%;
     min-width: 40px;
     max-width: 470px;
     margin: auto;
-   
-display: flex;
-    
+
+    display: flex;
+
 }
 
 
 .column input {
-width: 100%;
+    width: 100%;
 
 }
 
 .column label {
-  text-align: left;  
-  width: 100%;
-margin-left: 20px;
-height: 0px;
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+    height: 0px;
 }
 
 
 
-.column{
+.column {
 
-   flex: 1;
+    flex: 1;
 
 }
 
@@ -331,7 +331,7 @@ height: 0px;
 input[type=radio] {
     height: 2.6em;
     width: 20%;
-   
+
 
 
 
@@ -348,11 +348,7 @@ input[type=radio] {
 
 
 
-.row {
-   
-
-
-}
+.row {}
 
 
 
@@ -372,4 +368,3 @@ input[type=radio] {
 
 
 }
-
