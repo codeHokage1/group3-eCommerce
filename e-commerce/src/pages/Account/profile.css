@@ -38,12 +38,50 @@ body {
     padding: 20px;
 }
 
+.g-contact {
 
+    width: 80%;
+
+    max-width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0.5px solid lightslategray;
+ 
+    padding: 15px;
+
+
+}
+
+
+.g-select {
+
+    width: 100%;
+
+    max-width: 250px;
+    height: 40px;
+  
+    border: 0.5px solid lightslategray;
+    border-radius: 10px;
+    padding-left: 10px;
+
+
+}
+
+
+.r-label {
+    padding-left: -40px;
+
+    width: 60px;
+    padding-left: -200px;
+align-items:baseline;
+align-content: center;
+
+}
 
 
 
 @media screen and (max-width: 768px) {
-    .myBody {
+    .nBody {
             background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
             /* height: 500px; */
             background-position: center;
@@ -71,6 +109,28 @@ body {
                     line-height: 30px;
                     padding: 30px;
                 }
+
+.g-contact {
+margin-left: -12px;
+min-width: 260px;
+}
+
+  .g-select {
+      margin-left: -12px;
+      min-width: 260px;
+  }
+
+  .column label{
+  float: left;
+  margin-top: auto;
+    text-align: left;
+    height: 10px;
+    margin-left: 0px !important;
+  }
+
+ 
+
+
 
 }
 
@@ -100,13 +160,14 @@ body {
     font-family: 'Inter';
     font-style: normal;
     font-size: 14px;
-    line-height: 30px;
+
     color: #565956;
-    margin-bottom: 40px;
+ 
     width: 100%;
     min-width: 40px;
     max-width: 439px;
     margin: auto;
+
   
 
 }
@@ -138,6 +199,7 @@ width: 100%;
   text-align: left;  
   width: 100%;
 margin-left: 20px;
+height: 0px;
 }
 
 
@@ -186,32 +248,13 @@ margin-left: 20px;
     max-width: 439px;
     height: 40px;
     border: 0.5px solid lightslategray;
-    border-radius: 13px;
+    border-radius: 10px;
     padding: 15px;
 
 
 
 }
 
-
-.g-contact {
-
-    width: 50%;
-    min-width: 15px;
-    max-width: 200px;
-    height: 40px;
-    border-radius: 13px;
-    border: 0.5px solid lightslategray;
-    border-radius: 13px;
-    padding: 15px;
-
-
-}
-
-.g-radio label{
-  margin-top: 10px;
-    
-}
 
 
 
@@ -236,7 +279,7 @@ margin-left: 20px;
     max-width: 439px;
     height: 40px;
     border: 0.5px solid lightslategray;
-    border-radius: 13px;
+    border-radius: 10px;
     padding: 15px;
 
 
@@ -277,7 +320,7 @@ margin-left: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    margin: 0px;
+    margin-top: -20px;
     margin-left: -24px;
     font-size: 14px;
     height: 9px;
@@ -287,7 +330,8 @@ margin-left: 20px;
 
 input[type=radio] {
     height: 2.6em;
-    width: 30%;
+    width: 20%;
+   
 
 
 
@@ -329,6 +373,3 @@ input[type=radio] {
 
 }
 
-radio {
-    height: 16px;
-}
