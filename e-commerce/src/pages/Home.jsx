@@ -6,9 +6,11 @@ import StoreHeading from '../components/storeheading/StoreHeading'
 import Categories from '../components/Categories/Categories'
 import PopularStalls from '../components/PopularStalls/PopularStalls'
 import StartShopping from '../components/StartShopping'
-import AutoSlide from '../components/AutoSlide/AutoSlide';
+import Autoslide from '../components/Autoslide/Autoslide'
+
 
 import Footer from '../components/Footer/Footer'
+
 
 const Home = () => {
   return (
@@ -18,7 +20,7 @@ const Home = () => {
         <Categories />
         <PopularStalls />
         <StartShopping />
-        <AutoSlide />
+        <Autoslide />
         <FoodContainer title="Food items" />
         <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
         <FruitContainer title="Fruits" />

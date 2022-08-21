@@ -1,0 +1,32 @@
+.product_hero {
+    background: linear-gradient(180deg, rgba(18, 177, 4, 0.8) 0%, rgba(255, 126, 7, 0.8) 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+    border: none;
+    height: 95%;
+}
+
+.category_border {
+    border: 2px solid #12B104;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 7px;
+    color: var(--primary_color);
+    font-family: 'Playfair Display'
+}
+
+.hero_text{
+    font-family: Nunito;
+    color: white; 
+    position: relative;
+    z-index: 2;
+}
+
+/* .box {
+    width: 35%;
+    height: 35px;
+    background: var(--primary_color);
+    position: relative;
+    top: -9em;
+    left: 40%;
+    z-index: 1;
+} */
