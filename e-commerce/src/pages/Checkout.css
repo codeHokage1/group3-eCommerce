@@ -1,0 +1,110 @@
+.checkoutp {
+  font-family: Product Sans;
+  font-size: 20px;
+  font-weight: 700;
+  color: #565956;
+  margin-bottom: 33px;
+}
+.addressDetails {
+  background-color: #ff7e07;
+  border-radius: 8px;
+}
+.addressp {
+  margin-left: 46px;
+  margin-top: 9px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.confrimOrderDetails {
+  background-color: #ff7e07;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 70%;
+  margin-top: 35px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+.confrimOrder {
+  margin-top: 9px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+.sectionAddress {
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  margin-top: 6px;
+}
+.sectionPayment {
+  background-color: #d9d9d9;
+  border-radius: 5px;
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.farhanText {
+  font-size: 24px;
+  padding-top: 60px;
+  font-weight: bold;
+}
+.text {
+  padding-bottom: 60px;
+}
+.deliverBorder {
+  border-right: 1px solid black;
+}
+.deliveryMethod {
+  padding-top: 20px !important;
+  padding-bottom: 80px;
+}
+.dash {
+  border-bottom: 1px solid black;
+  padding-top: 60px;
+  width: 70%;
+}
+.formcontainer {
+  width: 60%;
+  border-radius: 5px;
+}
+.form {
+  width: 75%;
+}
+.mastercard {
+  background-color: #12b104;
+  color: white;
+  margin-right: 20px;
+  margin-bottom: 2px;
+}
+.paypal {
+  background-color: #12b10433;
+  margin-right: 20px;
+  margin-bottom: 2px;
+}
+.cash {
+  background-color: #12b10433;
+  margin-bottom: 2px;
+}
+.creditcard {
+  padding-top: 60px;
+  padding-bottom: 30px;
+}
+.paypal {
+  color: blue;
+}
+.img {
+  width: 30px;
+}
+.formMargin {
+  margin-bottom: 35px;
+}
+.submit {
+  width: 100%;
+  background-color: #12b104;
+  color: white;
+  margin-bottom: 40px;
+  padding: 10px;
+}
+.submit:hover {
+  color: #12b104;
+}
+input {
+  height: 50px;
+}
