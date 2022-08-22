@@ -12,11 +12,11 @@ import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProductPage";
 import DeliveryTracking from "./pages/Delivery/DeliveryTracking";
 import Footer2 from "./components/Footer2/Footer2";
+import CartPage from "./pages/CartPage/CartPage";
 import Contact from "./pages/Contact/Contact";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 
 import products from "./data";
-
 
 function App() {
   // products.map(product => console.log(product))
@@ -28,7 +28,7 @@ function App() {
       <Routes>
         <Route path={"/"} element={<Home />} />
         <Route path={"/account"} element={<Account />} />
-        <Route path={"/cart"} element={<Checkout />} />
+        <Route path={"/cartpage"} element={<CartPage />} />
         <Route path={"/help"} element={<Help />} />
         <Route path={"/products"} element={<Products products={products} />} />
         <Route path={"/products/:id"} element={<SingleProduct />} />

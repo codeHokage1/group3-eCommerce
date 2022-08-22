@@ -58,7 +58,7 @@ const NavBar = () => {
                 </Dropdown>
           </li>
           <li>
-            <Link to="/cart" className="link">
+            <Link to="/cartpage" className="link">
               <CartLogo className='link-logo' />
               <span className="mobile-remove">Cart</span>
             </Link>
