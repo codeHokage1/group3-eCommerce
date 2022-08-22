@@ -1,22 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import '../../components/paymentmethod/PaymentMethod.css'
-import { usePaystackPayment } from 'react-paystack'
+import PaystackPop from '@paystack/inline-js'
 
 const PaymentMethod = () => {
-  const config = {
-    reference: new Date().getTime().toString(),
-    email: 'user@example.com',
-    amount: 20000,
-    publicKey: 'pk_test_28f29fde6150495c2dfdfea909fb5ca2aaa22a40',
-  }
-  const initializePayment = usePaystackPayment(config)
-  const onSuccess = (reference) => {
-    console.log(reference)
-  }
+  const [email, setEmail] = useState('')
+  const amount = 200000
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setLastname] = useState('')
+  const [phone, setPhone] = useState('')
 
-  const onClose = () => {
-    console.log('closed')
+  const paywithpaystack = (e) => {
+    e.preventDefault()
+    const paystack = new PaystackPop()
+    paystack.newTransaction({
+      key: 'pk_test_28f29fde6150495c2dfdfea909fb5ca2aaa22a40',
+      amount: amount,
+      email,
+      firstname,
+      lastname,
+    })
   }
 
   return (
@@ -26,16 +29,38 @@ const PaymentMethod = () => {
           <Col xs lg="6">
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label className="pb-0 mb-0">Name</Form.Label>
-                <Form.Control type="text" placeholder="John Doe" />
+                <Form.Label className="pb-0 mb-0">First Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="John Doe"
+                  value={firstname}
+                  onChange={(e) => setFirstname(e.target.value)}
+                />
                 <Form.Text className="text-muted">
-                  Your prefered delivery name
+                  Your prefered delivery first name
+                </Form.Text>
+              </Form.Group>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label className="pb-0 mb-0">Last Name</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="John Doe"
+                  value={lastname}
+                  onChange={(e) => setLastname(e.target.value)}
+                />
+                <Form.Text className="text-muted">
+                  Your prefered delivery last name
                 </Form.Text>
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="pb-0 mb-0">Email address</Form.Label>
-                <Form.Control type="email" placeholder="johndoe@mail.com" />
+                <Form.Control
+                  type="email"
+                  placeholder="johndoe@mail.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
                 <Form.Text className="text-muted">
                   your prefered email address
                 </Form.Text>
@@ -43,20 +68,22 @@ const PaymentMethod = () => {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label className="pb-0 mb-0">Phone no</Form.Label>
-                <Form.Control type="text" placeholder="08137422773" />
+                <Form.Control
+                  type="text"
+                  placeholder="08137422773"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                />
               </Form.Group>
 
-              <Button className="paybtn" variant="success">
+              <Button
+                className="paybtn"
+                variant="success"
+                type="submit"
+                onClick={paywithpaystack}
+              >
                 Proceed Payment
               </Button>
-
-              <button
-                onClick={() => {
-                  initializePayment(onSuccess, onClose)
-                }}
-              >
-                Paystack Hooks Implementation
-              </button>
             </Form>
           </Col>
         </Row>
