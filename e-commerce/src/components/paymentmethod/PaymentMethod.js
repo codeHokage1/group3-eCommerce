@@ -32,7 +32,7 @@ const PaymentMethod = () => {
                 <Form.Label className="pb-0 mb-0">First Name</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="John"
                   value={firstname}
                   onChange={(e) => setFirstname(e.target.value)}
                 />
@@ -44,7 +44,7 @@ const PaymentMethod = () => {
                 <Form.Label className="pb-0 mb-0">Last Name</Form.Label>
                 <Form.Control
                   type="text"
-                  placeholder="John Doe"
+                  placeholder="Doe"
                   value={lastname}
                   onChange={(e) => setLastname(e.target.value)}
                 />

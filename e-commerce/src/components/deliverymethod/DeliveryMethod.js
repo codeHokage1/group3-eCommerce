@@ -9,27 +9,39 @@ const DeliveryMethod = () => {
   return (
     <Container>
       <Row className="justify-content-md-center">
-        <Col xs lg="6">
+        <Col xs lg="8">
           <div>
             <hr />
           </div>
         </Col>
       </Row>
-      <Row className="justify-content-md-center">
-        <Col className="deliverydeal">
-          <img src={deliveryman} />
-          <h6 className="font-weight-bold">Door Delivery</h6>
-          <p>Delivery N800. Delivery by weekend within the next 24hrs 20mins</p>
+      <Row className="justify-content-md-center mb-5">
+        <Col className="deliverydeal border-end border-dark">
+          <div className="deliveryservice">
+            <img src={deliveryman} />
+            <h6 className="bold-weight">Door Delivery</h6>
+            <p>
+              Delivery N800. Delivery by weekend within the next 24hrs 20mins
+            </p>
+          </div>
+        </Col>
+        <Col className="deliverydeal border-end border-dark">
+          <div className="deliveryservice">
+            <img src={location} />
+            <h6 className="bold-weight">Pickup station</h6>
+            <p>
+              Delivery N800. Delivery by weekend within the next 24hrs 20mins
+            </p>
+          </div>
         </Col>
         <Col className="deliverydeal">
-          <img src={location} />
-          <h6 className="font-weight-bold">Door Delivery</h6>
-          <p>Delivery N800. Delivery by weekend within the next 24hrs 20mins</p>
-        </Col>
-        <Col className="deliverydeal">
-          <img src={hand} />
-          <h6 className="font-weight-bold">Door Delivery</h6>
-          <p>Delivery N800. Delivery by weekend within the next 24hrs 20mins</p>
+          <div className="deliveryservice">
+            <img src={hand} />
+            <h6 className="bold-weight">Return policy</h6>
+            <p>
+              Delivery N800. Delivery by weekend within the next 24hrs 20mins
+            </p>
+          </div>
         </Col>
       </Row>
     </Container>
