@@ -14,8 +14,12 @@ import DeliveryTracking from "./pages/Delivery/DeliveryTracking";
 import Footer2 from "./components/Footer2/Footer2";
 import Contact from "./pages/Contact/Contact";
 
+import products from "./data";
+
 
 function App() {
+  // products.map(product => console.log(product))
+  
   return (
     <BrowserRouter>
       <BonusTop />
@@ -25,7 +29,7 @@ function App() {
         <Route path={"/account"} element={<Account />} />
         <Route path={"/cart"} element={<Checkout />} />
         <Route path={"/help"} element={<Help />} />
-        <Route path={"/products"} element={<Products />} />
+        <Route path={"/products"} element={<Products products={products} />} />
         <Route path={"/products/:id"} element={<SingleProduct />} />
         <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
