@@ -13,6 +13,7 @@ import SingleProduct from "./pages/SingleProductPage";
 import DeliveryTracking from "./pages/Delivery/DeliveryTracking";
 import Footer2 from "./components/Footer2/Footer2";
 import Contact from "./pages/Contact/Contact";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
 
 import products from "./data";
 
@@ -34,6 +35,8 @@ function App() {
         <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
         <Route path={"/contact"} element={<Contact />} />
+        <Route path={"/admin"} element={<AdminDashboard />} />
+
       </Routes>
 
       <Footer2 />
