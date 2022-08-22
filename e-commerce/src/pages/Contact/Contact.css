@@ -1,0 +1,6 @@
+.background{
+    background: linear-gradient(180deg, rgba(18, 177, 4, 0.2) 0%, rgba(255, 126, 7, 0.2) 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%);
+    /* -webkit-clip-path: polygon(0 0, 100% 0, 100% 56%, 0 100%); */
+    clip-path: polygon(0 0, 100% 50px, 100% 100%, 0 100%);
+}

@@ -13,8 +13,14 @@ import SingleProduct from "./pages/SingleProductPage";
 import DeliveryTracking from "./pages/Delivery/DeliveryTracking";
 import Footer2 from "./components/Footer2/Footer2";
 import CartPage from "./pages/CartPage/CartPage";
+import Contact from "./pages/Contact/Contact";
+import AdminDashboard from "./pages/Admin/AdminDashboard";
+
+import products from "./data";
 
 function App() {
+  // products.map(product => console.log(product))
+  
   return (
     <BrowserRouter>
       <BonusTop />
@@ -24,10 +30,13 @@ function App() {
         <Route path={"/account"} element={<Account />} />
         <Route path={"/cartpage"} element={<CartPage />} />
         <Route path={"/help"} element={<Help />} />
-        <Route path={"/products"} element={<Products />} />
+        <Route path={"/products"} element={<Products products={products} />} />
         <Route path={"/products/:id"} element={<SingleProduct />} />
         <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
+        <Route path={"/contact"} element={<Contact />} />
+        <Route path={"/admin"} element={<AdminDashboard />} />
+
       </Routes>
 
       <Footer2 />
