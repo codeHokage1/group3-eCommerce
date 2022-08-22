@@ -10,7 +10,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
 
-.profile-body {
+.myBody {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
     /* height: 500px; */
     background-position: center;
@@ -21,7 +21,7 @@ body {
     padding: 50px;
 }
 
-.profile-form {
+.formContainer {
     background-color: #F8F7F7;
     width: 700px;
     text-align: center;
@@ -30,7 +30,7 @@ body {
     margin: 0px auto;
 }
 
-.profile-form h1 {
+.formContainer h1 {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 700;
@@ -38,39 +38,99 @@ body {
     padding: 20px;
 }
 
+.g-contact {
 
+    width: 80%;
+
+    max-width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0.5px solid lightslategray;
+
+    padding: 15px;
+
+
+}
+
+
+.g-select {
+
+    width: 100%;
+
+    max-width: 250px;
+    height: 40px;
+
+    border: 0.5px solid lightslategray;
+    border-radius: 10px;
+    padding-left: 10px;
+
+
+}
+
+
+.r-label {
+    padding-left: -40px;
+
+    width: 60px;
+    padding-left: -200px;
+    align-items: baseline;
+    align-content: center;
+
+}
 
 
 
 @media screen and (max-width: 768px) {
-    .profile-body {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
-            /* height: 500px; */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            width: 100%;
-            padding: 50px;
-        }
+    .nBody {
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
+        /* height: 500px; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        padding: 50px;
+    }
 
 
-                .profile-form {
-                    background-color: #F8F7F7;
-                    width: 320px;
-                    text-align: center;
-                    border-radius: 20px;
-                    padding: 30px;
-                    margin: 0px auto;
-                }
-        
-                .profile-form h1 {
-                    font-family: 'Playfair Display', serif;
-                    font-size: 20px;
-                    font-weight: 700;
-                    line-height: 30px;
-                    padding: 30px;
-                }
+    .formContainer {
+        background-color: #F8F7F7;
+        width: 320px;
+        text-align: center;
+        border-radius: 20px;
+        padding: 30px;
+        margin: 0px auto;
+    }
+
+    .formContainer h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        padding: 30px;
+    }
+
+    .g-contact {
+        margin-left: -12px;
+        min-width: 260px;
+    }
+
+    .g-select {
+        margin-left: -12px;
+        min-width: 260px;
+    }
+
+    .column label {
+        float: left;
+        margin-top: auto;
+        text-align: left;
+        height: 10px;
+        margin-left: 0px !important;
+    }
+
+
+
+
 
 }
 
@@ -79,7 +139,7 @@ body {
 
 
 
-.profile-login {
+.login {
 
     background-color: #FF7E07 !important;
     border: 1px solid #FF7E07 !important;
@@ -96,55 +156,57 @@ body {
 
 
 
-.profile-radio {
+.g-radio {
     font-family: 'Inter';
     font-style: normal;
     font-size: 14px;
-    line-height: 30px;
+
     color: #565956;
-    margin-bottom: 40px;
+
     width: 100%;
     min-width: 40px;
     max-width: 439px;
     margin: auto;
-  
+
+
 
 }
 
 
-.profile-row {
+.row {
     font-family: 'Inter';
     font-style: normal;
     font-size: 14px;
     line-height: 30px;
     color: #565956;
-   
+
     width: 100%;
     min-width: 40px;
     max-width: 470px;
     margin: auto;
-   
-display: flex;
-    
-}
 
-
-.profile-column input {
-width: 100%;
+    display: flex;
 
 }
 
-.profile-column label {
-  text-align: left;  
-  width: 100%;
-margin-left: 20px;
+
+.column input {
+    width: 100%;
+
+}
+
+.column label {
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+    height: 0px;
 }
 
 
 
-.profile-column{
+.column {
 
-   flex: 1;
+    flex: 1;
 
 }
 
@@ -167,26 +229,26 @@ margin-left: 20px;
 
 
 
-/* .Menu {
+.Menu {
     color: black;
     color: white;
     overflow: hidden;
     margin: 10px;
 
-} */
+}
 
 
 
 
 
-.profile-name {
+.inputname {
 
     width: 100%;
     min-width: 40px;
     max-width: 439px;
     height: 40px;
     border: 0.5px solid lightslategray;
-    border-radius: 13px;
+    border-radius: 10px;
     padding: 15px;
 
 
@@ -194,28 +256,9 @@ margin-left: 20px;
 }
 
 
-.g-contact {
-
-    width: 50%;
-    min-width: 15px;
-    max-width: 200px;
-    height: 40px;
-    border-radius: 13px;
-    border: 0.5px solid lightslategray;
-    border-radius: 13px;
-    padding: 15px;
 
 
-}
-
-.g-radio label{
-  margin-top: 10px;
-    
-}
-
-
-
-.profile-login button {
+.longin button {
 
     width: 100%;
     min-width: 40px;
@@ -236,7 +279,7 @@ margin-left: 20px;
     max-width: 439px;
     height: 40px;
     border: 0.5px solid lightslategray;
-    border-radius: 13px;
+    border-radius: 10px;
     padding: 15px;
 
 
@@ -277,7 +320,7 @@ margin-left: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    margin: 0px;
+    margin-top: -20px;
     margin-left: -24px;
     font-size: 14px;
     height: 9px;
@@ -287,7 +330,8 @@ margin-left: 20px;
 
 input[type=radio] {
     height: 2.6em;
-    width: 30%;
+    width: 20%;
+
 
 
 
@@ -303,6 +347,8 @@ input[type=radio] {
 
 
 
+
+.row {}
 
 
 
@@ -314,15 +360,11 @@ input[type=radio] {
 
 
 
-/* .mb-3 {
+.mb-3 {
     width: 100%;
     max-width: 60%;
     min-width: 20%;
 
 
 
-} */
-
-radio {
-    height: 16px;
 }
