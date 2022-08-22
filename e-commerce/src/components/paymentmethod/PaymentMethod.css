@@ -1,0 +1,12 @@
+.paybtn {
+  background: #12b104 !important;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+  border-radius: 6px;
+  border: 0;
+  width: 100%;
+}
+
+.paybtn:hover {
+  background: #12b104 !important;
+  box-shadow: 6px 6px 6px #a6eda0 !important;
+}
