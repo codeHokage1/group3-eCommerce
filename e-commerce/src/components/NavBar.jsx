@@ -19,7 +19,7 @@ const Navbar = () => {
           <FiHelpCircle /> Help
         </div>
       </Link>{" "}
-      <Link to="/cart" className="Menu">
+      <Link to="/cartpage" className="Menu">
         <div>
           <BsCart4 /> Cart
         </div>
