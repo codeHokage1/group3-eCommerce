@@ -12,6 +12,7 @@ import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProductPage";
 import DeliveryTracking from "./pages/Delivery/DeliveryTracking";
 import Footer2 from "./components/Footer2/Footer2";
+import Contact from "./pages/Contact/Contact";
 
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
         <Route path={"/products/:id"} element={<SingleProduct />} />
         <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
+        <Route path={"/contact"} element={<Contact />} />
       </Routes>
 
       <Footer2 />

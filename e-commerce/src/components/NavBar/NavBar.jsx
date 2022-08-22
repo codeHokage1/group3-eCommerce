@@ -7,6 +7,7 @@ import { TbShoppingCart as CartLogo } from 'react-icons/tb'
 import { BiSearchAlt as SearchLogo } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
+import { useNavigate } from 'react-router-dom'
 
 
 import Offcanvas from 'react-bootstrap/Offcanvas'
@@ -19,6 +20,7 @@ const NavBar = () => {
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+  const navigate = useNavigate()
 
   return (
     <nav className="navbar">
@@ -50,7 +52,7 @@ const NavBar = () => {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">Contact Custmer Care</Dropdown.Item>
+                    <Dropdown.Item onClick={()=> navigate("/contact")}>Contact Customer Care</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
