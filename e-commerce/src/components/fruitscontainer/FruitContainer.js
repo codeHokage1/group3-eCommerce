@@ -14,7 +14,7 @@ import itemeight from '../../images/tomato.png'
 import itemnine from '../../images/vege.png'
 import CategoryFeature from '../categoryfeature/CategoryFeature'
 
-const FruitContainer = ({ title }) => {
+const FruitContainer = ({ title, products }) => {
   let ref = React.createRef()
   const scroll = (scrollOffset) => {
     ref.current.scrollLeft += scrollOffset

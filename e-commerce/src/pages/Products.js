@@ -9,20 +9,22 @@ import FruitContainer from '../components/fruitscontainer/FruitContainer'
 import Autoslide from '../components/Autoslide/Autoslide'
 import ProductPageHero from '../components/ProductPageHero/ProductPageHero'
 
-const Products = () => {
+const Products = ({products}) => {
   return (
     <>
       <ProductPageHero />
       <Autoslide />
-      <FoodContainer title="Food items" />
+      {/* <FoodContainer title="Food items" /> */}
       <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
-      <FruitContainer title="Fruits" />
-      <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
+      {
+        products.map(product => <FruitContainer title="Fruits" products={products} /> )
+      }
+      {/* <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
       <LiveStock title="Livestock & Protein" />
       <Baking title="Bakings" />
       <FrozenFood title="Frozen food" />
       <BeverageSnack title="Beverage & snack" />
-      <StoreHeading narative="START SHOPPING AT AN AFFORDABLE RATE" />
+      <StoreHeading narative="START SHOPPING AT AN AFFORDABLE RATE" /> */}
     </>
   )
 }
