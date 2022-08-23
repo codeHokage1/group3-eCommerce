@@ -160,7 +160,7 @@ const Profile = () => {
       <div className="formContainer">
         <h1> User's Profile</h1>
         <p className="myspan">
-          if you are a new memeber or dont have an account kindly create a new
+          if you are a new member or dont have an account kindly create a new
           account
           <p className="">
             {"Already have an account, "}

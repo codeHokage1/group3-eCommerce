@@ -15,7 +15,7 @@ const Products = ({products}) => {
       <ProductPageHero />
       <Autoslide />
       {/* <FoodContainer title="Food items" /> */}
-      <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
+      <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKET" />
       {
         products.map(product => <FruitContainer title="Fruits" products={products} /> )
       }
