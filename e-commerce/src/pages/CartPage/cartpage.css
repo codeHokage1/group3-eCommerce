@@ -1,0 +1,184 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.single-product {
+    padding: 70px;
+}
+.product-details{
+    display: flex;
+    gap: 50px;
+}
+.left-images{
+    display: flex;
+    flex-direction: column;
+}
+/* .main-image{
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white !important;
+} */
+.image {
+    padding-top: 50px;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.other-images{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+.container-one{
+    background: #D9D9D966;
+    /* border-radius: 15px;
+    width: 150px;
+    height: 100px; */
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.image-container img{
+    width: 100px;
+}
+
+
+.right-details{
+    color:#565956;
+    font-family: 'Nunito Sans';
+}
+.right-details span, .right-details h5{
+    color: #FF7E07;
+}
+.price{
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+.price-amount{
+    font-size: 16pt;
+    font-weight: bolder;
+    /* text-align: center; */
+    
+}
+
+.product-desc{
+    margin: 10px 0;
+}
+
+.quantity{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #565956;
+    border-radius: 15px;
+    padding: 5px 10px;
+}
+.quantity select{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 40px;
+}
+.quantity-addCart{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.rating-details{
+    background: rgba(222, 224, 222, 0.6);
+    box-shadow: 0px 4px 5px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 20px;
+}
+.rating-details h6{
+    font-weight: bold;
+}
+
+.add-button{
+    background: #FF7E07;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 3px;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    font-weight: bold;
+    height: 30px;
+}
+.checkout-button{
+    background: #FF7E07;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 4px;
+    color: white;
+    border: none;
+    outline: none;
+    padding: 5px 15px;
+    font-weight: bold;
+    height: 50px;
+    width: 80%;
+}
+.discountbadge {
+    width: 38px;
+    height: 15px;
+    background: #ffc1c1;
+    border-radius: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 15px;
+    color: #643333;
+    text-align: center;
+    margin: 0;
+  }
+.two{
+    text-align: center;
+    padding: 25px 15px;
+    margin: auto;
+}
+.markettitle {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.2em;
+    color: #ff7e07;
+    padding-top: 60px;
+    margin: 0;
+    text-align: left;
+    padding-left: 20px;
+  }
+  /* .marketdiv {
+    text-align: center;
+    margin: 22px 0;
+    padding: 23px;
+  } */
+  .clearfix {
+    clear: both;
+  }
+  /* .line-space {
+    letter-spacing: 0.2em;
+  } */
+
+
+
+  .price-row{
+    display: flex !important;
+  }
+  .price-title{
+    margin-right: auto;
+  } 

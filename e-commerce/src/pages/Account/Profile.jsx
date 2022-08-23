@@ -1,199 +1,199 @@
-import React from "react";
-import Button from "react-bootstrap/Button";
-import "./profile.css";
-import { Link } from "react-router-dom";
+import React from 'react'
+import Button from 'react-bootstrap/Button'
+import './profile.css'
+import { Link } from 'react-router-dom'
 
 const Profile = () => {
   const options = [
     {
-      label: "Please Select",
-      value: "select",
+      label: 'Please Select',
+      value: 'select',
     },
     {
-      label: "Abia",
-      value: "abia",
+      label: 'Abia',
+      value: 'abia',
     },
     {
-      label: "Adamawa",
-      value: "adamawa",
+      label: 'Adamawa',
+      value: 'adamawa',
     },
     {
-      label: "Akwa-Ibom",
-      value: "akwa-ibom",
+      label: 'Akwa-Ibom',
+      value: 'akwa-ibom',
     },
     {
-      label: "Anambra",
-      value: "anambra",
+      label: 'Anambra',
+      value: 'anambra',
     },
     {
-      label: "Bauchi",
-      value: "bauchi",
+      label: 'Bauchi',
+      value: 'bauchi',
     },
     {
-      label: "Bayelsa",
-      value: "bayelsa",
+      label: 'Bayelsa',
+      value: 'bayelsa',
     },
     {
-      label: "Benue",
-      value: "benue",
+      label: 'Benue',
+      value: 'benue',
     },
     {
-      label: "Borno",
-      value: "borno",
+      label: 'Borno',
+      value: 'borno',
     },
     {
-      label: "Cross River",
-      value: "cross river",
+      label: 'Cross River',
+      value: 'cross river',
     },
     {
-      label: "Delta",
-      value: "delta",
+      label: 'Delta',
+      value: 'delta',
     },
     {
-      label: "Ebonyi",
-      value: "ebonyi",
+      label: 'Ebonyi',
+      value: 'ebonyi',
     },
     {
-      label: "Edo",
-      value: "edo",
+      label: 'Edo',
+      value: 'edo',
     },
     {
-      label: "Ekiti",
-      value: "ekiti",
+      label: 'Ekiti',
+      value: 'ekiti',
     },
     {
-      label: "Enugu",
-      value: "enugu",
+      label: 'Enugu',
+      value: 'enugu',
     },
     {
-      label: "Gombe",
-      value: "gombe",
+      label: 'Gombe',
+      value: 'gombe',
     },
     {
-      label: "Imo",
-      value: "imo",
+      label: 'Imo',
+      value: 'imo',
     },
     {
-      label: "Jigawa",
-      value: "jigawa",
+      label: 'Jigawa',
+      value: 'jigawa',
     },
     {
-      label: "Kaduna",
-      value: "kaduna",
+      label: 'Kaduna',
+      value: 'kaduna',
     },
     {
-      label: "Kano",
-      value: "kano",
+      label: 'Kano',
+      value: 'kano',
     },
     {
-      label: "Katsina",
-      value: "katsina",
+      label: 'Katsina',
+      value: 'katsina',
     },
     {
-      label: "Kebbi",
-      value: "kebbi",
+      label: 'Kebbi',
+      value: 'kebbi',
     },
     {
-      label: "Kogi",
-      value: "kogi",
+      label: 'Kogi',
+      value: 'kogi',
     },
     {
-      label: "Kwara",
-      value: "kwara",
+      label: 'Kwara',
+      value: 'kwara',
     },
     {
-      label: "Lagos",
-      value: "lagos",
+      label: 'Lagos',
+      value: 'lagos',
     },
     {
-      label: "Nasarawa",
-      value: "nasarawa",
+      label: 'Nasarawa',
+      value: 'nasarawa',
     },
     {
-      label: "Niger",
-      value: "niger",
+      label: 'Niger',
+      value: 'niger',
     },
     {
-      label: "Ogun",
-      value: "ogun",
+      label: 'Ogun',
+      value: 'ogun',
     },
     {
-      label: "Ondo",
-      value: "ondo",
+      label: 'Ondo',
+      value: 'ondo',
     },
     {
-      label: "Osun",
-      value: "osun",
+      label: 'Osun',
+      value: 'osun',
     },
     {
-      label: "Oyo",
-      value: "oyo",
+      label: 'Oyo',
+      value: 'oyo',
     },
     {
-      label: "Plateau",
-      value: "plateau",
+      label: 'Plateau',
+      value: 'plateau',
     },
     {
-      label: "Rivers",
-      value: "rivers",
+      label: 'Rivers',
+      value: 'rivers',
     },
     {
-      label: "Sokoto",
-      value: "sokoto",
+      label: 'Sokoto',
+      value: 'sokoto',
     },
     {
-      label: "Taraba",
-      value: "taraba",
+      label: 'Taraba',
+      value: 'taraba',
     },
     {
-      label: "Yobe",
-      value: "yobe",
+      label: 'Yobe',
+      value: 'yobe',
     },
     {
-      label: "Zamfara",
-      value: "zamfara",
+      label: 'Zamfara',
+      value: 'zamfara',
     },
-  ];
+  ]
 
   return (
-    <main className="myBody">
-      <div className="formContainer">
+    <main className="profile-body">
+      <div className="profile-container">
         <h1> User's Profile</h1>
-        <p className="myspan">
+        <p className="profile-span">
           if you are a new memeber or dont have an account kindly create a new
           account
           <p className="">
-            {"Already have an account, "}
+            {'Already have an account, '}
 
-            <Link to="/account" className="link">
+            <Link to="/account" className="profile-link">
               Please login.
             </Link>
-          </p>{" "}
+          </p>{' '}
         </p>
 
         <form action="">
-          <div className="myname">
+          <div className="profile-name">
             <label for="FirstName" className="Fname">
               First Name
             </label>
           </div>
           <p />
           <input
-            className="inputname"
+            className="profile-input"
             type="text"
             name="FirstName"
             value=""
             placeholder=""
           />
           <p />
-          <div className="myname">
+          <div className="profile-name">
             <label for="FirstName" className="Fname">
               Last Name
             </label>
           </div>
           <p />
           <input
-            className="inputname"
+            className="profile-input"
             type="text"
             name="LastName"
             value=""
@@ -207,22 +207,22 @@ const Profile = () => {
             <label className="r-label">Female</label>
           </div>
           <p />
-          <div className="myname2">
+          <div className="profile-name2">
             <label for="FirstName" className="">
               Email
             </label>
           </div>
           <p />
           <input
-            className="inputname"
+            className="profile-input"
             type="text"
             name="email"
             value=""
             placeholder=""
           />
           <p />
-          <div className="row">
-            <div className="column">
+          <div className="profile-row">
+            <div className="profile-column">
               <label for="FirstName" className="">
                 Contact
               </label>
@@ -237,7 +237,7 @@ const Profile = () => {
               />
             </div>
 
-            <div className="column">
+            <div className="profile-column">
               <label for="FirstName" className="">
                 State
               </label>
@@ -253,14 +253,14 @@ const Profile = () => {
             </div>
           </div>
           <p />
-          <div className="myname">
+          <div className="profile-name">
             <label for="FirstName" className="Fname">
               Address
             </label>
           </div>
           <p />
           <input
-            className="inputname"
+            className="profile-input"
             type="adress"
             name="adress"
             value=""
@@ -285,7 +285,7 @@ const Profile = () => {
             className="login"
             size=""
             variant="primary"
-            style={{ border: "none" }}
+            style={{ border: 'none' }}
           >
             Create
           </Button>
@@ -293,7 +293,7 @@ const Profile = () => {
         </form>
       </div>
     </main>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile

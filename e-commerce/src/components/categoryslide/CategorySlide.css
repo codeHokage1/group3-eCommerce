@@ -67,7 +67,7 @@
   padding: 0px 20px;
   position: absolute;
   bottom: 0;
-  align-items: end;
+  align-items: flex-end;
   margin: 15px 0px;
 }
 .slick-dots {

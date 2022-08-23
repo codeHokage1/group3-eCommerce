@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import "./NavBar.css";
+import SearchBarSection from "../SearchbarSection/SearchBarSection";
 import { MdOutlineAccountCircle as UserLogo } from "react-icons/md";
 import { FaRegQuestionCircle as HelpLogo } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
@@ -7,16 +10,16 @@ import { TbShoppingCart as CartLogo } from "react-icons/tb";
 import { BiSearchAlt as SearchLogo } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import "./NavBar.css";
-import SearchBarSection from "../SearchbarSection/SearchBarSection";
+import { useNavigate } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({ countCartItems }) => {
+  // const [menuClicked, setMenuClicked] = useState(false);
+
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  // const [menuClicked, setMenuClicked] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <nav className="navbar">
@@ -62,6 +65,20 @@ const NavBar = () => {
           <li>
             <Link to="/cart" className="link">
               <CartLogo className="link-logo" />
+              <Dropdown>
+                <Dropdown.Menu>
+                  <Dropdown.Item onClick={() => navigate("/contact")}>
+                    Contact Customer Care
+                  </Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown>
+            </Link>
+          </li>
+          <li>
+            <Link to="/cartpage" className="link">
+              <CartLogo className="link-logo" />
+              {countCartItems ? <span>{countCartItems}</span> : " "}
               <span className="mobile-remove">Cart</span>
             </Link>
           </li>
