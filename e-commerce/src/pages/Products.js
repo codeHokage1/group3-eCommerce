@@ -18,7 +18,7 @@ const Products = ({Categoriesdata, cartItems, handleAdd, handleRemove}) => {
       <Autoslide />
       {/* <CategoryFeature /> */}
       {/* <FoodContainer title="Food items" /> */}
-      <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
+      <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKET" />
       {
         Categoriesdata.map(category => <FruitContainer title={category.name} products={category.products} handleAdd={handleAdd} handleRemove={handleRemove} cartItems={cartItems} /> )
       }

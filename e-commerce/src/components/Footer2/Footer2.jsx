@@ -1,34 +1,124 @@
-import React from 'react';
+import React from "react";
 import { FaYoutube, FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { BsCart4 } from "react-icons/bs";
+import { FiHelpCircle } from "react-icons/fi";
+import { MdOutlineAccountCircle } from "react-icons/md";
+import { TbApple } from "react-icons/tb";
+import {Link} from "react-router-dom";
 
+import "./footer2.css";
 
 const Footer2 = () => {
   return (
-      <div>
-          <footer className="w-100 py-4 flex-shrink-0 pink-background">
-        <div className="container">
-          <ul className="nav justify-content-center border-bottom border-dark pb-3 mb-3">
-            <li className="nav-item">
-              <a href="https://youtube.com" className="nav-link px-2 text-dark">
+    <div>    
+    <section
+             class="d-flex justify-content-between p-4"
+             style={{backgroundColor: "#212529"}}
+             >
+      <div class="me-5 text-white">
+        <span>Get connected with us on social networks:</span>
+      </div>
+
+      <div className="container">
+              <a href="https://youtube.com" className="nav-link px-2 text-white">
                 <FaYoutube />
               </a>
-            </li>
-            <li className="nav-item">
-              <a href="https://facebook.com" className="nav-link px-2 text-dark">
+            
+              <a
+                href="https://facebook.com"
+                className="nav-link px-2 text-white">
                 <FaFacebookF />
               </a>
-            </li>
-            <li className="nav-item">
-              <a href="https://instagram.com" className="nav-link px-2 text-dark">
+            
+              <a
+                href="https://instagram.com"
+                className="nav-link px-2 text-white">
                 <FaInstagram />
               </a>
-            </li>
-            <li className="nav-item">
-              <a href="https://twitter.com" className="nav-link px-2 text-dark">
+            
+              <a href="https://twitter.com" className="nav-link px-2 text-white">
                 <FaTwitter />
               </a>
+            
+        </div>
+    </section>
+      <footer className="w-100 py-4 flex-shrink-0 pink-background">
+        <div className="list">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
+            <h3 class="text-uppercase fw-bold">Group 3 Ltd.</h3>
+            <hr
+              class="mb-4 mt-0 d-inline-block mx-auto"
+              style={{
+                width: "60px",
+                backgroundColor: "#7c4dff",
+                height: "2px",
+              }}
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+              asperiores voluptatum nobis fuga repellendus, ex dolor numquam
+              maxime? Accusantium blanditiis quibusdam quod ipsum distinctio
+              laudantium aliquid sed culpa ducimus rem.
+            </p>
+          </div>
+          <ul id="overview">
+            <h3>Overview</h3>
+            <hr
+              class="mb-4 mt-0 d-inline-block mx-auto"
+              style={{
+                width: "60px",
+                backgroundColor: "#7c4dff",
+                height: "2px",
+              }}
+            />
+            <li>
+              <Link to="/products" style={{textDecoration:"none", color:"#565956"}}><TbApple /> Products</Link>
+            </li>
+            <li>
+              <MdOutlineAccountCircle /> Accounts
+            </li>
+            <li>
+              <FiHelpCircle /> Help
+            </li>
+            <li>
+             <Link to="/cartpage" style={{textDecoration:"none", color:"#565956"}}><BsCart4 /> Cart</Link>
             </li>
           </ul>
+          <ul id="connect">
+            <h3>Connect</h3>
+            <hr
+              class="mb-4 mt-0 d-inline-block mx-auto"
+              style={{
+                width: "60px",
+                backgroundColor: "#7c4dff",
+                height: "2px",
+              }}
+            />
+            <li>Contact</li>
+            <li>Newsletter</li>
+            <li>LinkedIn</li>
+          </ul>
+          <ul id="company">
+            <h3>Team</h3>
+            <hr
+              class="mb-4 mt-0 d-inline-block mx-auto"
+              style={{
+                width: "60px",
+                backgroundColor: "#7c4dff",
+                height: "2px",
+              }}
+            />
+            <li>Abdulkadir Kamaldeen: Deenabdulkadir@gmail.com​</li>
+            <li>Agoro Hakeem: omotagoro@gmail.com</li>
+            <li>Ogiri Moses: ogirimoses@gmail.com​</li>
+            <li>Okunsebor Joan: jokunsebor@gmail.com</li>
+            <li>Olayode Oluwafemi: oludareoluwafemirachael@gmail.com</li>
+            <li>Onajinrin Oluwakemi: oluwakemi.mabell@gmail.com</li>
+            <li>Shobande James: shobandejames@gmail.com​</li>
+            <li>Sodiq Farihan A: farhansodiq360@gmail.com</li>
+            <li>Ugochukwu Chidubanyi: chidu302@gmail.com</li>
+          </ul>
+        </div>
 
           <p className="nav justify-content-center">
             If you are visually-impaired and having difficulty with our website,
@@ -38,16 +128,13 @@ const Footer2 = () => {
             This site is protected by reCAPTCHA and the Google Privacy Policy
             and Terms of Service apply.
           </p>
-        </div>
       </footer>
 
       <footer className="w-100 py-4 flex-shrink-0 bg-dark text-white">
-        <div className="container ">
-          <p className="nav justify-content-center">All rights reserved.</p>
-        </div>
+          <p className="rights">All rights reserved.</p>
       </footer>
     </div>
-  )
-}
+  );
+};
 
-export default Footer2
+export default Footer2;

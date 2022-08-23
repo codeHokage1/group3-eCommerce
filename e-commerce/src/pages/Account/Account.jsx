@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React,{useState} from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import "./account.css";

@@ -11,6 +11,27 @@ body, html {
     user-select: none;
   }
 
+.list{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 45px;
+  margin: 10px;
+  
+}
+
+.list h3{
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+footer ul li{
+list-style-type: none;
+margin-bottom: 20px;
+
+}
+
   @media (min-width: 768px) {
     .bd-placeholder-img-lg {
       font-size: 3.5rem;
@@ -73,3 +94,24 @@ body, html {
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
   }
+
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.container a{
+  font-size: 20px;
+}
+
+.rights{
+  text-align: center;
+}
+
+#overview li:hover{
+  cursor: pointer;
+  font-weight: bold;
+}
+
+
