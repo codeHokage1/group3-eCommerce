@@ -14,13 +14,13 @@ const Footer2 = () => {
     <div>    
     <section
              class="d-flex justify-content-between p-4"
-             style={{backgroundColor: "#212529"}}
+             style={{backgroundColor: "#FF7E07"}}
              >
       <div class="me-5 text-white">
         <span>Get connected with us on social networks:</span>
       </div>
 
-      <div className="container">
+      <div className="social-container">
               <a href="https://youtube.com" className="nav-link px-2 text-white">
                 <FaYoutube />
               </a>
@@ -72,6 +72,9 @@ const Footer2 = () => {
                 height: "2px",
               }}
             />
+            <li>
+              <Link to="/" style={{textDecoration:"none", color:"#565956"}}><TbApple /> Home</Link>
+            </li>
             <li>
               <Link to="/products" style={{textDecoration:"none", color:"#565956"}}><TbApple /> Products</Link>
             </li>
@@ -131,7 +134,7 @@ const Footer2 = () => {
           </p>
       </footer>
 
-      <footer className="w-100 py-4 flex-shrink-0 bg-dark text-white">
+      <footer className="w-100 py-4 flex-shrink-0 text-white" style={{backgroundColor: "#FF7E07"}}>
           <p className="rights">All rights reserved.</p>
       </footer>
     </div>

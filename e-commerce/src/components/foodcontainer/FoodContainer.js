@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import '../foodcontainer/FoodContainer.css'
 import FoodItem from '../fooditem/FoodItem'
