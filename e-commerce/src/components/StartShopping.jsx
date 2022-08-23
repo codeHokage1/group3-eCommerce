@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react';
 import Button from './Button'
 import { useNavigate } from 'react-router-dom'
 
 const StartShopping = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
+  }, [])
   const navigate = useNavigate();
 
   return (
