@@ -12,7 +12,7 @@ import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProductPage";
 import DeliveryTracking from "./pages/Delivery/DeliveryTracking";
 import Footer2 from "./components/Footer2/Footer2";
-
+import Page404 from "./pages/404/Page404";
 
 function App() {
   return (
@@ -28,8 +28,8 @@ function App() {
         <Route path={"/products/:id"} element={<SingleProduct />} />
         <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
+        <Route path={"/page404"} element={<Page404 />} />
       </Routes>
-
       <Footer2 />
     </BrowserRouter>
   );
