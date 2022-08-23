@@ -39,7 +39,7 @@ const FoodItem = ({
               </Link>
             </p>
             <p>{price}</p>
-
+            
             <p className="fruitline">{discountprice}</p>
           </div>
           <div className="mt-1">

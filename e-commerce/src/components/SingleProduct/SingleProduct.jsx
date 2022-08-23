@@ -22,7 +22,6 @@ const SingleProduct = ({Categoriesdata, cartItems, handleAdd, handleRemove}) => 
     const findProduct = products.find(product => String(product.id) === id);
 
     const itemFoundInCart = cartItems.find(item => item.id === findProduct.id);
-
     // console.log(products)
   return (
     <main>
