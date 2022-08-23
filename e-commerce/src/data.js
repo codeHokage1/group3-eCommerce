@@ -10,7 +10,99 @@ import blueband from './images/blueband.jpg'; //for dairy
 
 const products = [
     {
-        beverage: [
+        cannedFoods: [
+                {
+                    id: 101,
+                    name: "Pringles",
+                    price: 695,
+                    description: "You can eat it",
+                    category: "canned food",
+                    image: pringles,
+                    rating: {
+                        rate: 4.6,
+                        count: 400
+                    }
+                },
+                {
+                    id: 102,
+                    name: "Titus Sardine",
+                    price: 695,
+                    description: "You can eat it",
+                    category: "canned food",
+                    image: pringles,
+                    rating: {
+                        rate: 4.6,
+                        count: 400
+                    }
+                },
+                {
+                    id: 103,
+                    name: "HotDogs",
+                    price: 695,
+                    description: "You can eat it",
+                    category: "canned food",
+                    image: pringles,
+                    rating: {
+                        rate: 4.6,
+                        count: 400
+                    }
+                },
+                {
+                    id: 104,
+                    name: "HotDogs",
+                    price: 695,
+                    description: "You can eat it",
+                    category: "canned food",
+                    image: pringles,
+                    rating: {
+                        rate: 4.6,
+                        count: 400
+                    }
+                }
+            ]
+        },
+        {
+            dryAndBaking: [
+                {
+                    id: 11,
+                    name: "CAP rice",
+                    price: 695,
+                    description: "You can eat it",
+                    category: "grains",
+                    image: rice,
+                    rating: {
+                        rate: 4.6,
+                        count: 400
+                    }
+                },
+                {
+                    id: 12,
+                    name: "Stallion Rice",
+                    price: 695,
+                    description: "You can eat it",
+                    category: "grains",
+                    image: rice,
+                    rating: {
+                        rate: 4.6,
+                        count: 400
+                    }
+                },
+                {
+                    id: 13,
+                    name: "Nigerian Rice",
+                    price: 695,
+                    description: "You can eat it",
+                    category: "grains",
+                    image: rice,
+                    rating: {
+                        rate: 4.6,
+                        count: 400
+                    }
+                }
+            ]
+        },
+        {
+        beverages: [
             {
                 id: 1,
                 name: "Milo",
@@ -177,46 +269,7 @@ const products = [
             }
         ]
     },
-    {
-        "canned foods": [
-            {
-                id: 14,
-                name: "Pringles",
-                price: 695,
-                description: "You can eat it",
-                category: "canned food",
-                image: pringles,
-                rating: {
-                    rate: 4.6,
-                    count: 400
-                }
-            },
-            {
-                id: 15,
-                name: "Titus Sardine",
-                price: 695,
-                description: "You can eat it",
-                category: "canned food",
-                image: pringles,
-                rating: {
-                    rate: 4.6,
-                    count: 400
-                }
-            },
-            {
-                id: 16,
-                name: "HotDogs",
-                price: 695,
-                description: "You can eat it",
-                category: "canned food",
-                image: pringles,
-                rating: {
-                    rate: 4.6,
-                    count: 400
-                }
-            }
-        ]
-    },
+    
     {
         snacks: [
             {
@@ -249,6 +302,18 @@ const products = [
                 price: 695,
                 description: "You can eat it",
                 category: "snacks",
+                image: snickers,
+                rating: {
+                    rate: 4.6,
+                    count: 400
+                }
+            },
+            {
+                id: 20,
+                name: "Hot Dogs",
+                price: 695,
+                description: "You can eat it",
+                category: "canned goods",
                 image: snickers,
                 rating: {
                     rate: 4.6,

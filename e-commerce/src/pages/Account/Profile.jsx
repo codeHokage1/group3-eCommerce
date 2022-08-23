@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
-import "./profile.css";
+// import "./profile.css";
 import { Link } from "react-router-dom";
 
 const Profile = () => {
