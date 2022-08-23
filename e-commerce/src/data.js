@@ -59,7 +59,7 @@ import hakefish from './images/frozenfood/hake-fish.png'
 import ham from './images/frozenfood/Ham.png'
 import mincedbeef from './images/frozenfood/minced-beef.png'
 import salmon from './images/frozenfood/salmon.png'
-import sausage from './images/frozenfood/sausage.png'
+import sausage2 from './images/frozenfood/sausage.png'
 import titus from './images/frozenfood/titus.png'
 
 // for grains
@@ -764,7 +764,7 @@ const Categoriesdata = [
         description: 'The best sausage you can have',
         discount: 21,
         category: 'Frozen food',
-        image: sausage,
+        image: sausage2,
         rating: {
           rate: 4.2,
           count: 100,
