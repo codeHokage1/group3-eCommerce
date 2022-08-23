@@ -5,10 +5,10 @@ import FruitContainer from '../components/fruitscontainer/FruitContainer';
 import Faqs from '../components/faqs/Faqs';
 
 
-const SingleProductPage = () => {
+const SingleProductPage = ({Categoriesdata}) => {
   return (
     <>
-      <SingleProduct />
+      <SingleProduct Categoriesdata={Categoriesdata}/>
       <FoodContainer title="Food items" />
       <FruitContainer title="Fruits" />
       <Faqs />
