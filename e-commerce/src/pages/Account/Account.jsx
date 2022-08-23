@@ -1,16 +1,46 @@
-import React from "react";
+import React, {useState} from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import "./account.css";
 import { Link } from "react-router-dom";
 
 const Account = () => {
+  const [email, setEmail] = useState("") 
+  const [password, setPassword] = useState("") 
+  const [password2, setPassword2] = useState("") 
+
+  const onSubmit = async (e) => {
+    e.preventDefault(); 
+    const user = {
+        email: email, 
+        password: password, 
+        confirmPassword: password2
+    }
+    const postOption = {
+      method: "POST", 
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json", 
+        // 'Access-Control-Allow-Origin': '*', 
+        // 'Access-Control-Allow-Method': 'methods'
+      },
+      body: JSON.stringify(user)
+    }
+    const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
+    const res = await response.json()
+    console.log(res)
+
+    setEmail("")
+    setPassword("")
+    setPassword2("")
+  }
+
   return (
     <main className="myBody">
       <div className="formContainer">
         <h1> Welcome Back!</h1>
 
-        <form action="">
+        <form onSubmit={onSubmit}>
           <div className="input-group">
             <label className="label" htmlFor="Email">
               Email
@@ -20,13 +50,46 @@ const Account = () => {
               className="input-email"
               type="text"
               name="email"
-              value=""
+              value= {email}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
             />
             <p />
           </div>
-          <button className="account-button continue">Continue</button>
-          <p>OR</p>
+
+          <div className="input-group">
+            <label className="label" htmlFor="Password">
+              Enter Password
+            </label>
+
+            <input
+              className="input-email"
+              type="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your Password"
+            />
+            <p />
+          </div>
+
+          <div className="input-group">
+            <label className="label" htmlFor="Password2">
+              Confirm Password 
+            </label>
+
+            <input
+              className="input-email"
+              type="password"
+              name="password2"
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
+              placeholder="Confirm Password"
+            />
+            <p />
+          </div>
+          <button type="submit" className="account-button continue">Register</button>
+          {/* <p>OR</p>
           <button className="account-button ">
             <div className="facebook-button">
               <BsFacebook style={{ color: "blue" }} />
@@ -39,7 +102,7 @@ const Account = () => {
               <FcGoogle />
               Sign in with Google
             </div>
-          </button>
+          </button> */}
           <br />
           <a href="" className="get-started">
             {" "}
