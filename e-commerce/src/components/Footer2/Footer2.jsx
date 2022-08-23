@@ -46,7 +46,7 @@ const Footer2 = () => {
       <footer className="w-100 py-4 flex-shrink-0 pink-background">
         <div className="list">
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
-            <h3 class="text-uppercase fw-bold">Group 3 Ltd.</h3>
+            <h3 class="text-uppercase fw-bold">Jara Dey</h3>
             <hr
               class="mb-4 mt-0 d-inline-block mx-auto"
               style={{
@@ -62,46 +62,45 @@ const Footer2 = () => {
               laudantium aliquid sed culpa ducimus rem.
             </p>
           </div>
-          <ul id="overview">
-            <h3>Overview</h3>
-            <hr
-              class="mb-4 mt-0 d-inline-block mx-auto"
-              style={{
-                width: "60px",
-                backgroundColor: "#7c4dff",
-                height: "2px",
-              }}
-            />
-            <li>
-              <Link to="/" style={{textDecoration:"none", color:"#565956"}}><TbApple /> Home</Link>
-            </li>
-            <li>
-              <Link to="/products" style={{textDecoration:"none", color:"#565956"}}><TbApple /> Products</Link>
-            </li>
-            <li>
-              <MdOutlineAccountCircle /> Accounts
-            </li>
-            <li>
-              <FiHelpCircle /> Help
-            </li>
-            <li>
-             <Link to="/cartpage" style={{textDecoration:"none", color:"#565956"}}><BsCart4 /> Cart</Link>
-            </li>
-          </ul>
-          <ul id="connect">
-            <h3>Connect</h3>
-            <hr
-              class="mb-4 mt-0 d-inline-block mx-auto"
-              style={{
-                width: "60px",
-                backgroundColor: "#7c4dff",
-                height: "2px",
-              }}
-            />
-            <li>Contact</li>
-            <li>Newsletter</li>
-            <li>LinkedIn</li>
-          </ul>
+          <div className="mobile-footer-details">
+              <ul id="overview">
+                <h3>Overview</h3>
+                <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style={{
+                    width: "60px",
+                    backgroundColor: "#7c4dff",
+                    height: "2px",
+                  }}
+                />
+                <li>
+                  <Link to="/products" style={{textDecoration:"none", color:"#565956"}}><TbApple /> Products</Link>
+                </li>
+                <li>
+                  <Link to="/account" style={{textDecoration:"none", color:"#565956"}}><MdOutlineAccountCircle /> Accounts</Link>
+                </li>
+                <li>
+                  <Link to="/contact" style={{textDecoration:"none", color:"#565956"}}><FiHelpCircle /> Help</Link>
+                </li>
+                <li>
+                <Link to="/cartpage" style={{textDecoration:"none", color:"#565956"}}><BsCart4 /> Cart</Link>
+                </li>
+              </ul>
+              <ul id="connect">
+                <h3>Connect</h3>
+                <hr
+                  class="mb-4 mt-0 d-inline-block mx-auto"
+                  style={{
+                    width: "60px",
+                    backgroundColor: "#7c4dff",
+                    height: "2px",
+                  }}
+                />
+                <li>Contact</li>
+                <li>Newsletter</li>
+                <li>LinkedIn</li>
+              </ul>
+          </div>
           <ul id="company">
             <h3>Team</h3>
             <hr
@@ -124,14 +123,16 @@ const Footer2 = () => {
           </ul>
         </div>
 
-          <p className="nav justify-content-center">
-            If you are visually-impaired and having difficulty with our website,
-            call us at{" "}
-          </p>
-          <p className="nav justify-content-center">
-            This site is protected by reCAPTCHA and the Google Privacy Policy
-            and Terms of Service apply.
-          </p>
+        {/* <div style={{padding: "20px", textAlign: "center"}}>
+            <p >
+              If you are visually-impaired and having difficulty with our website,
+              call us at{" "}
+            </p>
+            <p >
+              This site is protected by reCAPTCHA and the Google Privacy Policy
+              and Terms of Service apply.
+            </p>
+        </div> */}
       </footer>
 
       <footer className="w-100 py-4 flex-shrink-0 text-white" style={{backgroundColor: "#FF7E07"}}>
