@@ -56,7 +56,9 @@ const SearchBarSection = () => {
       product.title.toLowerCase().includes(search) ||
       product.category.toLowerCase().includes(search)
     ) {
-      return product;
+      if (search.length > 0) {
+        return product;
+      }
     }
   });
 

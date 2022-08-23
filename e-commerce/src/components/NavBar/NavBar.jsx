@@ -84,7 +84,7 @@ const NavBar = ({ countCartItems }) => {
           </li>
         </ul>
       </div>
-      <div className="search">
+      <div className="">
         <form onSubmit={(e) => e.preventDefault()}>
           {/* <button className="search-button">
             <SearchLogo />
