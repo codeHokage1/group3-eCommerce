@@ -174,3 +174,11 @@ body{
     letter-spacing: 0.2em;
   } */
 
+
+
+  .price-row{
+    display: flex !important;
+  }
+  .price-title{
+    margin-right: auto;
+  } 

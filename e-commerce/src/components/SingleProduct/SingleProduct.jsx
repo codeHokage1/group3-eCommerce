@@ -10,9 +10,20 @@ import other1 from '../../images/beef1.png';
 import other2 from '../../images/beef2.png';
 import other3 from '../../images/beef3.png';
 
-const SingleProduct = () => {
-
+const SingleProduct = ({Categoriesdata, cartItems, handleAdd, handleRemove}) => {
     const { id } = useParams();
+    const products = [];
+    Categoriesdata.forEach(category => {
+        category.products.forEach(product => {
+            products.push(product)
+        })
+    });
+
+    const findProduct = products.find(product => String(product.id) === id);
+
+    const itemFoundInCart = cartItems.find(item => item.id === findProduct.id);
+
+    // console.log(products)
   return (
     <main>
         <section className='single-product'>
@@ -20,7 +31,7 @@ const SingleProduct = () => {
             <section className='product-details'>
                 <div className='left-images'>
                     <div className='main-image'>
-                        <img src={mainPic} alt="" />
+                        <img src={findProduct.image} alt="" />
                     </div>
                     <div className='other-images'>
                         <div className='image-container'>
@@ -35,22 +46,19 @@ const SingleProduct = () => {
                     </div>
                 </div>
                 <div className='right-details'>
-                    <h1>Cow Meat (Beef)</h1> 
+                    <h1>{findProduct.name}</h1> 
                     <span>Available in different sizes and slices</span>             
                     <div className='price'>
-                        <button>N<span className='price-amount'>6,000</span></button>
-                        <p><span style={{color: 'green', fontWeight: 'bolder'}}>Save 12%</span><br />Inclusive of all Taxes</p>
+                        <button>N<span className='price-amount'>{findProduct.price}</span></button>
+                        <p><span style= {{color: 'green', fontWeight: 'bolder'}}>Save 12%</span><br />Inclusive of all Taxes</p>
                     </div>
                     
                     <h5 className='product-desc' style={{textDecoration: 'underline'}}>Product Description</h5>
                     <p className='product-desc-details'>
-                        The cow meat is usually in a 4 by 3 crafted bag. However, in stating 
-                        your order, you can request in kilos: full kilo, half kilo or smaller bits.
-                        Every stains and dirts has been removed and it has been stored to 
-                        maintain its quality.
+                        {findProduct.description}
                     </p>
                     <div className='quantity-addCart'>
-                        <div className='quantity'>
+                        {/* <div className='quantity'>
                             <p className='quantity-text'>QTY</p>
                             <select name="" id="">
                                 <option value="">1</option>
@@ -58,8 +66,20 @@ const SingleProduct = () => {
                                 <option value="">3</option>
                                 <option value="" selected>4</option>
                             </select> 
-                        </div> 
-                        <button> Add to Cart <CartLogo /> </button>            
+                        </div>  */}
+                          {/* <button> Add to Cart <CartLogo /> </button>  */}
+
+                        {
+                        itemFoundInCart ? (
+                            <div>
+                                <button onClick={() => handleRemove(itemFoundInCart)}> - </button>
+                                <span>{itemFoundInCart.qty}</span>
+                                <button onClick={() => handleAdd(findProduct)}> + </button>
+                            </div>                
+                        ) : (
+                            <button onClick={() => handleAdd(findProduct)}> Add to Cart <CartLogo /> </button>
+                        )
+                        }  
                     </div>
                     <div className='rating-details'>
                         <div>

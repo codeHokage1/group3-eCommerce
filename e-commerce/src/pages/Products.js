@@ -8,16 +8,19 @@ import FoodContainer from '../components/foodcontainer/FoodContainer'
 import FruitContainer from '../components/fruitscontainer/FruitContainer'
 import Autoslide from '../components/Autoslide/Autoslide'
 import ProductPageHero from '../components/ProductPageHero/ProductPageHero'
+import CategoryFeature from '../components/categoryfeature/CategoryFeature'
 
-const Products = ({products}) => {
+
+const Products = ({Categoriesdata, cartItems, handleAdd, handleRemove}) => {
   return (
     <>
       <ProductPageHero />
       <Autoslide />
+      {/* <CategoryFeature /> */}
       {/* <FoodContainer title="Food items" /> */}
       <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKET" />
       {
-        products.map(product => <FruitContainer title="Fruits" products={products} /> )
+        Categoriesdata.map(category => <FruitContainer title={category.name} products={category.products} handleAdd={handleAdd} handleRemove={handleRemove} cartItems={cartItems} /> )
       }
       {/* <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
       <LiveStock title="Livestock & Protein" />
