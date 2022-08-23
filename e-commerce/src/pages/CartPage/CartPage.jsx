@@ -5,6 +5,8 @@ import { BsCart4 } from "react-icons/bs";
 import FrozenFood from "../../components/frozenfood/FrozenFood";
 import BeverageSnack from "../../components/beveragesnack/BeverageSnack";
 
+import { Link } from 'react-router-dom';
+
 const CartPage = ({ cartItems, handleAdd, handleRemove }) => {
   
   const itemsPrice = cartItems.reduce((a, c) => a + (c.qty * c.price), 0);
@@ -58,31 +60,6 @@ const CartPage = ({ cartItems, handleAdd, handleRemove }) => {
                     </>
                   )
                 }
-            
-                {/* </div>
-                <div className="col-sm-6">
-                  <div className="card py-4 px-2">
-                  <div className="row">
-                  <div className="col-sm-6">
-                    <img src={beef2} class="img-fluid image px-4"/>
-                    <div className="clearfix">
-                    <p className="markettitle">Remove</p>
-                  </div>
-                    </div>
-                    
-                    <div className="col-sm-6 px-5">
-                      <h4 className="fw-bolder text-dark pb-3">COW MEAT (BEEF)</h4>
-                      <h5 className="fw-bolder pb-3">Quantity: 3 kilos</h5>
-                      <h4 className="fw-bolder text-dark">N6,000 </h4>
-                      <p className="discountbadge"> -20% </p> 
-                      <p className="card-text"><s>N5,500</s> </p>
-                      <p><button className="add-button">+</button>
-                      {"  2  "}
-                      <button className="add-button">-</button></p>
-                    </div>
-                    </div>
-                  </div>
-                </div> */}
                 
               </div>
           </div>
@@ -114,7 +91,9 @@ const CartPage = ({ cartItems, handleAdd, handleRemove }) => {
               </div>
               <hr />              
 
-              <button className="checkout-button p-2 price-amount">CHECK OUT N {totalPrice}</button>
+              <Link to='/checkout'>
+                <button className="checkout-button p-2 price-amount" style={{height: '50px'}}>N {totalPrice.toFixed(2)}: CHECK OUT </button>
+              </Link>
           </div>
         )
       }
