@@ -95,13 +95,13 @@ margin-bottom: 20px;
     -webkit-overflow-scrolling: touch;
   }
 
-.container{
+.social-container{
   display: flex;
   flex-direction: row;
   justify-content: right;
 }
 
-.container a{
+.social-container a{
   font-size: 20px;
 }
 
