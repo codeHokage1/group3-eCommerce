@@ -70,6 +70,7 @@ const Footer2 = () => {
               maxime? Accusantium blanditiis quibusdam quod ipsum distinctio
               laudantium aliquid sed culpa ducimus rem.
             </p>
+          </div>
          <div className="mobile-footer-details">
           <ul id="overview">
             <h3>Overview</h3>
