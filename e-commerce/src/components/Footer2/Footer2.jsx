@@ -4,7 +4,8 @@ import { BsCart4 } from "react-icons/bs";
 import { FiHelpCircle } from "react-icons/fi";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { TbApple } from "react-icons/tb";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 import "./footer2.css";
 
