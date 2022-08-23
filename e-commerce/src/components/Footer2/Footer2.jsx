@@ -135,7 +135,7 @@ const Footer2 = () => {
 
       <footer className="w-100 py-4 flex-shrink-0 text-white" style={{backgroundColor: "#FF7E07"}}>
           <p className="rights">All rights reserved.</p>
-      </footer>
+3      </footer>
     </div>
   );
 };
