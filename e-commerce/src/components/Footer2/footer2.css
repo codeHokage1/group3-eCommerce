@@ -25,7 +25,10 @@ body, html {
   font-size: 20px;
   font-weight: bold;
 }
-
+.mobile-footer-details{
+  display: flex;
+  gap: 30px;
+}
 footer ul li{
 list-style-type: none;
 margin-bottom: 20px;
