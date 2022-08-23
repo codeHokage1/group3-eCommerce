@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Button = ({title, btnClass}) => {
+const Button = ({title, btnClass, navigate}) => {
   return (
-    <button className= {`btn ${btnClass}`} style={style}> {title} </button>
+    <button onClick={() => navigate('/products')} className= {`btn ${btnClass}`} style={style}> {title} </button>
   )
 }
 

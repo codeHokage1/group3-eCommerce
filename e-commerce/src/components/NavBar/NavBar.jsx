@@ -10,6 +10,20 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import { useNavigate } from 'react-router-dom'
 
 
+import { FaBeer } from "react-icons/fa";
+import { FaSnowflake } from "react-icons/fa";
+import { GiOpenedFoodCan } from "react-icons/gi";
+import { GiCupcake } from "react-icons/gi";
+import { GiChipsBag } from "react-icons/gi";
+import { GiWheat } from "react-icons/gi";
+import { GiMilkCarton } from "react-icons/gi";
+import { FaPepperHot } from "react-icons/fa";
+import { GrContact } from "react-icons/gr";
+
+
+
+
+
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import './NavBar.css'
 
@@ -27,7 +41,7 @@ const NavBar = ({countCartItems}) => {
       <div className="brandAndLinks">
         <h1 className="navbar-brand">
           <Link to="/" className="link brand-link">
-            Group3 Ltd.
+            Jara Dey
           </Link>
         </h1>
         <ul className="links">
@@ -91,27 +105,33 @@ const NavBar = ({countCartItems}) => {
         style={{ width: '60%' }}
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Group3 Ltd.</Offcanvas.Title>
+          <Offcanvas.Title>Jara Dey</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className='mobile-menu-body'>
+          <p>Products Catergories</p>
           <ul className="products-mobile">
-            <li>
-                  <Dropdown>
-                    <Dropdown.Toggle variant="secondary" className='nav-help' id="dropdown-basic">
-                        <HelpLogo />
-                        <span className='help-mobile'>&nbsp;Help</span>
-                    </Dropdown.Toggle>
+            <li> <GiOpenedFoodCan /> Canned Foods</li>
+            <li> <GiMilkCarton /> Dairy Products</li>
+            <li> <GiCupcake /> Dry and Baking</li>
+            <li> <FaSnowflake /> Frozen Foods</li>
+            <li> <FaBeer /> Beverages</li>
+            <li> <GiChipsBag /> Snacks</li>
+            <li> <FaPepperHot /> Vegetable</li>
+            <li> <GiWheat /> Grain</li>
+            <hr />
+            <Dropdown>
+              <Dropdown.Toggle variant="secondary" className='nav-help' id="dropdown-basic">
+                  <HelpLogo />
+                  <span className='help-mobile'>&nbsp;Help</span>
+              </Dropdown.Toggle>
 
-                    <Dropdown.Menu>
-                      <Dropdown.Item href="#/action-1">Contact Custmer Care</Dropdown.Item>
-                      <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
-                    </Dropdown.Menu>
-                  </Dropdown>
-            </li>
-            <li> Vegetables</li>
-            <li> Vegetables</li>
-            <li> Vegetables</li>
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">Contact Custmer Care</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </ul>
+          
         </Offcanvas.Body>
       </Offcanvas>
     </nav>

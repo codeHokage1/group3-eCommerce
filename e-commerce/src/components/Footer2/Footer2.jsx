@@ -14,6 +14,7 @@ import { TbApple } from "react-icons/tb";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
+
 import "./footer2.css";
 
 const Footer2 = () => {
@@ -54,7 +55,7 @@ const Footer2 = () => {
       <footer className="w-100 py-4 flex-shrink-0 pink-background">
         <div className="list">
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-2">
-            <h3 class="text-uppercase fw-bold">Group3 Ltd.</h3>
+            <h3 class="text-uppercase fw-bold">Jara Dey</h3>
             <hr
               class="mb-4 mt-0 d-inline-block mx-auto"
               style={{
@@ -69,7 +70,7 @@ const Footer2 = () => {
               maxime? Accusantium blanditiis quibusdam quod ipsum distinctio
               laudantium aliquid sed culpa ducimus rem.
             </p>
-          </div>
+         <div className="mobile-footer-details">
           <ul id="overview">
             <h3>Overview</h3>
             <hr
@@ -138,6 +139,7 @@ const Footer2 = () => {
             <li>Newsletter</li>
             <li>LinkedIn</li>
           </ul>
+         </div>
           <ul id="company">
             <h3>Team</h3>
             <hr
@@ -150,24 +152,26 @@ const Footer2 = () => {
             />
             <li>Abdulkadir Kamaldeen: Deenabdulkadir@gmail.com​</li>
             <li>Agoro Hakeem: omotagoro@gmail.com</li>
-            <li>Ogiri Moses: ogirimoses@gmail.com​</li>
+            <li>Ogiri Moses: ogirimoses@gmail.com</li>
             <li>Okunsebor Joan: jokunsebor@gmail.com</li>
             <li>Olayode Oluwafemi: oludareoluwafemirachael@gmail.com</li>
             <li>Onajinrin Oluwakemi: oluwakemi.mabell@gmail.com</li>
-            <li>Shobande James: shobandejames@gmail.com​</li>
+            <li>Shobande James: shobandejames@gmail.com</li>
             <li>Sodiq Farihan A: farhansodiq360@gmail.com</li>
             <li>Ugochukwu Chidubanyi: chidu302@gmail.com</li>
           </ul>
         </div>
+        {/* <div style={{padding: "20px", textAlign: "center"}}>
+            <p >
+              If you are visually-impaired and having difficulty with our website,
+              call us at{" "}
+            </p>
+            <p >
+              This site is protected by reCAPTCHA and the Google Privacy Policy
+              and Terms of Service apply.
+            </p>
+        </div> */}
 
-        <p className="nav justify-content-center" style={{ marginTop: "20px" }}>
-          If you are visually-impaired and having difficulty with our website,
-          call us at{" "}
-        </p>
-        <p className="nav justify-content-center">
-          This site is protected by reCAPTCHA and the Google Privacy Policy and
-          Terms of Service apply.
-        </p>
       </footer>
 
       <footer
