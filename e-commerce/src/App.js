@@ -1,5 +1,7 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useState, useEffect } from 'react';
+
 import BonusTop from "./components/BonusTop/BonusTop";
 import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -12,31 +14,54 @@ import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProductPage";
 import DeliveryTracking from "./pages/Delivery/DeliveryTracking";
 import Footer2 from "./components/Footer2/Footer2";
+import CartPage from "./pages/CartPage/CartPage";
 import Contact from "./pages/Contact/Contact";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 
-import products from "./data";
-
+import Categoriesdata from "./data";
 
 function App() {
-  // products.map(product => console.log(product))
+  const [cartItems, setCartItems] = useState([]);
+
+  const handleAdd = (product) => {
+    const exist = cartItems.find(item => item.id === product.id);
+    if (exist) {
+      const newCart = cartItems.map(item => item.id === exist.id ? { ...item, qty: item.qty + 1 } : item);
+      setCartItems(newCart);
+    } else {
+      const newCart = [...cartItems, { ...product, qty: 1 }];
+      setCartItems(newCart);
+    }
+    console.log(cartItems)
+  }
+
+  const handleRemove = (product) => {
+    const exist = cartItems.find(item => item.id === product.id);
+    if (exist.qty === 1) {
+      const newCart = cartItems.filter(item => item.id !== exist.id);
+      setCartItems(newCart);
+    } else {
+      const newCart = cartItems.map(item => item.id === exist.id ? { ...item, qty: item.qty - 1 } : item);
+      setCartItems(newCart);
+    }
+  }
   
   return (
     <BrowserRouter>
       <BonusTop />
-      <NavBar />
+      <NavBar countCartItems={cartItems.length} />
       <Routes>
         <Route path={"/"} element={<Home />} />
         <Route path={"/account"} element={<Account />} />
-        <Route path={"/cart"} element={<Checkout />} />
+        <Route path={"/cartpage"} element={<CartPage cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove}/>} />
         <Route path={"/help"} element={<Help />} />
-        <Route path={"/products"} element={<Products products={products} />} />
-        <Route path={"/products/:id"} element={<SingleProduct />} />
+        <Route path={"/products"} element={<Products Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
+        <Route path={"/products/:id"} element={<SingleProduct Categoriesdata={Categoriesdata}/>} />
         <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
         <Route path={"/contact"} element={<Contact />} />
         <Route path={"/admin"} element={<AdminDashboard />} />
-
+        <Route path={"/checkout"} element={<Checkout />} />
       </Routes>
 
       <Footer2 />

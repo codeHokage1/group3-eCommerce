@@ -10,7 +10,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
 
-.myBody {
+.profile-body {
     background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
     /* height: 500px; */
     background-position: center;
@@ -21,7 +21,7 @@ body {
     padding: 50px;
 }
 
-.formContainer {
+.profile-container {
     background-color: #F8F7F7;
     width: 700px;
     text-align: center;
@@ -30,7 +30,7 @@ body {
     margin: 0px auto;
 }
 
-.formContainer h1 {
+.profile-container h1 {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 700;
@@ -81,7 +81,7 @@ body {
 
 
 @media screen and (max-width: 768px) {
-    .nBody {
+    .profile-body {
         background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
         /* height: 500px; */
         background-position: center;
@@ -93,7 +93,7 @@ body {
     }
 
 
-    .formContainer {
+    .profile-container {
         background-color: #F8F7F7;
         width: 320px;
         text-align: center;
@@ -102,7 +102,7 @@ body {
         margin: 0px auto;
     }
 
-    .formContainer h1 {
+    .profile-container h1 {
         font-family: 'Playfair Display', serif;
         font-size: 20px;
         font-weight: 700;
@@ -120,7 +120,7 @@ body {
         min-width: 260px;
     }
 
-    .column label {
+    .profile-column label {
         float: left;
         margin-top: auto;
         text-align: left;
@@ -173,7 +173,7 @@ body {
 }
 
 
-.row {
+.profile-row {
     font-family: 'Inter';
     font-style: normal;
     font-size: 14px;
@@ -190,12 +190,12 @@ body {
 }
 
 
-.column input {
+.profile-column input {
     width: 100%;
 
 }
 
-.column label {
+.profile-column label {
     text-align: left;
     width: 100%;
     margin-left: 20px;
@@ -204,7 +204,7 @@ body {
 
 
 
-.column {
+.profile-column {
 
     flex: 1;
 
@@ -241,7 +241,7 @@ body {
 
 
 
-.inputname {
+.profile-input {
 
     width: 100%;
     min-width: 40px;
@@ -258,7 +258,7 @@ body {
 
 
 
-.longin button {
+.login button {
 
     width: 100%;
     min-width: 40px;
@@ -290,7 +290,7 @@ body {
 
 
 
-.myspan {
+.profile-span {
 
     text-align: center;
 
@@ -303,7 +303,7 @@ body {
 
 }
 
-.myname {
+.profile-name {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
@@ -316,7 +316,7 @@ body {
 }
 
 
-.myname2 {
+.profile-name2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
@@ -348,7 +348,7 @@ input[type=radio] {
 
 
 
-.row {}
+.profile-row {}
 
 
 

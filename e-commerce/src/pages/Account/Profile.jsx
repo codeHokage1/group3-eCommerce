@@ -156,44 +156,44 @@ const Profile = () => {
   ]
 
   return (
-    <main className="myBody">
-      <div className="formContainer">
+    <main className="profile-body">
+      <div className="profile-container">
         <h1> User's Profile</h1>
-        <p className="myspan">
+        <p className="profile-span">
           if you are a new memeber or dont have an account kindly create a new
           account
           <p className="">
             {'Already have an account, '}
 
-            <Link to="/account" className="link">
+            <Link to="/account" className="profile-link">
               Please login.
             </Link>
           </p>{' '}
         </p>
 
         <form action="">
-          <div className="myname">
+          <div className="profile-name">
             <label for="FirstName" className="Fname">
               First Name
             </label>
           </div>
           <p />
           <input
-            className="inputname"
+            className="profile-input"
             type="text"
             name="FirstName"
             value=""
             placeholder=""
           />
           <p />
-          <div className="myname">
+          <div className="profile-name">
             <label for="FirstName" className="Fname">
               Last Name
             </label>
           </div>
           <p />
           <input
-            className="inputname"
+            className="profile-input"
             type="text"
             name="LastName"
             value=""
@@ -207,22 +207,22 @@ const Profile = () => {
             <label className="r-label">Female</label>
           </div>
           <p />
-          <div className="myname2">
+          <div className="profile-name2">
             <label for="FirstName" className="">
               Email
             </label>
           </div>
           <p />
           <input
-            className="inputname"
+            className="profile-input"
             type="text"
             name="email"
             value=""
             placeholder=""
           />
           <p />
-          <div className="row">
-            <div className="column">
+          <div className="profile-row">
+            <div className="profile-column">
               <label for="FirstName" className="">
                 Contact
               </label>
@@ -237,7 +237,7 @@ const Profile = () => {
               />
             </div>
 
-            <div className="column">
+            <div className="profile-column">
               <label for="FirstName" className="">
                 State
               </label>
@@ -253,14 +253,14 @@ const Profile = () => {
             </div>
           </div>
           <p />
-          <div className="myname">
+          <div className="profile-name">
             <label for="FirstName" className="Fname">
               Address
             </label>
           </div>
           <p />
           <input
-            className="inputname"
+            className="profile-input"
             type="adress"
             name="adress"
             value=""
