@@ -10,7 +10,7 @@ import other1 from '../../images/beef1.png';
 import other2 from '../../images/beef2.png';
 import other3 from '../../images/beef3.png';
 
-const SingleProduct = ({Categoriesdata}) => {
+const SingleProduct = ({Categoriesdata, cartItems, handleAdd, handleRemove}) => {
     const { id } = useParams();
     const products = [];
     Categoriesdata.forEach(category => {
@@ -21,6 +21,7 @@ const SingleProduct = ({Categoriesdata}) => {
 
     const findProduct = products.find(product => String(product.id) === id);
 
+    const itemFoundInCart = cartItems.find(item => item.id === findProduct.id);
     // console.log(products)
   return (
     <main>
@@ -56,7 +57,7 @@ const SingleProduct = ({Categoriesdata}) => {
                         {findProduct.description}
                     </p>
                     <div className='quantity-addCart'>
-                        <div className='quantity'>
+                        {/* <div className='quantity'>
                             <p className='quantity-text'>QTY</p>
                             <select name="" id="">
                                 <option value="">1</option>
@@ -64,8 +65,20 @@ const SingleProduct = ({Categoriesdata}) => {
                                 <option value="">3</option>
                                 <option value="" selected>4</option>
                             </select> 
-                        </div> 
-                        <button> Add to Cart <CartLogo /> </button>            
+                        </div>  */}
+                          {/* <button> Add to Cart <CartLogo /> </button>  */}
+
+                        {
+                        itemFoundInCart ? (
+                            <div>
+                                <button onClick={() => handleRemove(itemFoundInCart)}> - </button>
+                                <span>{itemFoundInCart.qty}</span>
+                                <button onClick={() => handleAdd(findProduct)}> + </button>
+                            </div>                
+                        ) : (
+                            <button onClick={() => handleAdd(findProduct)}> Add to Cart <CartLogo /> </button>
+                        )
+                        }  
                     </div>
                     <div className='rating-details'>
                         <div>

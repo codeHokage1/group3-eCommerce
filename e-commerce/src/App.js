@@ -56,7 +56,7 @@ function App() {
         <Route path={"/cartpage"} element={<CartPage cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove}/>} />
         <Route path={"/help"} element={<Help />} />
         <Route path={"/products"} element={<Products Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
-        <Route path={"/products/:id"} element={<SingleProduct Categoriesdata={Categoriesdata}/>} />
+        <Route path={"/products/:id"} element={<SingleProduct Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove}/>} />
         <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
         <Route path={"/contact"} element={<Contact />} />

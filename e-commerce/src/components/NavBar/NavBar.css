@@ -54,7 +54,7 @@ body{
     outline: none;
 }
 .navbar-brand{
-    margin-right: 300px !important;
+    margin-right: 50% !important;
     font-size: 20pt !important;
     font-family: 'Julius Sans One', sans-serif;
     font-weight: bolder;
@@ -85,12 +85,15 @@ body{
     flex-direction: column;
     position: absolute;
     background-color: #FF7E07;
+    padding-left: 0;
 }
 .products-mobile li {
     margin-bottom: 10px;
     width: 100%;
     border-bottom: 1px solid grey;
     padding-bottom: 10px;
+    padding-left: none;
+    margin-left: none;
 }
 .menu-button:hover{
     border: #FF7E07 1px solid;
@@ -135,7 +138,7 @@ body{
         font-size: 14pt !important;    
     }
     .navbar-brand{
-        margin-right: 100px !important;
+        margin-right: 50% !important;
         font-family: 'Julius Sans One', sans-serif;
         font-weight: bolder;
         color: white;
