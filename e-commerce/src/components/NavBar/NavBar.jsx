@@ -13,7 +13,7 @@ import { useNavigate } from 'react-router-dom'
 import Offcanvas from 'react-bootstrap/Offcanvas'
 import './NavBar.css'
 
-const NavBar = () => {
+const NavBar = ({countCartItems}) => {
   // const [menuClicked, setMenuClicked] = useState(false);
 
   const [show, setShow] = useState(false)
@@ -58,8 +58,11 @@ const NavBar = () => {
                 </Dropdown>
           </li>
           <li>
-            <Link to="/cart" className="link">
+            <Link to="/cartpage" className="link">
               <CartLogo className='link-logo' />
+              {
+                countCartItems ? <span>{countCartItems}</span> : ' '
+              }
               <span className="mobile-remove">Cart</span>
             </Link>
           </li>
