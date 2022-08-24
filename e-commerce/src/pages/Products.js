@@ -15,8 +15,8 @@ import FoodItem from '../components/fooditem/FoodItem'
 const Products = ({Categoriesdata, cartItems, handleAdd, handleRemove, filteredProducts, search}) => {
   return (
     <>
-      <h2> Available Products based on : {search}</h2>
-      <div style={{display: "flex", textAlign: "center"}}>
+      <h2 style={{textAlign: "center"}}> Available Products based on : {search}</h2>
+      <div style={{display: "flex", textAlign: "center", margin: "0 auto", width: "70%"}}>
         {
           filteredProducts.length > 0 && 
             filteredProducts.map(product => (
