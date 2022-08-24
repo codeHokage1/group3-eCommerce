@@ -23,6 +23,7 @@ const AddProduct = () => {
         "Content-Type": "application/json", 
       },
       body: JSON.stringify(inputs)
+      
     }
     const response = await fetch ("https://localhost:7297/api/Product/CreateProduct", postOption)
     const res = await response.json()
