@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-const Button = ({title, btnClass}) => {
+const Button = ({ title, btnClass, navigate }) => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
+  }, [])
   return (
-    <button className= {`btn ${btnClass}`} style={style}> {title} </button>
+    <Link
+          to="/products"
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
+          }}
+    >
+      <button className= {`btn ${btnClass}`} style={style}> {title} </button>
+    </Link>
   )
 }
 

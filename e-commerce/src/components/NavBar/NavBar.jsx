@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import "./NavBar.css";
 import SearchBarSection from "../SearchbarSection/SearchBarSection";
 import { MdOutlineAccountCircle as UserLogo } from "react-icons/md";
 import { FaRegQuestionCircle as HelpLogo } from "react-icons/fa";
@@ -12,7 +10,25 @@ import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
 import { useNavigate } from "react-router-dom";
 
-const NavBar = ({ countCartItems }) => {
+import { FaBeer } from "react-icons/fa";
+import { FaSnowflake } from "react-icons/fa";
+import { GiOpenedFoodCan } from "react-icons/gi";
+import { GiCupcake } from "react-icons/gi";
+import { GiChipsBag } from "react-icons/gi";
+import { GiWheat } from "react-icons/gi";
+import { GiMilkCarton } from "react-icons/gi";
+import { FaPepperHot } from "react-icons/fa";
+import { GrContact } from "react-icons/gr";
+
+import logo from '../../images/logoAlone.png';
+import logoText from '../../images/logoText.png';
+
+
+
+import Offcanvas from 'react-bootstrap/Offcanvas'
+import './NavBar.css'
+
+const NavBar = ({countCartItems}) => {
   // const [menuClicked, setMenuClicked] = useState(false);
 
   const [show, setShow] = useState(false);
@@ -26,7 +42,8 @@ const NavBar = ({ countCartItems }) => {
       <div className="brandAndLinks">
         <h1 className="navbar-brand">
           <Link to="/" className="link brand-link">
-            Group3 Ltd.
+            <img src={logo} alt='' className="brand-logo" />
+            <img src={logoText} alt='' className="brand-logo-text"/>
           </Link>
         </h1>
         <ul className="links">
@@ -54,26 +71,11 @@ const NavBar = ({ countCartItems }) => {
                 <span className="mobile-remove">&nbsp;Help</span>
               </Dropdown.Toggle>
 
-              <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">
-                  Contact Custmer Care
-                </Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </li>
-          <li>
-            <Link to="/cart" className="link">
-              <CartLogo className="link-logo" />
-              <Dropdown>
-                <Dropdown.Menu>
-                  <Dropdown.Item onClick={() => navigate("/contact")}>
-                    Contact Customer Care
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </Link>
+                  <Dropdown.Menu>
+                <Dropdown.Item onClick={() => { navigate("/contact");  setShow(false)}}>Contact Customer Care</Dropdown.Item>
+                    <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
+                  </Dropdown.Menu>
+                </Dropdown>
           </li>
           <li>
             <Link to="/cartpage" className="link">
@@ -108,33 +110,36 @@ const NavBar = ({ countCartItems }) => {
         style={{ width: "60%" }}
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Group3 Ltd.</Offcanvas.Title>
+          <Offcanvas.Title>
+            <img src={logo} alt='' className="brand-logo" />
+            <img src={logoText} alt='' className="brand-logo-text"/>
+          </Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body className="mobile-menu-body">
+        <Offcanvas.Body className='mobile-menu-body'>
+          <p style={{color: "grey", textDecoration: "underline"}}>Products Catergories</p>
           <ul className="products-mobile">
-            <li>
-              <Dropdown>
-                <Dropdown.Toggle
-                  variant="secondary"
-                  className="nav-help"
-                  id="dropdown-basic"
-                >
+            <li> <GiOpenedFoodCan /> Canned Foods</li>
+            <li> <GiMilkCarton /> Dairy Products</li>
+            <li> <GiCupcake /> Dry and Baking</li>
+            <li> <FaSnowflake /> Frozen Foods</li>
+            <li> <FaBeer /> Beverages</li>
+            <li> <GiChipsBag /> Snacks</li>
+            <li> <FaPepperHot /> Vegetable</li>
+            <li> <GiWheat /> Grain</li>
+            <hr />
+            <Dropdown>
+              <Dropdown.Toggle variant="secondary" className='nav-help' id="dropdown-basic">
                   <HelpLogo />
-                  <span className="help-mobile">&nbsp;Help</span>
-                </Dropdown.Toggle>
+                  <span className='help-mobile'>&nbsp;Help</span>
+              </Dropdown.Toggle>
 
-                <Dropdown.Menu>
-                  <Dropdown.Item href="#/action-1">
-                    Contact Custmer Care
-                  </Dropdown.Item>
-                  <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
-                </Dropdown.Menu>
-              </Dropdown>
-            </li>
-            <li> Vegetables</li>
-            <li> Vegetables</li>
-            <li> Vegetables</li>
+              <Dropdown.Menu>
+                <Dropdown.Item onClick={()=> navigate("/contact")} href="#/action-1">Contact Custmer Care</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
           </ul>
+          
         </Offcanvas.Body>
       </Offcanvas>
     </nav>
