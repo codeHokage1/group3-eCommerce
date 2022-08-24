@@ -9,11 +9,34 @@ import FruitContainer from '../components/fruitscontainer/FruitContainer'
 import Autoslide from '../components/Autoslide/Autoslide'
 import ProductPageHero from '../components/ProductPageHero/ProductPageHero'
 import CategoryFeature from '../components/categoryfeature/CategoryFeature'
+import FoodItem from '../components/fooditem/FoodItem'
 
 
-const Products = ({Categoriesdata, cartItems, handleAdd, handleRemove}) => {
+const Products = ({Categoriesdata, cartItems, handleAdd, handleRemove, filteredProducts, search}) => {
   return (
     <>
+      <h2> Available Products based on : {search}</h2>
+      <div style={{display: "flex", textAlign: "center"}}>
+        {
+          filteredProducts.length > 0 && 
+            filteredProducts.map(product => (
+              <FoodItem
+                key={product.id}
+                id={product.id}
+                discount="-22%"
+                img={product.image}
+                name={product.name}
+                price={product.price}
+                discountprice="N820"
+                handleAdd={handleAdd}
+                handleRemove={handleRemove}
+                product={product}
+                itemFoundInCart={cartItems.find(item => item.id === product.id)}
+              />
+            ))
+        }
+        <hr />
+      </div>
       <ProductPageHero />
       <Autoslide />
       {/* <CategoryFeature /> */}

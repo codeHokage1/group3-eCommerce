@@ -25,7 +25,7 @@ import logoText from "../../images/logoText.png";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "./NavBar.css";
 
-const NavBar = ({ countCartItems }) => {
+const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFilteredProducts }) => {
   // const [menuClicked, setMenuClicked] = useState(false);
 
   const [show, setShow] = useState(false);
@@ -33,6 +33,25 @@ const NavBar = ({ countCartItems }) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const navigate = useNavigate();
+
+  const products = []
+  Categoriesdata.forEach((category) => {
+    category.products.forEach((product) => {
+      products.push(product)
+    })
+  })
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const newProducts = products.filter(product => (
+      product.name.toLowerCase().includes(search.toLowerCase()) ||
+      product.description.toLowerCase().includes(search.toLowerCase()) ||
+      product.category.toLowerCase().includes(search.toLowerCase())
+    ))
+    setFilteredProducts(newProducts);
+    navigate('/products')
+    // setSearch('')
+  }
 
   return (
     <nav className="navbar">
@@ -91,16 +110,18 @@ const NavBar = ({ countCartItems }) => {
         </ul>
       </div>
       <div className="">
-        <form onSubmit={(e) => e.preventDefault()}>
-          {/* <button className="search-button">
+        <form onSubmit={handleSearch}>
+          <button className="search-button" type="submit">
             <SearchLogo />
           </button>
           <input
             type="text"
+            value={search}
+            onChange={e => setSearch(e.target.value)}
             placeholder="Search for products, stores and categories"
             className="search-input"
-          /> */}
-          <SearchBarSection />
+          />
+          {/* <SearchBarSection /> */}
         </form>
         <div>
           <FaBars className="menu-button" onClick={handleShow} />

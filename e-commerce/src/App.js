@@ -25,6 +25,9 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [cartTotalPrice, setCartTotalPrice] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [search, setSearch] = useState('');
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
 
   const handleAdd = (product) => {
     const exist = cartItems.find((item) => item.id === product.id);
@@ -63,6 +66,8 @@ function App() {
     localStorage.setItem("cartItems", JSON.stringify(newCart));
   };
 
+  
+
   useEffect(() => {
     setCartItems(
       localStorage.getItem("cartItems")
@@ -80,7 +85,7 @@ function App() {
           async
         ></script>
       </Helmet>
-      <NavBar countCartItems={cartItems.length} />
+      <NavBar Categoriesdata={Categoriesdata} search={search} setSearch={setSearch} setFilteredProducts={setFilteredProducts} countCartItems={cartItems.length} />
       <Routes>
         <Route path={"/"} element={<Home Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
         <Route path={"/account"} element={<Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
@@ -94,6 +99,8 @@ function App() {
               cartItems={cartItems}
               handleAdd={handleAdd}
               handleRemove={handleRemove}
+              filteredProducts={filteredProducts}
+              search={search}
             />
           }
         />
