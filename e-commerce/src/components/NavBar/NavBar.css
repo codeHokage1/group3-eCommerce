@@ -15,10 +15,20 @@ body{
 }
 .navbar{
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/hero.png");
-    padding: 20px 50px !important;
+    padding: 10px 50px 10px 70px!important;
     margin: 0;
     position: relative;
     border-bottom: #FF7E07 2px solid;
+}
+.brand-logo{
+    width: 50px;
+    margin: 0;
+    padding: 0;
+}
+.brand-logo-text{
+    width: 120px;
+    margin: 0;
+    padding: 0;
 }
 .brandAndLinks ul{
     list-style-type: none;
@@ -54,7 +64,7 @@ body{
     outline: none;
 }
 .navbar-brand{
-    margin-right: 50% !important;
+    margin-right: 30% !important;
     font-size: 20pt !important;
     font-family: 'Julius Sans One', sans-serif;
     font-weight: bolder;
@@ -130,7 +140,16 @@ body{
         flex-direction: column;
         padding: 10px 20px !important;
     }
-
+    .brand-logo{
+        width: 20px;
+        margin: 0;
+        padding: 0;
+    }
+    .brand-logo-text{
+        width: 60px;
+        margin: 0;
+        padding: 0;
+    }
     .brandAndLinks{
         position: relative !important;
     }
@@ -138,7 +157,7 @@ body{
         font-size: 14pt !important;    
     }
     .navbar-brand{
-        margin-right: 50% !important;
+        margin-right: 30% !important;
         font-family: 'Julius Sans One', sans-serif;
         font-weight: bolder;
         color: white;

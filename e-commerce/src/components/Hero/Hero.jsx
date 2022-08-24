@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import './Hero.css';
 import { Link } from 'react-router-dom';
 
+
 const Hero = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
