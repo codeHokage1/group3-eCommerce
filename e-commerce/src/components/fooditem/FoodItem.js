@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
+import DiscountBadge from '../DiscountBadge'
 
 import { FiPlus } from 'react-icons/fi'
 import '../fooditem/FoodItem.css'
@@ -23,10 +24,10 @@ const FoodItem = ({
 
   return (
     <>
-      <div className="foodContainer">
+      <div className="foodContainer container">
         <div className="foodcon">
           <div className="discountdiv">
-            <p className="discountbadge">{discount}</p>
+            <DiscountBadge value={discount} />
           </div>
 
           <div className="foodcard">

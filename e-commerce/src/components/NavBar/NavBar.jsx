@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import SearchBarSection from "../SearchbarSection/SearchBarSection";
+import BonusTop from "../BonusTop/BonusTop";
 import { MdOutlineAccountCircle as UserLogo } from "react-icons/md";
 import { FaRegQuestionCircle as HelpLogo } from "react-icons/fa";
 import { FaBars } from "react-icons/fa";
@@ -103,8 +104,8 @@ const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFiltered
           <li>
             <Link to="/cartpage" className="link">
               <CartLogo className="link-logo" />
-              {countCartItems ? <span>{countCartItems}</span> : " "}
               <span className="mobile-remove">Cart</span>
+           {countCartItems ? <span class="badge rounded-pill bg-danger">{countCartItems}</span> : " "} 
             </Link>
           </li>
         </ul>

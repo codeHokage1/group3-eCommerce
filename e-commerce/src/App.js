@@ -101,13 +101,14 @@ function App() {
         pauseOnFocusLoss
         draggable
         pauseOnHover />
-      <BonusTop />
+     
       <Helmet>
         <script
           src="//code.tidio.co/yvvy72t3wfgrjaddnuveceiilzjlg9tm.js"
           async
         ></script>
       </Helmet>
+      <BonusTop />
       <NavBar Categoriesdata={Categoriesdata} search={search} setSearch={setSearch} setFilteredProducts={setFilteredProducts} countCartItems={cartItems.length} />
       <Routes>
         <Route path={"/"} element={<Home Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
