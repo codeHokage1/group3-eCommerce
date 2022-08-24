@@ -18,8 +18,8 @@ import Page404 from "./pages/404/Page404";
 import CartPage from "./pages/CartPage/CartPage";
 import Contact from "./pages/Contact/Contact";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
-
 import Categoriesdata from "./data";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -33,11 +33,11 @@ function App() {
         item.id === exist.id ? { ...item, qty: item.qty + 1 } : item
       );
       setCartItems(newCart);
-      localStorage.setItem('cartItems', JSON.stringify(newCart));
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
     } else {
       const newCart = [...cartItems, { ...product, qty: 1 }];
       setCartItems(newCart);
-      localStorage.setItem('cartItems', JSON.stringify(newCart));
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
     }
     console.log(cartItems);
   };
@@ -47,29 +47,39 @@ function App() {
     if (exist.qty === 1) {
       const newCart = cartItems.filter((item) => item.id !== exist.id);
       setCartItems(newCart);
-      localStorage.setItem('cartItems', JSON.stringify(newCart));
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
     } else {
       const newCart = cartItems.map((item) =>
         item.id === exist.id ? { ...item, qty: item.qty - 1 } : item
       );
       setCartItems(newCart);
-      localStorage.setItem('cartItems', JSON.stringify(newCart));
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
     }
-  }
+  };
 
   const totallyRemove = (product) => {
-      const newCart = cartItems.filter(item => item.id !== product.id);
-      setCartItems(newCart);
-      localStorage.setItem('cartItems', JSON.stringify(newCart));
-  }
+    const newCart = cartItems.filter((item) => item.id !== product.id);
+    setCartItems(newCart);
+    localStorage.setItem("cartItems", JSON.stringify(newCart));
+  };
 
   useEffect(() => {
-    setCartItems(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
-  }, [])
-  
+    setCartItems(
+      localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem("cartItems"))
+        : []
+    );
+  }, []);
+
   return (
     <BrowserRouter>
       <BonusTop />
+      <Helmet>
+        <script
+          src="//code.tidio.co/yvvy72t3wfgrjaddnuveceiilzjlg9tm.js"
+          async
+        ></script>
+      </Helmet>
       <NavBar countCartItems={cartItems.length} />
       <Routes>
         <Route path={"/"} element={<Home Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
@@ -102,7 +112,10 @@ function App() {
         <Route path={"/profile"} element={<Profile />} />
         <Route path={"/contact"} element={<Contact />} />
         <Route path={"/admin"} element={<AdminDashboard />} />
-        <Route path={"/checkout"} element={<Checkout cartTotalPrice={cartTotalPrice} />} />
+        <Route
+          path={"/checkout"}
+          element={<Checkout cartTotalPrice={cartTotalPrice} />}
+        />
         <Route path={"*"} element={<Page404 />} />
       </Routes>
       <Footer2 />
