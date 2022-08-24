@@ -18,7 +18,7 @@ const PaymentMethod = ({ cartTotalPrice }) => {
     const paystack = new PaystackPop()
     paystack.newTransaction({
       key: 'pk_test_28f29fde6150495c2dfdfea909fb5ca2aaa22a40',
-      amount: amount*100,
+      amount: amount * 100,
       email,
       firstname,
       lastname,

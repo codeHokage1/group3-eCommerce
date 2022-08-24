@@ -147,6 +147,7 @@ const CartPage = ({
             </p>
           </div>
           <hr />
+<<<<<<< HEAD
           <button
             onClick={handleCheckout}
             className="checkout-button p-2 price-amount"
@@ -156,6 +157,8 @@ const CartPage = ({
           </button>
         </div>
       )}
+
+=======
 
       <FrozenFood title="Frozen Food" />
       {/* <FoodContainer title="Food items" /> */}

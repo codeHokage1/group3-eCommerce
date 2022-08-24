@@ -23,10 +23,7 @@ const Home = ({ Categoriesdata, cartItems, handleAdd, handleRemove }) => {
     oneEachProducts.push(category.products[0])
   })
 
-  const randomProducts = []
-  Categoriesdata.forEach((category) => {
-    randomProducts.push(category.products[2])
-  })
+  import Footer from '../components/Footer/Footer'
 
   return (
     <main>
@@ -44,13 +41,7 @@ const Home = ({ Categoriesdata, cartItems, handleAdd, handleRemove }) => {
           cartItems={cartItems}
         />
         <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
-        <FruitContainer
-          title="Kitchen & Fridge essentials"
-          products={randomProducts}
-          handleAdd={handleAdd}
-          handleRemove={handleRemove}
-          cartItems={cartItems}
-        />
+        <FruitContainer title="Fruits" />
         <Footer />
       </div>
     </main>
