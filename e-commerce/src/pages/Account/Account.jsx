@@ -4,8 +4,11 @@ import { BsFacebook } from "react-icons/bs";
 import "./account.css";
 import { Link, useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Account = ({ isLoggedIn, setIsLoggedIn }) => {
+
+const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin }) => {
   const [regName, setRegName] = useState("");
   const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
@@ -17,6 +20,10 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isRegistered, setIsRegistered] = useState(true);
 
   const navigate = useNavigate();
+  const notifyRegister = () => toast.success("Successfully Registered! Proceed to Login");
+  const notifyEmail = () => toast.success("Confirmation Email has been sent to your email address");
+
+
 
   const handleReg = async (e) => {
     e.preventDefault();
@@ -43,12 +50,12 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     //email implementation
 
     var templateParams = {
-      from_name: "Jaradey",
+      from_name: "JaraDey",
       to_name: regEmail,
       message:
         "Hi " +
         regName +
-        " Welcome to JaraDey, thank you for registering with us",
+        " Welcome to JaraDey, thank you for registering with us. This email is to verify that you have successfully registered.",
     };
 
     emailjs
@@ -61,6 +68,8 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
       .then(
         function (response) {
           console.log("SUCCESS!", response.status, response.text);
+          notifyEmail();
+
         },
         function (error) {
           console.log("FAILED...", error);
@@ -69,7 +78,8 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
 
     //emaillllll
 
-    alert("User Registered!");
+    // alert("User Registered!");
+    notifyRegister();
     setRegName("");
     setRegPassword("");
     setRegPassword2("");
@@ -98,7 +108,8 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     // const res = await response.json()
     // console.log(res)
 
-    alert("Login Succesful !");
+    // alert("Login Succesful !");
+    notifyLogin();
     setLoginEmail("");
     setLoginPassword("");
     setIsLoggedIn(!isLoggedIn);
@@ -107,6 +118,15 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <main className="myBody">
+      <ToastContainer position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover />
       <div className="formContainer">
         {isRegistered ? <h1> Welcome Back !</h1> : <h1>Get Started !</h1>}
         {isRegistered ? (
