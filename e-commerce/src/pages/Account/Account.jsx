@@ -1,15 +1,32 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
+=======
+import "./account.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+>>>>>>> ae9940843f651b76c91e9edda63d09a64a5691d5
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import "./account.css";
 import { Link, useNavigate } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 
+<<<<<<< HEAD
 const Account = ({ isLoggedIn, setIsLoggedIn }) => {
   const [regName, setRegName] = useState("");
   const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
   const [regPassword2, setRegPassword2] = useState("");
+=======
+
+const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin }) => {
+  
+  const [regName, setRegName] = useState("") 
+  const [regEmail, setRegEmail] = useState("") 
+  const [regPassword, setRegPassword] = useState("") 
+  const [regPassword2, setRegPassword2] = useState("") 
+>>>>>>> ae9940843f651b76c91e9edda63d09a64a5691d5
 
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -17,6 +34,10 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isRegistered, setIsRegistered] = useState(true);
 
   const navigate = useNavigate();
+  
+  const notifyReg = () => toast.success("Successfully registered. Kindly Log in");
+  // const notifyLogin = () => toast.success("Successfully Logged in !");
+
 
   const handleReg = async (e) => {
     e.preventDefault();
@@ -39,6 +60,11 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     // const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
     // const res = await response.json()
     // console.log(res)
+<<<<<<< HEAD
+=======
+    
+    notifyReg()
+>>>>>>> ae9940843f651b76c91e9edda63d09a64a5691d5
 
     //email implementation
 
@@ -97,6 +123,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     // const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
     // const res = await response.json()
     // console.log(res)
+<<<<<<< HEAD
 
     alert("Login Succesful !");
     setLoginEmail("");
@@ -104,9 +131,27 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     setIsLoggedIn(!isLoggedIn);
     navigate("/");
   };
+=======
+     
+    notifyLogin()
+    setLoginEmail("")
+    setLoginPassword("")
+    setIsLoggedIn(!isLoggedIn)
+    navigate('/')
+  }
+>>>>>>> ae9940843f651b76c91e9edda63d09a64a5691d5
 
   return (
     <main className="myBody">
+      <ToastContainer position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover />
       <div className="formContainer">
         {isRegistered ? <h1> Welcome Back !</h1> : <h1>Get Started !</h1>}
         {isRegistered ? (

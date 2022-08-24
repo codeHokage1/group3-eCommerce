@@ -6,6 +6,7 @@ import FrozenFood from '../../components/frozenfood/FrozenFood'
 import BeverageSnack from '../../components/beveragesnack/BeverageSnack'
 import StoreHeading from '../../components/storeheading/StoreHeading'
 import FruitContainer from '../../components/fruitscontainer/FruitContainer'
+import {TbShoppingCartOff as EmptyCart} from 'react-icons/tb'
 
 
 import { Link, useNavigate } from 'react-router-dom'
@@ -66,7 +67,7 @@ const CartPage = ({
         <div className="container ">
           <h3 className="nav justify-content-center">
             {' '}
-            <BsCart4 /> CART{' '}
+            <BsCart4 />{'  '}CART
           </h3>
         </div>
       </header>
@@ -74,7 +75,11 @@ const CartPage = ({
         <div className="py-4 container w-90 px-0">
           <div>
             {cartItems.length === 0 ? (
-              <p>Your cart is currently empty. Start placing your orders</p>
+                                  <div className="emptycart-container">
+                                    <EmptyCart className="empty-cart-logo"/>
+                                    <p className="">Your cart is currently empty. Start placing your orders</p>
+                                    <Link to='/products'><button className="empty-cart-button">Start Shopping</button></Link>
+                                  </div>
             ) : (
               <>
                 {cartItems.map((item) => (

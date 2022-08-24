@@ -187,3 +187,34 @@ body {
 .price-title {
   margin-right: auto;
 }
+
+.emptycart-container{
+  text-align: center;
+  font-family: 'Nunito Sans';
+  color: grey;
+  font-size: 14pt;
+}
+.empty-cart-logo{
+  color: gray;
+  font-size: 100px;
+  border-radius: 50%;
+  border: 2px solid grey;
+  padding: 10px;
+  margin: 20px;
+}
+.empty-cart-button{
+  background-color: #ff7e07;
+  outline: 0;
+  border: none;
+  font-size: 12pt;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: white;
+  border-radius: 10px;
+  font-family: 'Nunito Sans';
+  margin: 20px;
+}
+.empty-cart-button:hover{
+  text-decoration: underline;
+  box-shadow: 3px 3px 5px 5px grey;
+}
