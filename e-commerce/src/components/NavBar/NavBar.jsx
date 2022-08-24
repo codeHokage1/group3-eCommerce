@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import "./NavBar.css";
 import SearchBarSection from "../SearchbarSection/SearchBarSection";
 import { MdOutlineAccountCircle as UserLogo } from "react-icons/md";
 import { FaRegQuestionCircle as HelpLogo } from "react-icons/fa";
@@ -20,9 +18,11 @@ import { GiWheat } from "react-icons/gi";
 import { GiMilkCarton } from "react-icons/gi";
 import { FaPepperHot } from "react-icons/fa";
 import { GrContact } from "react-icons/gr";
-// import logo from '../../images/headerLogo.png';
+
 import logo from "../../images/logoAlone.png";
 import logoText from "../../images/logoText.png";
+
+import Offcanvas from "react-bootstrap/Offcanvas";
 import "./NavBar.css";
 
 const NavBar = ({ countCartItems }) => {

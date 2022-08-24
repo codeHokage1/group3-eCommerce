@@ -139,13 +139,13 @@ function App() {
         />
         <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
-        <Route path={"/page404"} element={<Page404 />} />
         <Route path={"/contact"} element={<Contact />} />
         <Route path={"/admin"} element={<AdminDashboard />} />
         <Route
           path={"/checkout"}
           element={<Checkout cartTotalPrice={cartTotalPrice} />}
         />
+        <Route path={"*"} element={<Page404 />} />
       </Routes>
       <Footer2 />
     </BrowserRouter>
