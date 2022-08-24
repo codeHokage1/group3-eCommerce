@@ -40,8 +40,37 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     // const res = await response.json()
     // console.log(res)
 
+    //email implementation
+
+    var templateParams = {
+      from_name: "Jaradey",
+      to_name: regEmail,
+      message:
+        "Hi " +
+        regName +
+        " Welcome to JaraDey, thank you for resgitering with us",
+    };
+
+    emailjs
+      .send(
+        "service_53tc4hr",
+        "template_jf9a2if",
+        templateParams,
+        "j96Zi-XI6EaVaJ9vZ"
+      )
+      .then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+
+    //emaillllll
+
     alert("User Registered!");
-    setRegEmail("");
+    setRegName("");
     setRegPassword("");
     setRegPassword2("");
     setIsRegistered(!isRegistered);
