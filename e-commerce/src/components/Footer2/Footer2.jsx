@@ -1,4 +1,5 @@
 import React from 'react'
+import { useEffect } from 'react'
 import {
   FaYoutube,
   FaFacebookF,
@@ -12,7 +13,6 @@ import { FiHelpCircle } from 'react-icons/fi'
 import { MdOutlineAccountCircle } from 'react-icons/md'
 import { TbApple } from 'react-icons/tb'
 import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
 
 import logo from '../../images/logoAlone.png';
 import logoText from '../../images/logoText.png';
@@ -24,6 +24,7 @@ const Footer2 = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
   }, [])
+  
   return (
     <div>
       <section
@@ -180,6 +181,7 @@ const Footer2 = () => {
             </p>
         </div> */}
       </footer>
+
 
       <footer
         className="w-100 py-4 flex-shrink-0 text-white"
