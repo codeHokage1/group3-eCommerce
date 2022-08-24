@@ -64,7 +64,6 @@ const NavBar = ({ countCartItems }) => {
           </li>
           <li>
             <Link to="/cart" className="link">
-              <CartLogo className="link-logo" />
               <Dropdown>
                 <Dropdown.Menu>
                   <Dropdown.Item onClick={() => navigate("/contact")}>

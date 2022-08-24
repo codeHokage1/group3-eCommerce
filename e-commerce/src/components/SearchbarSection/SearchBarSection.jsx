@@ -18,6 +18,7 @@ const SearchBarSection = () => {
       price: "N155.4",
       tags: "",
     },
+
     {
       id: 3,
       title: "Meat",

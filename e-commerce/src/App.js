@@ -18,8 +18,8 @@ import Page404 from "./pages/404/Page404";
 import CartPage from "./pages/CartPage/CartPage";
 import Contact from "./pages/Contact/Contact";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
-
 import Categoriesdata from "./data";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -54,6 +54,12 @@ function App() {
   return (
     <BrowserRouter>
       <BonusTop />
+      <Helmet>
+        <script
+          src="//code.tidio.co/yvvy72t3wfgrjaddnuveceiilzjlg9tm.js"
+          async
+        ></script>
+      </Helmet>
       <NavBar countCartItems={cartItems.length} />
       <Routes>
         <Route path={"/"} element={<Home />} />
