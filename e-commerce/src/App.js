@@ -82,38 +82,9 @@ function App() {
       </Helmet>
       <NavBar countCartItems={cartItems.length} />
       <Routes>
-        <Route
-          path={"/"}
-          element={
-            <Home
-              Categoriesdata={Categoriesdata}
-              cartItems={cartItems}
-              handleAdd={handleAdd}
-              handleRemove={handleRemove}
-            />
-          }
-        />
-        <Route
-          path={"/account"}
-          element={
-            <Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-          }
-        />
-        <Route
-          path={"/cartpage"}
-          element={
-            <CartPage
-              cartItems={cartItems}
-              handleAdd={handleAdd}
-              handleRemove={handleRemove}
-              totallyRemove={totallyRemove}
-              setCartTotalPrice={setCartTotalPrice}
-              cartTotalPrice={cartTotalPrice}
-              isLoggedIn={isLoggedIn}
-              setIsLoggedIn={setIsLoggedIn}
-            />
-          }
-        />
+        <Route path={"/"} element={<Home Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
+        <Route path={"/account"} element={<Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path={"/cartpage"} element={<CartPage Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} totallyRemove={totallyRemove} setCartTotalPrice={setCartTotalPrice} cartTotalPrice={cartTotalPrice} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path={"/help"} element={<Help />} />
         <Route
           path={"/products"}
