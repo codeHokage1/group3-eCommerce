@@ -23,6 +23,11 @@ const Home = ({ Categoriesdata, cartItems, handleAdd, handleRemove }) => {
     oneEachProducts.push(category.products[0])
   })
 
+  const oneEachProducts2 = []
+  Categoriesdata.forEach((category) => {
+    oneEachProducts2.push(category.products[2])
+  })
+
   return (
     <main>
       <Hero />
@@ -40,7 +45,13 @@ const Home = ({ Categoriesdata, cartItems, handleAdd, handleRemove }) => {
           cartItems={cartItems}
         />
         <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKET" />
-        <FruitContainer title="Fruits" />
+        <FruitContainer
+          title="Kitchen and Fridge Essentials"
+          products={oneEachProducts2}
+          handleAdd={handleAdd}
+          handleRemove={handleRemove}
+          cartItems={cartItems}
+        />
         <Footer />
       </div>
     </main>
