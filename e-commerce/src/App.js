@@ -17,6 +17,7 @@ import Footer2 from "./components/Footer2/Footer2";
 import Page404 from "./pages/404/Page404";
 import CartPage from "./pages/CartPage/CartPage";
 import Contact from "./pages/Contact/Contact";
+import SearchPage from "./pages/Search/SearchPage";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import Categoriesdata from "./data";
 import { Helmet } from "react-helmet";
@@ -99,8 +100,6 @@ function App() {
               cartItems={cartItems}
               handleAdd={handleAdd}
               handleRemove={handleRemove}
-              filteredProducts={filteredProducts}
-              search={search}
             />
           }
         />
@@ -124,6 +123,8 @@ function App() {
           element={<Checkout cartTotalPrice={cartTotalPrice} />}
         />
         <Route path={"*"} element={<Page404 />} />
+        <Route path={"/search"} element={<SearchPage filteredProducts={filteredProducts} search={search} handleAdd={handleAdd} handleRemove={handleRemove} cartItems={cartItems} />} />
+        
       </Routes>
       <Footer2 />
     </BrowserRouter>

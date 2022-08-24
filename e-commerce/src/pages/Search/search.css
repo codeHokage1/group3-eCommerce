@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+.search-body{
+    padding: 20px 30px;
+    text-align: center;
+    font-family: 'Nunito Sans';
+    min-height: 70vh;
+}
+.search-body h2{
+    font-family: "Playfair Display";
+}
+.search-buttons{
+    background-color: #ff7e07;
+    outline: 0;
+    border: none;
+    font-size: 12pt;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Nunito Sans';
+    margin: 20px;
+}
+.search-buttons:hover{
+    text-decoration: underline;
+    box-shadow: 3px 3px 5px 5px grey;
+}
+
+.filtered-products-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+}

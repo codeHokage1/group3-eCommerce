@@ -49,7 +49,7 @@ const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFiltered
       product.category.toLowerCase().includes(search.toLowerCase())
     ))
     setFilteredProducts(newProducts);
-    navigate('/products')
+    navigate('/search')
     // setSearch('')
   }
 
