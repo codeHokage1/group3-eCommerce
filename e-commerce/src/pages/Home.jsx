@@ -23,8 +23,6 @@ const Home = ({ Categoriesdata, cartItems, handleAdd, handleRemove }) => {
     oneEachProducts.push(category.products[0])
   })
 
-  import Footer from '../components/Footer/Footer'
-
   return (
     <main>
       <Hero />

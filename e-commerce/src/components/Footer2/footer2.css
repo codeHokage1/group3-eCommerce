@@ -32,7 +32,13 @@ body, html {
 footer ul li{
 list-style-type: none;
 margin-bottom: 20px;
-
+}
+.footer-logo{
+  width: 100px;
+}
+.footer-logo-text{
+  width: 120px;
+  margin-left: 10px;
 }
 
   @media screen and (max-width: 768px) {

@@ -15,7 +15,7 @@ const CartPage = ({
   setCartTotalPrice,
   cartTotalPrice,
   isLoggedIn,
-  setIsLoggedIn,
+  setIsLoggedIn
 }) => {
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0)
   const taxPrice = itemsPrice * 0.14
@@ -147,7 +147,7 @@ const CartPage = ({
             </p>
           </div>
           <hr />
-<<<<<<< HEAD
+
           <button
             onClick={handleCheckout}
             className="checkout-button p-2 price-amount"
@@ -157,8 +157,6 @@ const CartPage = ({
           </button>
         </div>
       )}
-
-=======
 
       <FrozenFood title="Frozen Food" />
       {/* <FoodContainer title="Food items" /> */}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import { Link } from 'react-router-dom'
 
 import { FiPlus } from 'react-icons/fi'
@@ -16,6 +16,11 @@ const FoodItem = ({
   handleRemove,
   itemFoundInCart,
 }) => {
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
+  }, [])
+
   return (
     <>
       <div className="foodContainer">
@@ -34,7 +39,7 @@ const FoodItem = ({
         <div className="d-flex justify-content-between">
           <div>
             <p className="fruitset mt-2">
-              <Link className="fruitset boldfont" to={`/products/${id}`}>
+              <Link className="fruitset boldfont" to={`/products/${id}`} onClick={() => {window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })}}>
                 {name}
               </Link>
             </p>
