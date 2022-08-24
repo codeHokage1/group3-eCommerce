@@ -80,7 +80,7 @@ const SearchBarSection = () => {
       </div>
       <div className="display">
         {filteredProducts.map((product) => (
-          <div className="product">
+          <div className="product" onClick={""}>
             <h6>{product.category}</h6>
             <h3>{product.title}</h3>
             <h5>{product.price}</h5>
