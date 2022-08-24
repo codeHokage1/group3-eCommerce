@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 import BonusTop from "./components/BonusTop/BonusTop";
 import NavBar from "./components/NavBar/NavBar";
@@ -14,6 +14,7 @@ import Products from "./pages/Products";
 import SingleProduct from "./pages/SingleProductPage";
 import DeliveryTracking from "./pages/Delivery/DeliveryTracking";
 import Footer2 from "./components/Footer2/Footer2";
+import Page404 from "./pages/404/Page404";
 import CartPage from "./pages/CartPage/CartPage";
 import Contact from "./pages/Contact/Contact";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
@@ -26,9 +27,11 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleAdd = (product) => {
-    const exist = cartItems.find(item => item.id === product.id);
+    const exist = cartItems.find((item) => item.id === product.id);
     if (exist) {
-      const newCart = cartItems.map(item => item.id === exist.id ? { ...item, qty: item.qty + 1 } : item);
+      const newCart = cartItems.map((item) =>
+        item.id === exist.id ? { ...item, qty: item.qty + 1 } : item
+      );
       setCartItems(newCart);
       localStorage.setItem('cartItems', JSON.stringify(newCart));
     } else {
@@ -36,17 +39,19 @@ function App() {
       setCartItems(newCart);
       localStorage.setItem('cartItems', JSON.stringify(newCart));
     }
-    console.log(cartItems)
-  }
+    console.log(cartItems);
+  };
 
   const handleRemove = (product) => {
-    const exist = cartItems.find(item => item.id === product.id);
+    const exist = cartItems.find((item) => item.id === product.id);
     if (exist.qty === 1) {
-      const newCart = cartItems.filter(item => item.id !== exist.id);
+      const newCart = cartItems.filter((item) => item.id !== exist.id);
       setCartItems(newCart);
       localStorage.setItem('cartItems', JSON.stringify(newCart));
     } else {
-      const newCart = cartItems.map(item => item.id === exist.id ? { ...item, qty: item.qty - 1 } : item);
+      const newCart = cartItems.map((item) =>
+        item.id === exist.id ? { ...item, qty: item.qty - 1 } : item
+      );
       setCartItems(newCart);
       localStorage.setItem('cartItems', JSON.stringify(newCart));
     }
@@ -71,15 +76,35 @@ function App() {
         <Route path={"/account"} element={<Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
         <Route path={"/cartpage"} element={<CartPage cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} totallyRemove={totallyRemove} setCartTotalPrice={setCartTotalPrice} cartTotalPrice={cartTotalPrice} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path={"/help"} element={<Help />} />
-        <Route path={"/products"} element={<Products Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
-        <Route path={"/products/:id"} element={<SingleProduct Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove}/>} />
+        <Route
+          path={"/products"}
+          element={
+            <Products
+              Categoriesdata={Categoriesdata}
+              cartItems={cartItems}
+              handleAdd={handleAdd}
+              handleRemove={handleRemove}
+            />
+          }
+        />
+        <Route
+          path={"/products/:id"}
+          element={
+            <SingleProduct
+              Categoriesdata={Categoriesdata}
+              cartItems={cartItems}
+              handleAdd={handleAdd}
+              handleRemove={handleRemove}
+            />
+          }
+        />
         <Route path={"/delivery"} element={<DeliveryTracking />} />
         <Route path={"/profile"} element={<Profile />} />
+        <Route path={"/page404"} element={<Page404 />} />
         <Route path={"/contact"} element={<Contact />} />
         <Route path={"/admin"} element={<AdminDashboard />} />
         <Route path={"/checkout"} element={<Checkout cartTotalPrice={cartTotalPrice} />} />
       </Routes>
-
       <Footer2 />
     </BrowserRouter>
   );

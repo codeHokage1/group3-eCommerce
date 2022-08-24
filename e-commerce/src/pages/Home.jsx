@@ -26,6 +26,7 @@ const Home = ({ Categoriesdata, cartItems, handleAdd, handleRemove }) => {
   return (
     <main>
       <Hero />
+      {/* <SearchBarSection /> */}
       <div className="App">
         <Categories />
         <PopularStalls />
@@ -38,7 +39,7 @@ const Home = ({ Categoriesdata, cartItems, handleAdd, handleRemove }) => {
           handleRemove={handleRemove}
           cartItems={cartItems}
         />
-        <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKEt" />
+        <StoreHeading narative="YOUR FAVORITE STORE FOR WHOLESALE MARKET" />
         <FruitContainer title="Fruits" />
         <Footer />
       </div>
