@@ -6,6 +6,7 @@ import FrozenFood from '../../components/frozenfood/FrozenFood'
 import BeverageSnack from '../../components/beveragesnack/BeverageSnack'
 
 import { Link, useNavigate } from 'react-router-dom'
+import numeral from 'numeral';
 
 const CartPage = ({
   cartItems,
@@ -20,7 +21,7 @@ const CartPage = ({
   const itemsPrice = cartItems.reduce((a, c) => a + c.qty * c.price, 0)
   const taxPrice = itemsPrice * 0.14
   const shippingPrice = itemsPrice > 2000 ? 0 : 20
-  const totalPrice = itemsPrice + taxPrice + shippingPrice
+  const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
@@ -34,6 +35,7 @@ const CartPage = ({
       setCartTotalPrice(totalPrice)
       navigate('/checkout')
     } else {
+      window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
       navigate('/account')
     }
   }
@@ -153,7 +155,7 @@ const CartPage = ({
             className="checkout-button p-2 price-amount"
             style={{ height: '50px' }}
           >
-            N {totalPrice.toFixed(2)}: CHECK OUT{' '}
+            N {numeral(totalPrice).format('0,0.000')}: CHECK OUT{' '}
           </button>
         </div>
       )}
