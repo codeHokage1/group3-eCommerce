@@ -7,9 +7,12 @@ Link to current deployed app: https://jara-dey.vercel.app/ (Still in development
 
 
 ## Team Members
-* Agoro Hakeem
-* Okunsebor Joan
-* Olayode Oluwafemi
-* Onajinrin Oluwakemi
-* Shobande James
-* Sodiq Farihan
+1.	Abdulkadir Kamaldeen	
+2.	Agoro Hakeem
+3.	Ogiri Moses	
+4.	Okunsebor Joan
+5.	Olayode Oluwafemi
+6.	Onajinrin Oluwakemi
+7.	Shobande James
+8.	Sodiq Farihan
+9.	Ugochukwu Chidubanyi
