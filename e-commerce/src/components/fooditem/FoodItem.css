@@ -48,9 +48,19 @@
   color: #565956;
   margin: 0;
   text-align: justify;
+  text-decoration: none;
+}
+
+.fruitset:hover {
+  color: #e99710;
+}
+
+.fruitprice {
+  text-align: justify;
+  margin-bottom: 0px;
 }
 .fruitline {
-  color: #d9d9d9;
+  color: #c09e66;
   text-decoration-line: line-through;
   text-decoration-color: #565956;
   text-align: justify;
@@ -86,6 +96,9 @@
   text-align: center;
   background: white;
   background-color: rgba(18, 177, 4, 0.8);
+  border: none;
+  color: #fff;
+  width: 25px;
 }
 
 .btn-minus {
@@ -94,4 +107,7 @@
   background: white;
   margin-right: 5px;
   background-color: rgb(189, 7, 7);
+  border: none;
+  color: #fff;
+  width: 25px;
 }
