@@ -162,6 +162,10 @@ body{
     text-align: left;
     padding-left: 20px;
   }
+  .markettitle:hover{
+    text-decoration: underline;
+    cursor: pointer;
+  }
   /* .marketdiv {
     text-align: center;
     margin: 22px 0;

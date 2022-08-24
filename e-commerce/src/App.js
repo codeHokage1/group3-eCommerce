@@ -22,15 +22,18 @@ import Categoriesdata from "./data";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [cartTotalPrice, setCartTotalPrice] = useState(0);
 
   const handleAdd = (product) => {
     const exist = cartItems.find(item => item.id === product.id);
     if (exist) {
       const newCart = cartItems.map(item => item.id === exist.id ? { ...item, qty: item.qty + 1 } : item);
       setCartItems(newCart);
+      localStorage.setItem('cartItems', JSON.stringify(newCart));
     } else {
       const newCart = [...cartItems, { ...product, qty: 1 }];
       setCartItems(newCart);
+      localStorage.setItem('cartItems', JSON.stringify(newCart));
     }
     console.log(cartItems)
   }
@@ -40,20 +43,32 @@ function App() {
     if (exist.qty === 1) {
       const newCart = cartItems.filter(item => item.id !== exist.id);
       setCartItems(newCart);
+      localStorage.setItem('cartItems', JSON.stringify(newCart));
     } else {
       const newCart = cartItems.map(item => item.id === exist.id ? { ...item, qty: item.qty - 1 } : item);
       setCartItems(newCart);
+      localStorage.setItem('cartItems', JSON.stringify(newCart));
     }
   }
+
+  const totallyRemove = (product) => {
+      const newCart = cartItems.filter(item => item.id !== product.id);
+      setCartItems(newCart);
+      localStorage.setItem('cartItems', JSON.stringify(newCart));
+  }
+
+  useEffect(() => {
+    setCartItems(localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []);
+  }, [])
   
   return (
     <BrowserRouter>
       <BonusTop />
       <NavBar countCartItems={cartItems.length} />
       <Routes>
-        <Route path={"/"} element={<Home />} />
+        <Route path={"/"} element={<Home Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
         <Route path={"/account"} element={<Account />} />
-        <Route path={"/cartpage"} element={<CartPage cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove}/>} />
+        <Route path={"/cartpage"} element={<CartPage cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} totallyRemove={totallyRemove} setCartTotalPrice={setCartTotalPrice} cartTotalPrice={cartTotalPrice} />} />
         <Route path={"/help"} element={<Help />} />
         <Route path={"/products"} element={<Products Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
         <Route path={"/products/:id"} element={<SingleProduct Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove}/>} />
@@ -61,7 +76,7 @@ function App() {
         <Route path={"/profile"} element={<Profile />} />
         <Route path={"/contact"} element={<Contact />} />
         <Route path={"/admin"} element={<AdminDashboard />} />
-        <Route path={"/checkout"} element={<Checkout />} />
+        <Route path={"/checkout"} element={<Checkout cartTotalPrice={cartTotalPrice} />} />
       </Routes>
 
       <Footer2 />

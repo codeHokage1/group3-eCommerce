@@ -174,7 +174,7 @@ const Profile = () => {
 
         <form action="">
           <div className="profile-name">
-            <label for="FirstName" className="Fname">
+            <label for="FirstName" className="profile-input-name">
               First Name
             </label>
           </div>
@@ -188,7 +188,7 @@ const Profile = () => {
           />
           <p />
           <div className="profile-name">
-            <label for="FirstName" className="Fname">
+            <label for="FirstName" className="profile-input-name">
               Last Name
             </label>
           </div>
@@ -201,11 +201,11 @@ const Profile = () => {
             placeholder=""
           />
           <p />
-          <div className="g-radio">
+          <div className="profile-radio">
             <input type="radio" id="radio1" name="gender" value="Male" />
-            <label className="r-label">Male</label>
+            <label className="profile-label">Male</label>
             <input type="radio" id="radio2" name="gender" value="Female" />
-            <label className="r-label">Female</label>
+            <label className="profile-label">Female</label>
           </div>
           <p />
           <div className="profile-name2">
@@ -231,7 +231,7 @@ const Profile = () => {
 
               <input
                 id="contact"
-                className="g-contact"
+                className="profile-contact"
                 type="tel"
                 name="tel"
                 placeholder="+234"
@@ -245,7 +245,7 @@ const Profile = () => {
               <br />
 
               <div>
-                <select className="g-select">
+                <select className="profile-select">
                   {options.map((option) => (
                     <option value={option.value}>{option.label}</option>
                   ))}
@@ -255,7 +255,7 @@ const Profile = () => {
           </div>
           <p />
           <div className="profile-name">
-            <label for="FirstName" className="Fname">
+            <label for="FirstName" className="profile-input-name">
               Address
             </label>
           </div>
@@ -271,7 +271,7 @@ const Profile = () => {
           <p />
           <p />
           <p />
-          <div className="g-terms">
+          <div className="profile-terms">
             <input
               id="terms"
               className=""
@@ -283,7 +283,7 @@ const Profile = () => {
           </div>
 
           <Button
-            className="login"
+            className="profile-login"
             size=""
             variant="primary"
             style={{ border: 'none' }}

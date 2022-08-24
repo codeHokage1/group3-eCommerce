@@ -5,7 +5,8 @@ import CheckoutSubheading from '../components/checkoutsubheading/CheckoutSubhead
 import DeliveryMethod from '../components/deliverymethod/DeliveryMethod'
 import PaymentMethod from '../components/paymentmethod/PaymentMethod'
 
-const Checkout = () => {
+const Checkout = ({ cartTotalPrice }) => {
+
   return (
     <div>
       <CheckoutHeading heading="checkout" />
@@ -14,7 +15,7 @@ const Checkout = () => {
       <CheckoutSubheading title="Delivery method"></CheckoutSubheading>
       <DeliveryMethod />
       <CheckoutSubheading title="Billing details"></CheckoutSubheading>
-      <PaymentMethod />
+      <PaymentMethod cartTotalPrice={cartTotalPrice} />
     </div>
   )
 }

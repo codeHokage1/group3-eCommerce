@@ -66,7 +66,7 @@ const NavBar = ({countCartItems}) => {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={()=> navigate("/contact")}>Contact Customer Care</Dropdown.Item>
+                <Dropdown.Item onClick={() => { navigate("/contact");  setShow(false)}}>Contact Customer Care</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
@@ -126,7 +126,7 @@ const NavBar = ({countCartItems}) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Contact Custmer Care</Dropdown.Item>
+                <Dropdown.Item onClick={()=> navigate("/contact")} href="#/action-1">Contact Custmer Care</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

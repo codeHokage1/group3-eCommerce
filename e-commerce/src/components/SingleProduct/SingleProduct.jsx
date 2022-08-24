@@ -15,7 +15,7 @@ const SingleProduct = ({Categoriesdata, cartItems, handleAdd, handleRemove}) => 
     const products = [];
     Categoriesdata.forEach(category => {
         category.products.forEach(product => {
-            products.push(product)
+            products.push(product);
         })
     });
 
