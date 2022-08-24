@@ -1,16 +1,16 @@
-.markettitle {
+.marktitle {
   text-transform: uppercase;
   font-style: normal;
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 0.2em;
-  color: #ffffff;
+  color: #ffffff !important;
   padding-top: 10px;
   margin: 0;
 }
 .marketdiv {
   background: #ff7e07;
-  text-align: center;
+  text-align: center !important;
   margin: 22px 0;
   padding: 23px;
 }
