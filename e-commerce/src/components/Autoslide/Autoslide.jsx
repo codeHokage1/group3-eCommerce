@@ -29,7 +29,7 @@ const Autoslide = () => {
                                     <div class="card-body">
                                         <img src={data.src} alt="" className="slider_image" />
                                     </div>
-                                    <p className="slider_tag text-white">poultry </p>
+                                    <p className="slider_tag text-white">{data.title} </p>
                                 </div>
                             )
                         })}
@@ -45,7 +45,7 @@ const Autoslide = () => {
                                     <div class="card-body">
                                         <img src={data.src} alt="" className="slider_image" />
                                     </div>
-                                    <p className="slider_tag text-white">poultry </p>
+                                    <p className="slider_tag text-white">{data.title}</p>
                                 </div>
                             )
                         })}
