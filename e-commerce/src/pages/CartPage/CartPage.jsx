@@ -4,11 +4,15 @@ import beef2 from '../../images/beef2.png'
 import { BsCart4 } from 'react-icons/bs'
 import FrozenFood from '../../components/frozenfood/FrozenFood'
 import BeverageSnack from '../../components/beveragesnack/BeverageSnack'
+import StoreHeading from '../../components/storeheading/StoreHeading'
+import FruitContainer from '../../components/fruitscontainer/FruitContainer'
+
 
 import { Link, useNavigate } from 'react-router-dom'
 import numeral from 'numeral';
 
 const CartPage = ({
+  Categoriesdata,
   cartItems,
   handleAdd,
   handleRemove,
@@ -22,6 +26,18 @@ const CartPage = ({
   const taxPrice = itemsPrice * 0.14
   const shippingPrice = itemsPrice > 2000 ? 0 : 20
   const totalPrice = itemsPrice + taxPrice + shippingPrice;
+
+  const products = []
+  Categoriesdata.forEach((category) => {
+    category.products.forEach((product) => {
+      products.push(product)
+    })
+  })
+
+  const oneEachProducts = []
+  Categoriesdata.forEach((category) => {
+    oneEachProducts.push(category.products[3])
+  })
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
@@ -160,9 +176,17 @@ const CartPage = ({
         </div>
       )}
 
-      <FrozenFood title="Frozen Food" />
+      <StoreHeading narative="CONTINUE SHOPPING" />
+      <FruitContainer
+          title="Food Items and More"
+          products={oneEachProducts}
+          handleAdd={handleAdd}
+          handleRemove={handleRemove}
+          cartItems={cartItems}
+      />
+      {/* <FrozenFood title="Frozen Food" /> */}
       {/* <FoodContainer title="Food items" /> */}
-      <BeverageSnack title="Beverages and Snacks" />
+      {/* <BeverageSnack title="Beverages and Snacks" /> */}
     </div>
   )
 }
