@@ -6,7 +6,7 @@ const ProductPageHero = () => {
   return (
     <div className="container">
       <div className="d-sm-flex justify-content-between">
-        <div class="col-sm-5 d-sm-flex justify-content-between flex-wrap text-center">
+        <div className="col-sm-5 d-sm-flex justify-content-between flex-wrap text-center mobile-view">
           {Data.map((data) => {
             return (
               <button className="category_border col-sm-5  py-4 m-3 ">

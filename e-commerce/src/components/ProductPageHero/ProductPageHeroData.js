@@ -25,7 +25,7 @@ const Data = [
   },
   {
     id: 4,
-    title: "Frozen Foods",
+    title: "sFrozen Food",
     logo: <FaSnowflake />,
   },
   {

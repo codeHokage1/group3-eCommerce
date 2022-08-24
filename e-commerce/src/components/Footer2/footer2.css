@@ -25,16 +25,38 @@ body, html {
   font-size: 20px;
   font-weight: bold;
 }
-
+.mobile-footer-details{
+  display: flex;
+  gap: 30px;
+}
 footer ul li{
 list-style-type: none;
 margin-bottom: 20px;
 
 }
 
-  @media (min-width: 768px) {
+  @media screen and (max-width: 768px) {
+    .list{
+      flex-direction: column;
+      padding: 20px;
+    }
+    #overview, #connect, #company{
+      padding-left: 0;
+    }
+    .mobile-footer-details{
+      display: flex;
+    }
     .bd-placeholder-img-lg {
       font-size: 3.5rem;
+    }
+    #overview{
+      margin-right: auto;
+    }
+    .footer-logo{
+      width: 50px;
+    }
+    .footer-logo-text{
+      width: 70px;
     }
 
     /* .mobile-only{
@@ -113,5 +135,10 @@ margin-bottom: 20px;
   cursor: pointer;
   font-weight: bold;
 }
+
+
+
+
+
 
 

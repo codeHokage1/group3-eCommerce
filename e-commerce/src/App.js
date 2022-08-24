@@ -23,6 +23,8 @@ import { Helmet } from "react-helmet";
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
+  const [cartTotalPrice, setCartTotalPrice] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleAdd = (product) => {
     const exist = cartItems.find((item) => item.id === product.id);
@@ -31,9 +33,11 @@ function App() {
         item.id === exist.id ? { ...item, qty: item.qty + 1 } : item
       );
       setCartItems(newCart);
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
     } else {
       const newCart = [...cartItems, { ...product, qty: 1 }];
       setCartItems(newCart);
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
     }
     console.log(cartItems);
   };
@@ -43,13 +47,29 @@ function App() {
     if (exist.qty === 1) {
       const newCart = cartItems.filter((item) => item.id !== exist.id);
       setCartItems(newCart);
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
     } else {
       const newCart = cartItems.map((item) =>
         item.id === exist.id ? { ...item, qty: item.qty - 1 } : item
       );
       setCartItems(newCart);
+      localStorage.setItem("cartItems", JSON.stringify(newCart));
     }
   };
+
+  const totallyRemove = (product) => {
+    const newCart = cartItems.filter((item) => item.id !== product.id);
+    setCartItems(newCart);
+    localStorage.setItem("cartItems", JSON.stringify(newCart));
+  };
+
+  useEffect(() => {
+    setCartItems(
+      localStorage.getItem("cartItems")
+        ? JSON.parse(localStorage.getItem("cartItems"))
+        : []
+    );
+  }, []);
 
   return (
     <BrowserRouter>
@@ -62,8 +82,23 @@ function App() {
       </Helmet>
       <NavBar countCartItems={cartItems.length} />
       <Routes>
-        <Route path={"/"} element={<Home />} />
-        <Route path={"/account"} element={<Account />} />
+        <Route
+          path={"/"}
+          element={
+            <Home
+              Categoriesdata={Categoriesdata}
+              cartItems={cartItems}
+              handleAdd={handleAdd}
+              handleRemove={handleRemove}
+            />
+          }
+        />
+        <Route
+          path={"/account"}
+          element={
+            <Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+          }
+        />
         <Route
           path={"/cartpage"}
           element={
@@ -71,6 +106,11 @@ function App() {
               cartItems={cartItems}
               handleAdd={handleAdd}
               handleRemove={handleRemove}
+              totallyRemove={totallyRemove}
+              setCartTotalPrice={setCartTotalPrice}
+              cartTotalPrice={cartTotalPrice}
+              isLoggedIn={isLoggedIn}
+              setIsLoggedIn={setIsLoggedIn}
             />
           }
         />
@@ -102,7 +142,10 @@ function App() {
         <Route path={"/page404"} element={<Page404 />} />
         <Route path={"/contact"} element={<Contact />} />
         <Route path={"/admin"} element={<AdminDashboard />} />
-        <Route path={"/checkout"} element={<Checkout />} />
+        <Route
+          path={"/checkout"}
+          element={<Checkout cartTotalPrice={cartTotalPrice} />}
+        />
       </Routes>
       <Footer2 />
     </BrowserRouter>
