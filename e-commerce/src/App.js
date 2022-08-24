@@ -1,6 +1,11 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet";
+
+
 
 import BonusTop from "./components/BonusTop/BonusTop";
 import NavBar from "./components/NavBar/NavBar";
@@ -20,7 +25,9 @@ import Contact from "./pages/Contact/Contact";
 import SearchPage from "./pages/Search/SearchPage";
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import Categoriesdata from "./data";
-import { Helmet } from "react-helmet";
+
+
+
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -28,6 +35,10 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [search, setSearch] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
+
+  const notifyLogin = () => toast.success("Successfully Logged in !");
+  const notifyAddToCart = () => toast.success("Product has been added to cart!");
+  const notifyRemoveFromCart = () => toast.success("Product has been removed from cart!");
 
 
   const handleAdd = (product) => {
@@ -44,6 +55,7 @@ function App() {
       localStorage.setItem("cartItems", JSON.stringify(newCart));
     }
     console.log(cartItems);
+    notifyAddToCart();
   };
 
   const handleRemove = (product) => {
@@ -65,6 +77,7 @@ function App() {
     const newCart = cartItems.filter((item) => item.id !== product.id);
     setCartItems(newCart);
     localStorage.setItem("cartItems", JSON.stringify(newCart));
+    notifyRemoveFromCart();
   };
 
   
@@ -79,6 +92,15 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ToastContainer position="top-center"
+        autoClose={3000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover />
       <BonusTop />
       <Helmet>
         <script
@@ -89,7 +111,7 @@ function App() {
       <NavBar Categoriesdata={Categoriesdata} search={search} setSearch={setSearch} setFilteredProducts={setFilteredProducts} countCartItems={cartItems.length} />
       <Routes>
         <Route path={"/"} element={<Home Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
-        <Route path={"/account"} element={<Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path={"/account"} element={<Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} notifyLogin={notifyLogin} />} />
         <Route path={"/cartpage"} element={<CartPage Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} totallyRemove={totallyRemove} setCartTotalPrice={setCartTotalPrice} cartTotalPrice={cartTotalPrice} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path={"/help"} element={<Help />} />
         <Route

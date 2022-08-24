@@ -9,7 +9,7 @@ import "./account.css";
 import { Link, useNavigate } from "react-router-dom";
 
 
-const Account = ({ isLoggedIn, setIsLoggedIn }) => {
+const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin }) => {
   
   const [regName, setRegName] = useState("") 
   const [regEmail, setRegEmail] = useState("") 
@@ -23,7 +23,9 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
 
   const navigate = useNavigate();
   
-  const notify = () => toast.success("Successfully registered");
+  const notifyReg = () => toast.success("Successfully registered. Kindly Log in");
+  // const notifyLogin = () => toast.success("Successfully Logged in !");
+
 
 
   const handleReg = async (e) => {
@@ -47,8 +49,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     // const res = await response.json()
     // console.log(res)
     
-    alert('User Registered!');
-    notify()
+    notifyReg()
 
     setRegEmail("")
     setRegPassword("")
@@ -77,8 +78,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     // const res = await response.json()
     // console.log(res)
      
-    alert("Login Succesful !")
-    notify()
+    notifyLogin()
     setLoginEmail("")
     setLoginPassword("")
     setIsLoggedIn(!isLoggedIn)
@@ -87,9 +87,8 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <main className="myBody">
-      <button onClick={notify}> test toast </button>
       <ToastContainer position="top-center"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
