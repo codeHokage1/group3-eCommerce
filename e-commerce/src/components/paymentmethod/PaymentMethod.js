@@ -9,6 +9,7 @@ const PaymentMethod = () => {
   const [firstname, setFirstname] = useState('')
   const [lastname, setLastname] = useState('')
   const [phone, setPhone] = useState('')
+  const [address, setAddress] = useState('')
 
   const paywithpaystack = (e) => {
     e.preventDefault()
@@ -19,6 +20,8 @@ const PaymentMethod = () => {
       email,
       firstname,
       lastname,
+      phone,
+      address,
     })
   }
 
@@ -28,7 +31,7 @@ const PaymentMethod = () => {
         <Row className="justify-content-md-center mt-5 mb-5">
           <Col xs lg="6">
             <Form>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="formm" controlId="formBasicEmail">
                 <Form.Label className="pb-0 mb-0">First Name</Form.Label>
                 <Form.Control
                   type="text"
@@ -40,7 +43,7 @@ const PaymentMethod = () => {
                   Your prefered delivery first name
                 </Form.Text>
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="formm" controlId="formBasicEmail">
                 <Form.Label className="pb-0 mb-0">Last Name</Form.Label>
                 <Form.Control
                   type="text"
@@ -53,7 +56,7 @@ const PaymentMethod = () => {
                 </Form.Text>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicEmail">
+              <Form.Group className="formm" controlId="formBasicEmail">
                 <Form.Label className="pb-0 mb-0">Email address</Form.Label>
                 <Form.Control
                   type="email"
@@ -66,13 +69,23 @@ const PaymentMethod = () => {
                 </Form.Text>
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="formm" controlId="formBasicPassword">
                 <Form.Label className="pb-0 mb-0">Phone no</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="08137422773"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
+                />
+              </Form.Group>
+
+              <Form.Group className="formm" controlId="formBasicPassword">
+                <Form.Label className="pb-0 mb-0">Delivery address</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="41/43 Industrial Avenue Sabo Yaba, Lagos"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
                 />
               </Form.Group>
 

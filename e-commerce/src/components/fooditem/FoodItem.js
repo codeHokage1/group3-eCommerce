@@ -1,8 +1,8 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-import { FiPlus } from "react-icons/fi";
-import "../fooditem/FoodItem.css";
+import { FiPlus } from 'react-icons/fi'
+import '../fooditem/FoodItem.css'
 
 const FoodItem = ({
   id,
@@ -26,7 +26,7 @@ const FoodItem = ({
 
           <div className="foodcard">
             <div className="imgitem">
-              <img src={img} style={{ width: "150px" }} alt="" />
+              <img src={img} style={{ width: '150px' }} alt="" />
             </div>
           </div>
         </div>
@@ -38,8 +38,8 @@ const FoodItem = ({
                 {name}
               </Link>
             </p>
-            <p>{price}</p>
-            
+            <p className="fruitprice">{price}</p>
+
             <p className="fruitline">{discountprice}</p>
           </div>
           <div className="mt-1">
@@ -49,19 +49,19 @@ const FoodItem = ({
                   className="btn-minus"
                   onClick={() => handleRemove(itemFoundInCart)}
                 >
-                  {" "}
-                  -{" "}
+                  {' '}
+                  -{' '}
                 </button>
-                <span>{itemFoundInCart.qty}</span>{" "}
+                <span>{itemFoundInCart.qty}</span>{' '}
                 <button className="btn-plus" onClick={() => handleAdd(product)}>
-                  {" "}
-                  +{" "}
+                  {' '}
+                  +{' '}
                 </button>
               </div>
             ) : (
               <button
                 className="addtocart"
-                style={{ fontSize: "11pt", padding: "5px" }}
+                style={{ fontSize: '11pt', padding: '5px 8px' }}
                 onClick={() => handleAdd(product)}
               >
                 <FiPlus className="minman" /> Add to cart
@@ -71,7 +71,7 @@ const FoodItem = ({
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default FoodItem;
+export default FoodItem
