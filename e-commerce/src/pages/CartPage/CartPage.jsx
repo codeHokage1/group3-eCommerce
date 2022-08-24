@@ -5,9 +5,9 @@ import { BsCart4 } from "react-icons/bs";
 import FrozenFood from "../../components/frozenfood/FrozenFood";
 import BeverageSnack from "../../components/beveragesnack/BeverageSnack";
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const CartPage = ({ cartItems, handleAdd, handleRemove, totallyRemove, setCartTotalPrice, cartTotalPrice}) => {
+const CartPage = ({ cartItems, handleAdd, handleRemove, totallyRemove, setCartTotalPrice, cartTotalPrice, isLoggedIn, setIsLoggedIn}) => {
   
   const itemsPrice = cartItems.reduce((a, c) => a + (c.qty * c.price), 0);
   const taxPrice = itemsPrice * 0.14;
@@ -18,9 +18,17 @@ const CartPage = ({ cartItems, handleAdd, handleRemove, totallyRemove, setCartTo
     window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
   }, [])
 
+  const navigate = useNavigate();
+
   const handleCheckout = () => {
-    window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' });
-    setCartTotalPrice(totalPrice);
+    if (isLoggedIn) {
+      window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' });
+      setCartTotalPrice(totalPrice);
+      navigate('/checkout')
+    } else {
+      navigate('/account')
+    }
+    
   }
 
   useEffect(() => {
@@ -103,10 +111,7 @@ const CartPage = ({ cartItems, handleAdd, handleRemove, totallyRemove, setCartTo
                 <p><strong>N {totalPrice.toFixed(2)}</strong></p>
               </div>
               <hr />              
-
-              <Link to='/checkout' >
                 <button onClick={handleCheckout} className="checkout-button p-2 price-amount" style={{height: '50px'}}>N {totalPrice.toFixed(2)}: CHECK OUT </button>
-              </Link>
           </div>
         )
       }

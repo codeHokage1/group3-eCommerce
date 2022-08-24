@@ -23,6 +23,7 @@ import Categoriesdata from "./data";
 function App() {
   const [cartItems, setCartItems] = useState([]);
   const [cartTotalPrice, setCartTotalPrice] = useState(0);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleAdd = (product) => {
     const exist = cartItems.find(item => item.id === product.id);
@@ -67,8 +68,8 @@ function App() {
       <NavBar countCartItems={cartItems.length} />
       <Routes>
         <Route path={"/"} element={<Home Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
-        <Route path={"/account"} element={<Account />} />
-        <Route path={"/cartpage"} element={<CartPage cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} totallyRemove={totallyRemove} setCartTotalPrice={setCartTotalPrice} cartTotalPrice={cartTotalPrice} />} />
+        <Route path={"/account"} element={<Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />} />
+        <Route path={"/cartpage"} element={<CartPage cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} totallyRemove={totallyRemove} setCartTotalPrice={setCartTotalPrice} cartTotalPrice={cartTotalPrice} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path={"/help"} element={<Help />} />
         <Route path={"/products"} element={<Products Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
         <Route path={"/products/:id"} element={<SingleProduct Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove}/>} />
