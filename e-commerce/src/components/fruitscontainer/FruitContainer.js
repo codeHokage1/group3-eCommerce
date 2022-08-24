@@ -12,9 +12,8 @@ import itemsix from '../../images/potato.png'
 import itemseven from '../../images/anon-straw.png'
 import itemeight from '../../images/tomato.png'
 import itemnine from '../../images/vege.png'
-import CategoryFeature from '../categoryfeature/CategoryFeature'
 
-const FruitContainer = ({ title, products }) => {
+const FruitContainer = ({ title, products, handleAdd, handleRemove, cartItems}) => {
   let ref = React.createRef()
   const scroll = (scrollOffset) => {
     ref.current.scrollLeft += scrollOffset
@@ -22,7 +21,7 @@ const FruitContainer = ({ title, products }) => {
 
   return (
     <div className="bg-linear">
-      <CategoryFeature />
+      
       <Container>
         <Row>
           <Col>
@@ -31,70 +30,60 @@ const FruitContainer = ({ title, products }) => {
         </Row>
 
         <div className="fooditems" ref={ref}>
-          <FoodItem
-            discount="-22%"
-            img={itemnine}
-            name="Berry"
-            price="N8200"
-            discountprice="N820"
-          />
-          <FoodItem
-            discount="-20%"
-            img={itemtwo}
-            name="Tomato Ball"
-            price="N6500"
-            discountprice="N650"
-          />
-          <FoodItem
-            discount="-40%"
-            img={itemthree}
-            name="Chilli Pepper"
-            price="N6,000"
-            discountprice="N600"
-          />
-          <FoodItem
-            discount="-10%"
-            img={itemfive}
-            name="Sweet Potato"
-            price="N12,000"
-            discountprice="N1200"
-          />
-          <FoodItem
-            discount="-12%"
-            img={itemone}
-            name="Fruit Set"
-            price="N8,000"
-            discountprice="N800"
-          />
-          <FoodItem
-            discount="-30%"
-            img={itemfour}
-            name="Green Broccoli"
-            price="N7,500"
-            discountprice="N750"
-          />
-
-          <FoodItem
-            discount="-50%"
-            img={itemsix}
-            name="Cucumber"
-            price="N5,000"
-            discountprice="N500"
-          />
-          <FoodItem
-            discount="-20%"
-            img={itemseven}
-            name="Green Veges"
-            price="N5300"
-            discountprice="N530"
-          />
-          <FoodItem
-            discount="-15%"
-            img={itemeight}
-            name="Papaya"
-            price="N7000"
-            discountprice="N700"
-          />
+          {
+            products ? 
+            products.map(product => <FoodItem
+              key={product.id}
+              id={product.id}
+              discount="-22%"
+              img={product.image}
+              name={product.name}
+              price={product.price}
+              discountprice="N820"
+              handleAdd={handleAdd}
+              handleRemove={handleRemove}
+              product={product}
+              itemFoundInCart={cartItems.find(item => item.id === product.id)}
+            />) : (
+                <>
+                  <FoodItem
+                  discount="-22%"
+                  img={itemnine}
+                  name="Berry"
+                  price="N8200"
+                  discountprice="N820"
+                />
+                <FoodItem
+                  discount="-20%"
+                  img={itemtwo}
+                  name="Tomato Ball"
+                  price="N6500"
+                  discountprice="N650"
+                />
+                <FoodItem
+                  discount="-40%"
+                  img={itemthree}
+                  name="Chilli Pepper"
+                  price="N6,000"
+                  discountprice="N600"
+                />
+                <FoodItem
+                  discount="-10%"
+                  img={itemfive}
+                  name="Sweet Potato"
+                  price="N12,000"
+                  discountprice="N1200"
+                />
+                <FoodItem
+                  discount="-12%"
+                  img={itemone}
+                  name="Fruit Set"
+                  price="N8,000"
+                  discountprice="N800"
+                 />
+              </>
+            )
+          }
         </div>
 
         <div className="scrollpane">

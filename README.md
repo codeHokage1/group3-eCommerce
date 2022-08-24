@@ -3,6 +3,8 @@ This is a repo for the final project for Group 3 of the PWC X Xerde 6 weeks boot
 
 The system is also designed with Ease of Usage and Navigation as a primary concern.
 
+Link to current deployed app: https://jara-dey.vercel.app/ (Still in development stage)
+
 
 ## Team Members
 * Agoro Hakeem

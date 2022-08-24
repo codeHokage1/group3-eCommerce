@@ -21,7 +21,7 @@ body {
     padding: 50px;
 }
 
-.profile-form {
+.profile-container {
     background-color: #F8F7F7;
     width: 700px;
     text-align: center;
@@ -30,7 +30,7 @@ body {
     margin: 0px auto;
 }
 
-.profile-form h1 {
+.profile-container h1 {
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     font-weight: 700;
@@ -38,39 +38,101 @@ body {
     padding: 20px;
 }
 
+.profile-contact {
 
+    width: 80%;
+
+    max-width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border: 0.5px solid lightslategray;
+
+    padding: 15px;
+
+
+}
+
+
+.profile-select {
+
+    width: 100%;
+
+    max-width: 250px;
+    height: 40px;
+
+    border: 0.5px solid lightslategray;
+    border-radius: 10px;
+    padding-left: 10px;
+
+
+}
+
+
+.profile-label {
+    padding-left: -40px;
+
+    width: 60px;
+    padding-left: -200px;
+    align-items: baseline;
+    align-content: center;
+
+}
 
 
 
 @media screen and (max-width: 768px) {
     .profile-body {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
-            /* height: 500px; */
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            position: relative;
-            width: 100%;
-            padding: 50px;
-        }
+        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url("../../images/assets/account.png");
+        /* height: 500px; */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+        width: 100%;
+        padding: 0px;
+    }
 
 
-                .profile-form {
-                    background-color: #F8F7F7;
-                    width: 320px;
-                    text-align: center;
-                    border-radius: 20px;
-                    padding: 30px;
-                    margin: 0px auto;
-                }
-        
-                .profile-form h1 {
-                    font-family: 'Playfair Display', serif;
-                    font-size: 20px;
-                    font-weight: 700;
-                    line-height: 30px;
-                    padding: 30px;
-                }
+    .profile-container {
+        background-color: #F8F7F7;
+        width: 300px;
+        text-align: center;
+        border-radius: 20px;
+        padding: 20px;
+        margin: auto;
+        margin-left: -10px;
+       
+    }
+
+    .profile-container h1 {
+        font-family: 'Playfair Display', serif;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 30px;
+        padding: 10px;
+    }
+
+    .profile-contact {
+        margin-left: -12px;
+        min-width: 260px;
+    }
+
+    .profile-select {
+        margin-left: -12px;
+        min-width: 260px;
+    }
+
+    .profile-column label {
+        float: left;
+        margin-top: auto;
+        text-align: left;
+        height: 10px;
+        margin-left: 0px !important;
+    }
+
+
+
+
 
 }
 
@@ -100,14 +162,15 @@ body {
     font-family: 'Inter';
     font-style: normal;
     font-size: 14px;
-    line-height: 30px;
+
     color: #565956;
-    margin-bottom: 40px;
+
     width: 100%;
     min-width: 40px;
     max-width: 439px;
     margin: auto;
-  
+
+
 
 }
 
@@ -118,39 +181,40 @@ body {
     font-size: 14px;
     line-height: 30px;
     color: #565956;
-   
+
     width: 100%;
     min-width: 40px;
     max-width: 470px;
     margin: auto;
-   
-display: flex;
-    
+
+    display: flex;
+
 }
 
 
 .profile-column input {
-width: 100%;
+    width: 100%;
 
 }
 
 .profile-column label {
-  text-align: left;  
-  width: 100%;
-margin-left: 20px;
+    text-align: left;
+    width: 100%;
+    margin-left: 20px;
+    height: 0px;
 }
 
 
 
-.profile-column{
+.profile-column {
 
-   flex: 1;
+    flex: 1;
 
 }
 
 
 
-.g-terms {
+.profile-terms {
     font-family: 'Inter';
     font-style: normal;
     font-size: 14px;
@@ -167,51 +231,32 @@ margin-left: 20px;
 
 
 
-/* .Menu {
+.Menu {
     color: black;
     color: white;
     overflow: hidden;
     margin: 10px;
 
-} */
+}
 
 
 
 
 
-.profile-name {
+.profile-input {
 
     width: 100%;
     min-width: 40px;
     max-width: 439px;
     height: 40px;
     border: 0.5px solid lightslategray;
-    border-radius: 13px;
+    border-radius: 10px;
     padding: 15px;
 
 
 
 }
 
-
-.g-contact {
-
-    width: 50%;
-    min-width: 15px;
-    max-width: 200px;
-    height: 40px;
-    border-radius: 13px;
-    border: 0.5px solid lightslategray;
-    border-radius: 13px;
-    padding: 15px;
-
-
-}
-
-.g-radio label{
-  margin-top: 10px;
-    
-}
 
 
 
@@ -236,7 +281,7 @@ margin-left: 20px;
     max-width: 439px;
     height: 40px;
     border: 0.5px solid lightslategray;
-    border-radius: 13px;
+    border-radius: 10px;
     padding: 15px;
 
 
@@ -247,7 +292,7 @@ margin-left: 20px;
 
 
 
-.myspan {
+.profile-span {
 
     text-align: center;
 
@@ -260,7 +305,7 @@ margin-left: 20px;
 
 }
 
-.myname {
+.profile-name {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
@@ -273,11 +318,11 @@ margin-left: 20px;
 }
 
 
-.myname2 {
+.profile-name2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     width: 100%;
-    margin: 0px;
+    margin-top: -20px;
     margin-left: -24px;
     font-size: 14px;
     height: 9px;
@@ -287,7 +332,8 @@ margin-left: 20px;
 
 input[type=radio] {
     height: 2.6em;
-    width: 30%;
+    width: 20%;
+
 
 
 
@@ -304,9 +350,11 @@ input[type=radio] {
 
 
 
+.profile-row {}
 
 
-.Fname {
+
+.profile-input-name {
     margin-bottom: 4px;
 }
 
@@ -314,15 +362,11 @@ input[type=radio] {
 
 
 
-/* .mb-3 {
+.mb-3 {
     width: 100%;
     max-width: 60%;
     min-width: 20%;
 
 
 
-} */
-
-radio {
-    height: 16px;
 }
