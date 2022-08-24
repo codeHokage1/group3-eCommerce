@@ -1,8 +1,13 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import "./account.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import "./account.css";
 import { Link, useNavigate } from "react-router-dom";
+
 
 const Account = ({ isLoggedIn, setIsLoggedIn }) => {
   
@@ -17,6 +22,8 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
   const [isRegistered, setIsRegistered] = useState(true);
 
   const navigate = useNavigate();
+  
+  const notify = () => toast.success("Successfully registered");
 
 
   const handleReg = async (e) => {
@@ -41,6 +48,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     // console.log(res)
     
     alert('User Registered!');
+    notify()
 
     setRegEmail("")
     setRegPassword("")
@@ -70,6 +78,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
     // console.log(res)
      
     alert("Login Succesful !")
+    notify()
     setLoginEmail("")
     setLoginPassword("")
     setIsLoggedIn(!isLoggedIn)
@@ -78,6 +87,16 @@ const Account = ({ isLoggedIn, setIsLoggedIn }) => {
 
   return (
     <main className="myBody">
+      <button onClick={notify}> test toast </button>
+      <ToastContainer position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover />
       <div className="formContainer">
         {
           isRegistered ? <h1> Welcome Back !</h1> : <h1>Get Started !</h1>
