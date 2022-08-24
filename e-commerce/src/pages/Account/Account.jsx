@@ -2,9 +2,10 @@ import React,{useState} from "react";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import "./account.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-const Account = () => {
+const Account = ({ isLoggedIn, setIsLoggedIn }) => {
+  
   const [regName, setRegName] = useState("") 
   const [regEmail, setRegEmail] = useState("") 
   const [regPassword, setRegPassword] = useState("") 
@@ -15,55 +16,64 @@ const Account = () => {
 
   const [isRegistered, setIsRegistered] = useState(true);
 
+  const navigate = useNavigate();
+
+
   const handleReg = async (e) => {
     e.preventDefault(); 
-    const user = {
-        email: regEmail, 
-        password: regPassword, 
-        confirmPassword: regPassword2
-    }
-    const postOption = {
-      method: "POST", 
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json", 
-        // 'Access-Control-Allow-Origin': '*', 
-        // 'Access-Control-Allow-Method': 'methods'
-      },
-      body: JSON.stringify(user)
-    }
-    const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
-    const res = await response.json()
-    console.log(res)
+    // const user = {
+    //     email: regEmail, 
+    //     password: regPassword, 
+    //     confirmPassword: regPassword2
+    // }
+    // const postOption = {
+    //   method: "POST", 
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json", 
+    //     // 'Access-Control-Allow-Origin': '*', 
+    //     // 'Access-Control-Allow-Method': 'methods'
+    //   },
+    //   body: JSON.stringify(user)
+    // }
+    // const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
+    // const res = await response.json()
+    // console.log(res)
+    
+    alert('User Registered!');
 
     setRegEmail("")
     setRegPassword("")
     setRegPassword2("")
+    setIsRegistered(!isRegistered);
   }
 
   const handleLogin = async (e) => {
     e.preventDefault(); 
-    const user = {
-        email: loginEmail, 
-        password: loginPassword, 
+    // const user = {
+    //     email: loginEmail, 
+    //     password: loginPassword, 
 
-    }
-    const postOption = {
-      method: "POST", 
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json", 
-        // 'Access-Control-Allow-Origin': '*', 
-        // 'Access-Control-Allow-Method': 'methods'
-      },
-      body: JSON.stringify(user)
-    }
-    const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
-    const res = await response.json()
-    console.log(res)
-
+    // }
+    // const postOption = {
+    //   method: "POST", 
+    //   headers: {
+    //     Accept: "application/json",
+    //     "Content-Type": "application/json", 
+    //     // 'Access-Control-Allow-Origin': '*', 
+    //     // 'Access-Control-Allow-Method': 'methods'
+    //   },
+    //   body: JSON.stringify(user)
+    // }
+    // const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
+    // const res = await response.json()
+    // console.log(res)
+     
+    alert("Login Succesful !")
     setLoginEmail("")
     setLoginPassword("")
+    setIsLoggedIn(!isLoggedIn)
+    navigate('/')
   }
 
   return (

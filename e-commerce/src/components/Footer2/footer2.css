@@ -52,6 +52,12 @@ margin-bottom: 20px;
     #overview{
       margin-right: auto;
     }
+    .footer-logo{
+      width: 50px;
+    }
+    .footer-logo-text{
+      width: 70px;
+    }
 
     /* .mobile-only{
         display: flex;

@@ -20,7 +20,9 @@ import { GiMilkCarton } from "react-icons/gi";
 import { FaPepperHot } from "react-icons/fa";
 import { GrContact } from "react-icons/gr";
 
-
+// import logo from '../../images/headerLogo.png';
+import logo from '../../images/logoAlone.png';
+import logoText from '../../images/logoText.png';
 
 
 
@@ -41,7 +43,8 @@ const NavBar = ({countCartItems}) => {
       <div className="brandAndLinks">
         <h1 className="navbar-brand">
           <Link to="/" className="link brand-link">
-            Jara Dey
+            <img src={logo} alt='' className="brand-logo" />
+            <img src={logoText} alt='' className="brand-logo-text"/>
           </Link>
         </h1>
         <ul className="links">
@@ -66,7 +69,7 @@ const NavBar = ({countCartItems}) => {
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu>
-                    <Dropdown.Item onClick={()=> navigate("/contact")}>Contact Customer Care</Dropdown.Item>
+                <Dropdown.Item onClick={() => { navigate("/contact");  setShow(false)}}>Contact Customer Care</Dropdown.Item>
                     <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
@@ -105,10 +108,13 @@ const NavBar = ({countCartItems}) => {
         style={{ width: '60%' }}
       >
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Jara Dey</Offcanvas.Title>
+          <Offcanvas.Title>
+            <img src={logo} alt='' className="brand-logo" />
+            <img src={logoText} alt='' className="brand-logo-text"/>
+          </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body className='mobile-menu-body'>
-          <p>Products Catergories</p>
+          <p style={{color: "grey", textDecoration: "underline"}}>Products Catergories</p>
           <ul className="products-mobile">
             <li> <GiOpenedFoodCan /> Canned Foods</li>
             <li> <GiMilkCarton /> Dairy Products</li>
@@ -126,7 +132,7 @@ const NavBar = ({countCartItems}) => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item href="#/action-1">Contact Custmer Care</Dropdown.Item>
+                <Dropdown.Item onClick={()=> navigate("/contact")} href="#/action-1">Contact Custmer Care</Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>

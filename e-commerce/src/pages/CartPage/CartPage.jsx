@@ -1,18 +1,39 @@
-import React from "react";
+import React, {useEffect} from "react";
 import './cartpage.css';
 import beef2 from '../../images/beef2.png'
 import { BsCart4 } from "react-icons/bs";
 import FrozenFood from "../../components/frozenfood/FrozenFood";
 import BeverageSnack from "../../components/beveragesnack/BeverageSnack";
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const CartPage = ({ cartItems, handleAdd, handleRemove }) => {
+const CartPage = ({ cartItems, handleAdd, handleRemove, totallyRemove, setCartTotalPrice, cartTotalPrice, isLoggedIn, setIsLoggedIn}) => {
   
   const itemsPrice = cartItems.reduce((a, c) => a + (c.qty * c.price), 0);
   const taxPrice = itemsPrice * 0.14;
   const shippingPrice = itemsPrice > 2000 ? 0 : 20;
   const totalPrice = itemsPrice + taxPrice + shippingPrice;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' })
+  }, [])
+
+  const navigate = useNavigate();
+
+  const handleCheckout = () => {
+    if (isLoggedIn) {
+      window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' });
+      setCartTotalPrice(totalPrice);
+      navigate('/checkout')
+    } else {
+      navigate('/account')
+    }
+    
+  }
+
+  useEffect(() => {
+    console.log(cartTotalPrice);
+  }, [cartTotalPrice])
 
   return (
     <div>
@@ -38,7 +59,7 @@ const CartPage = ({ cartItems, handleAdd, handleRemove }) => {
                             <div className="col-sm-6">
                               <img src={item.image} class="img-fluid image px-4" alt=''/>
                               <div className="clearfix">
-                              <p className="markettitle">Remove</p>
+                              <p className="markettitle" onClick={() => totallyRemove(item)}>Remove</p>
                             </div>
                               </div>
                               
@@ -90,10 +111,7 @@ const CartPage = ({ cartItems, handleAdd, handleRemove }) => {
                 <p><strong>N {totalPrice.toFixed(2)}</strong></p>
               </div>
               <hr />              
-
-              <Link to='/checkout'>
-                <button className="checkout-button p-2 price-amount" style={{height: '50px'}}>N {totalPrice.toFixed(2)}: CHECK OUT </button>
-              </Link>
+                <button onClick={handleCheckout} className="checkout-button p-2 price-amount" style={{height: '50px'}}>N {totalPrice.toFixed(2)}: CHECK OUT </button>
           </div>
         )
       }

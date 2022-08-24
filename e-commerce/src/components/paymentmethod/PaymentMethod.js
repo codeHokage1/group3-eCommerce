@@ -3,19 +3,21 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import '../../components/paymentmethod/PaymentMethod.css'
 import PaystackPop from '@paystack/inline-js'
 
-const PaymentMethod = () => {
+const PaymentMethod = ({ cartTotalPrice }) => {
   const [email, setEmail] = useState('')
-  const amount = 200000
+  const amount = cartTotalPrice
   const [firstname, setFirstname] = useState('')
   const [lastname, setLastname] = useState('')
   const [phone, setPhone] = useState('')
+
+  console.log(cartTotalPrice)
 
   const paywithpaystack = (e) => {
     e.preventDefault()
     const paystack = new PaystackPop()
     paystack.newTransaction({
       key: 'pk_test_28f29fde6150495c2dfdfea909fb5ca2aaa22a40',
-      amount: amount,
+      amount: amount*100,
       email,
       firstname,
       lastname,
