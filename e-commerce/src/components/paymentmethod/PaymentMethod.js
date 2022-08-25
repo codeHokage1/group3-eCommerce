@@ -3,19 +3,15 @@ import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import '../../components/paymentmethod/PaymentMethod.css'
 import PaystackPop from '@paystack/inline-js'
 import { Link, useNavigate } from 'react-router-dom'
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const PaymentMethod = ({ cartTotalPrice, countCartItems }) => {
-  const [email, setEmail] = useState('')
+
+const PaymentMethod = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEmail, delivery, setDelivery, payment, setPayment, phone, address, setPhone, setAddress }) => {
+
+  const notifyReceipt = () => toast.success("Thank you! A recipt has been sent to your provide email adress");
   const amount = cartTotalPrice
-  const [firstname, setFirstname] = useState('')
-  const [lastname, setLastname] = useState('')
-  const [phone, setPhone] = useState('')
-  const [address, setAddress] = useState('')
-
-  const [delivery, setDelivery] = useState('')
-  const [payment, setPayment] = useState('')
-
-
 
  const navigate = useNavigate()
 
@@ -26,27 +22,49 @@ const PaymentMethod = ({ cartTotalPrice, countCartItems }) => {
     paystack.newTransaction({
       key: 'pk_test_28f29fde6150495c2dfdfea909fb5ca2aaa22a40',
       amount: amount * 100,
-      email,
-      firstname,
-      lastname,
-      phone,
-      address,
+      email: regEmail,
+      // phone,
+      // address,
       onSuccess(transaction) {
         // Payment complete! Reference: transaction.reference
         let message = `Payment Complete! Reference ${transaction.reference}`
         console.log(message)
         navigate('/delivery')
-        setEmail('')
-        setFirstname('')
-        setLastname('')
         setPhone('')
         setAddress('')
+        var templateParams = {
+          from_name: "JaraDey",
+          to_name: regEmail,
+          message:
+            "Hi " +
+            regName +
+            `Thank your shoppin with JaraDey. Kindly find the transaction reference below. We also didnt forget to add Jara for you ;). Transaction Reference: ${transaction.reference}`,
+        };
+      
+        emailjs
+          .send(
+            "service_53tc4hr",
+            "template_jf9a2if",
+            templateParams,
+            "j96Zi-XI6EaVaJ9vZ"
+          )
+          .then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+              notifyReceipt();
+      
+            },
+            function (error) {
+              console.log("FAILED...", error);
+            }
+          );
+      
 
-        console.log(countCartItems)
+        // console.log(countCartItems)
       },
       onCancel() {
         // user closed popup
-        console.log('canceled a transaction')
+        console.log('Canceled a transaction')
         navigate('/products')
       },
     })

@@ -36,10 +36,21 @@ function App() {
   const [search, setSearch] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+  const [firstname, setFirstname] = useState('')
+  const [lastname, setLastname] = useState('')
+  const [phone, setPhone] = useState('')
+  const [address, setAddress] = useState('')
+  const [email, setEmail] = useState('')
+
   const [regName, setRegName] = useState("");
   const [regEmail, setRegEmail] = useState("");
   const [regPassword, setRegPassword] = useState("");
   const [regPassword2, setRegPassword2] = useState("");
+  const [regError, setRegError] = useState("");
+
+
+  const [delivery, setDelivery] = useState('')
+  const [payment, setPayment] = useState('')
 
   const notifyLogin = () => toast.success("Successfully Logged in !");
   const notifyAddToCart = () => toast.success("Product has been added to cart!");
@@ -137,6 +148,8 @@ function App() {
           setRegEmail={setRegEmail}
           setRegPassword={setRegPassword}
           setRegPassword2={setRegPassword2}
+          regError={regError}
+          setRegError={setRegError}
         />} />
         <Route path={"/cartpage"} element={<CartPage Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} totallyRemove={totallyRemove} setCartTotalPrice={setCartTotalPrice} cartTotalPrice={cartTotalPrice} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path={"/help"} element={<Help />} />
@@ -168,8 +181,22 @@ function App() {
         <Route path={"/admin"} element={<AdminDashboard />} />
         <Route
           path={"/checkout"}
-          element={<Checkout cartTotalPrice={cartTotalPrice} regName={regName} />}
-        />
+          element={<Checkout
+                    cartTotalPrice={cartTotalPrice}
+                    regName={regName}
+                    setRegName={setRegName}
+                    regEmail={regEmail}
+                    setRegEmail={setRegEmail}
+                    delivery={delivery}
+                    setDelivery={setDelivery}
+                    payment={payment}
+                    setPayment={setPayment}
+                    phone={phone}
+                    setPhone={setPhone}
+                    address={address}
+                    setAddress={setAddress}
+                  />}
+          />
         <Route path={"*"} element={<Page404 />} />
         <Route path={"/search"} element={<SearchPage filteredProducts={filteredProducts} search={search} handleAdd={handleAdd} handleRemove={handleRemove} cartItems={cartItems} />} />
         
