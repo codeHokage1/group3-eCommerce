@@ -4,16 +4,16 @@ import '../../components/paymentmethod/PaymentMethod.css'
 import PaystackPop from '@paystack/inline-js'
 import { Link, useNavigate } from 'react-router-dom'
 
-const PaymentMethod = ({ cartTotalPrice, countCartItems }) => {
-  const [email, setEmail] = useState('')
+const PaymentMethod = ({ cartTotalPrice, countCartItems, firstname, lastname, phone, address, delivery, payment, email }) => {
+  // const [email, setEmail] = useState('')
   const amount = cartTotalPrice
-  const [firstname, setFirstname] = useState('')
-  const [lastname, setLastname] = useState('')
-  const [phone, setPhone] = useState('')
-  const [address, setAddress] = useState('')
+  // const [firstname, setFirstname] = useState('')
+  // const [lastname, setLastname] = useState('')
+  // const [phone, setPhone] = useState('')
+  // const [address, setAddress] = useState('')
 
-  const [delivery, setDelivery] = useState('')
-  const [payment, setPayment] = useState('')
+  // const [delivery, setDelivery] = useState('')
+  // const [payment, setPayment] = useState('')
 
 
 
@@ -36,11 +36,11 @@ const PaymentMethod = ({ cartTotalPrice, countCartItems }) => {
         let message = `Payment Complete! Reference ${transaction.reference}`
         console.log(message)
         navigate('/delivery')
-        setEmail('')
-        setFirstname('')
-        setLastname('')
-        setPhone('')
-        setAddress('')
+        // setEmail('')
+        // setFirstname('')
+        // setLastname('')
+        // setPhone('')
+        // setAddress('')
 
         console.log(countCartItems)
       },
@@ -59,13 +59,13 @@ const PaymentMethod = ({ cartTotalPrice, countCartItems }) => {
           <Col xs lg="6">
             <Form>
               <p>Total Price: {cartTotalPrice}</p>
-              <label htmlFor="payment-option"><strong>Choose Payment Option:</strong></label> <br />
+              {/* <label htmlFor="payment-option"><strong>Choose Payment Option:</strong></label> <br />
                 <input style={{width: "20px"}} type='radio' value='on-delivery' id="payment-option" name="payment" onClick={e => setPayment(e.target.value)}/> Pay on Delivery
                 <input style={{width: "20px"}} type='radio' value='online' id="payment-option" name="payment" onClick={e => setPayment(e.target.value)}/> Online Payment <br />
 
               <label htmlFor="delivery-option"><strong>Choose Delivery Option:</strong></label> <br />
               <input style={{width: "20px"}} type='radio' value='door-delivery' id="delivery-option" name="delivery" onClick={e => setDelivery(e.target.value)}/> Door Delivery 
-              <input style={{width: "20px"}} type='radio' value='pick-up' id="delivery-option" name="delivery" onClick={e => setDelivery(e.target.value)}/> Pick Up <br />
+              <input style={{width: "20px"}} type='radio' value='pick-up' id="delivery-option" name="delivery" onClick={e => setDelivery(e.target.value)}/> Pick Up <br /> */}
               {/* <Form.Group className="formm" controlId="formBasicEmail"> */}
                 {/* <Form.Label className="pb-0 mb-0">First Name</Form.Label>
                 <Form.Control
