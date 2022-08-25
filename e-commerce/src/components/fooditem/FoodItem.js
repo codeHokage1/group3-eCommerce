@@ -59,7 +59,7 @@ const FoodItem = ({
                   -{' '}
                 </button>
                 <span>{itemFoundInCart.qty}</span>{' '}
-                <button className="btn-plus" onClick={() => handleAdd(product)}>
+                <button className="btn-plus" onClick={() => handleAdd(product, itemFoundInCart)}>
                   {' '}
                   +{' '}
                 </button>
@@ -68,7 +68,7 @@ const FoodItem = ({
               <button
                 className="addtocart"
                 style={{ fontSize: '11pt', padding: '5px 8px' }}
-                onClick={() => handleAdd(product)}
+                onClick={() => handleAdd(product, itemFoundInCart)}
               >
                 <FiPlus className="minman" /> Add to cart
               </button>
