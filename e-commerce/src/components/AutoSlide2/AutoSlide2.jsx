@@ -18,7 +18,7 @@ function AutoSlide2(props) {
   }, [activeIndex]);
 
   return (
-    <div className="d-flex ">
+    <div className="d-flex text-center">
       <div className="slider-container my-1">
         <SliderContent activeIndex={activeIndex} sliderImage={sliderImage} />
         {/* <DiscountBadge value="-20%"/> */}

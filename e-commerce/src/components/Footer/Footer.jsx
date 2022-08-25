@@ -40,9 +40,10 @@ const Footer = () => {
   
       <footer className="w-100 py-4 flex-shrink-0 bg-dark text-white">
         <div className="container pb-3 mb-3">
-          <p className="pb-4 mb-3 nav justify-content-center border-bottom border-white fw-bold">
+          <p className="pb-4 border-bottom border-white fw-bold h4">
             Customer review
           </p>
+          {/* pb-4 mb-3 nav justify-content-center border-bottom border-white fw-bold text-center */}
           <AutoSlide2 />
         </div>
       </footer>
