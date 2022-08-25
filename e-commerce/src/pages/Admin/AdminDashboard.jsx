@@ -8,7 +8,7 @@ const AdminDashboard = () => {
 
     return (
         <>
-            <div className='text-center py-3'>
+            <div className='text-center below-header py-3 mt-5'>
                 <h1>Admin Dashboard </h1>
             </div>
             <hr />

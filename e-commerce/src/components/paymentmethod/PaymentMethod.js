@@ -30,6 +30,11 @@ const PaymentMethod = ({ cartTotalPrice }) => {
         let message = `Payment Complete! Reference ${transaction.reference}`
         alert(message);
         navigate('/delivery')
+         setEmail("")
+      setFirstname("")
+      setLastname("")
+      setPhone("")
+      setAddress("")
       },
       onCancel() {
         // user closed popup

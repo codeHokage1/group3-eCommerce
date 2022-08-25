@@ -8,7 +8,7 @@ const SearchPage = ({filteredProducts, search, handleAdd, handleRemove, cartItem
 
     
   return (
-    <div className='search-body'>
+    <div className='search-body mt-5 below-header'>
         {
             search ? <h2>All products available based on: <span style={{color: "#ff7e07"}}>{search}</span></h2> : <h2>No searched products</h2>
         }
