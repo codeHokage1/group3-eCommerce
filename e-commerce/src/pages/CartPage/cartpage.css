@@ -83,7 +83,9 @@ body {
 .product-desc {
   margin: 10px 0;
 }
-
+.qtyno{
+  margin: 0 5px;
+}
 .quantity {
   display: flex;
   flex-direction: column;
