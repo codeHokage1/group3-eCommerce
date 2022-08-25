@@ -6,12 +6,28 @@ import Faqs from '../components/faqs/Faqs';
 
 
 const SingleProductPage = ({ Categoriesdata, cartItems, handleAdd, handleRemove }) => {
+
+  const products = []
+  Categoriesdata.forEach((category) => {
+    category.products.forEach((product) => {
+      products.push(product)
+    })
+  })
   
+  const oneEachProducts = []
+  Categoriesdata.forEach((category) => {
+    oneEachProducts.push(category.products[2])
+  })
   return (
     <>
       <SingleProduct Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove}/>
-      <FoodContainer title="Food items" />
-      <FruitContainer title="Fruits" />
+      <FruitContainer
+          title="Kitchen and Fridge Essentials"
+          products={oneEachProducts}
+          handleAdd={handleAdd}
+          handleRemove={handleRemove}
+          cartItems={cartItems}
+        />
       <Faqs />
     </>
   )
