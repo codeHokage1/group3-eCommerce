@@ -66,7 +66,7 @@ const PaymentMethod = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEm
         // user closed popup
         console.log('Canceled a transaction')
         navigate('/products')
-      },
+      }
     })
   }
 

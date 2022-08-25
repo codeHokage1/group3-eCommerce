@@ -120,13 +120,6 @@ const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFiltered
             </Link>
           </li>
 
-          <li>
-            <Link to="/account" className="link">
-              <UserLogo className="link-logo" />
-              <span className="mobile-remove">Account</span>
-            </Link>
-          </li>
-
         </ul>
       </div>
       <div className="">
