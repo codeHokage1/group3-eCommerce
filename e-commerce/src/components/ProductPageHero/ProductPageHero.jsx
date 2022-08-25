@@ -4,9 +4,9 @@ import Data from "./ProductPageHeroData";
 
 const ProductPageHero = () => {
   return (
-    <div className="container">
-      <div className="d-sm-flex justify-content-between">
-        <div className="col-sm-5 d-sm-flex justify-content-between flex-wrap text-center mobile-view">
+    <div className="container mt-5 below-header">
+      <div className="d-sm-flex justify-content-between mt-5">
+        <div className="col-sm-5 mt-5 d-sm-flex justify-content-between flex-wrap text-center mobile-view">
           {Data.map((data) => {
             return (
               <button className="category_border col-sm-5  py-4 m-3 ">
@@ -17,7 +17,7 @@ const ProductPageHero = () => {
             );
           })}
         </div>
-        <div class="col-sm-7">
+        <div class="col-sm-7 mt-5">
           <div class="card product_hero mt-2">
             <div class="card-body">
               <div className="hero_text text-center p-sm-5 p-4">

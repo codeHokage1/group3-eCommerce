@@ -25,15 +25,16 @@ const PaymentMethod = ({ cartTotalPrice }) => {
       lastname,
       phone,
       address,
-      onSuccess: (transaction) => { 
+      onSuccess(transaction){ 
         // Payment complete! Reference: transaction.reference 
-        alert('should redirect');
+        let message = `Payment Complete! Reference ${transaction.reference}`
+        alert(message);
         navigate('/delivery')
       },
-      onCancel: () => {
+      onCancel() {
         // user closed popup
-        alert('window closed');
-        navigate('/delivery')
+        alert('canceled a transaction');
+        navigate('/products')
       }
     })
   }

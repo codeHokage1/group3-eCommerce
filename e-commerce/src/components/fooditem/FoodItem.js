@@ -24,7 +24,7 @@ const FoodItem = ({
 
   return (
     <>
-      <div className="foodContainer container">
+      <div className="foodContainer">
         <div className="foodcon">
           <div className="discountdiv">
             <DiscountBadge value={discount} />
