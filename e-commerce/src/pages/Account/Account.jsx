@@ -135,7 +135,8 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin, regName, regEmail, re
     // console.log(res)
 
 
-    // after integration with backend
+    // after integration with backend, logic for login
+    
     // if (res === 'user not found') {
     //   setRegError(res);
     //   notifyError(res);
