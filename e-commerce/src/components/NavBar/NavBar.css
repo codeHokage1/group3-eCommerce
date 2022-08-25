@@ -79,6 +79,7 @@ body{
 }
 .link-logo{
     font-size: 20px;
+    color: white;
 }
 .search > form{
     display: flex !important;

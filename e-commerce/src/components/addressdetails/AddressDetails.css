@@ -6,3 +6,29 @@
   color: #000;
   font-weight: 700;
 }
+
+.address-form{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin: 0 auto;
+}
+.address-form input{
+  margin-bottom: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  border: 2px grey solid;
+  outline: none;
+}
+.address-form input[type="submit"]{
+  border: 0;
+  outline: 0;
+  background-color: #FF7E07;
+  padding: 10px ;
+  color: white;
+  font-family: 'Nunito Sans';
+}
+.address-form input[type="submit"]:hover{
+  box-shadow: 3px 3px 5px grey;
+  text-decoration: underline;
+}

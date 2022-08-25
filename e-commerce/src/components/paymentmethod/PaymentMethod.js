@@ -4,7 +4,7 @@ import '../../components/paymentmethod/PaymentMethod.css'
 import PaystackPop from '@paystack/inline-js'
 import { Link, useNavigate } from 'react-router-dom'
 
-const PaymentMethod = ({ cartTotalPrice }) => {
+const PaymentMethod = ({ cartTotalPrice, countCartItems }) => {
   const [email, setEmail] = useState('')
   const amount = cartTotalPrice
   const [firstname, setFirstname] = useState('')
@@ -12,7 +12,13 @@ const PaymentMethod = ({ cartTotalPrice }) => {
   const [phone, setPhone] = useState('')
   const [address, setAddress] = useState('')
 
+  const [delivery, setDelivery] = useState('')
+  const [payment, setPayment] = useState('')
+
+
+
  const navigate = useNavigate()
+
 
   const paywithpaystack = (e) => {
     e.preventDefault()
@@ -25,23 +31,24 @@ const PaymentMethod = ({ cartTotalPrice }) => {
       lastname,
       phone,
       address,
-      onSuccess(transaction){ 
-        // Payment complete! Reference: transaction.reference 
+      onSuccess(transaction) {
+        // Payment complete! Reference: transaction.reference
         let message = `Payment Complete! Reference ${transaction.reference}`
-        alert(message);
+        console.log(message)
         navigate('/delivery')
-         setEmail("")
-      setFirstname("")
-      setLastname("")
-      setPhone("")
-      setAddress("")
+        setEmail('')
+        setFirstname('')
+        setLastname('')
+        setPhone('')
+        setAddress('')
+
+        console.log(countCartItems)
       },
       onCancel() {
         // user closed popup
-        alert('canceled a transaction');
+        console.log('canceled a transaction')
         navigate('/products')
-
-      }
+      },
     })
   }
 
@@ -51,8 +58,16 @@ const PaymentMethod = ({ cartTotalPrice }) => {
         <Row className="justify-content-md-center mt-5 mb-5">
           <Col xs lg="6">
             <Form>
-              <Form.Group className="formm" controlId="formBasicEmail">
-                <Form.Label className="pb-0 mb-0">First Name</Form.Label>
+              <p>Total Price: {cartTotalPrice}</p>
+              <label htmlFor="payment-option"><strong>Choose Payment Option:</strong></label> <br />
+                <input style={{width: "20px"}} type='radio' value='on-delivery' id="payment-option" name="payment" onClick={e => setPayment(e.target.value)}/> Pay on Delivery
+                <input style={{width: "20px"}} type='radio' value='online' id="payment-option" name="payment" onClick={e => setPayment(e.target.value)}/> Online Payment <br />
+
+              <label htmlFor="delivery-option"><strong>Choose Delivery Option:</strong></label> <br />
+              <input style={{width: "20px"}} type='radio' value='door-delivery' id="delivery-option" name="delivery" onClick={e => setDelivery(e.target.value)}/> Door Delivery 
+              <input style={{width: "20px"}} type='radio' value='pick-up' id="delivery-option" name="delivery" onClick={e => setDelivery(e.target.value)}/> Pick Up <br />
+              {/* <Form.Group className="formm" controlId="formBasicEmail"> */}
+                {/* <Form.Label className="pb-0 mb-0">First Name</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="John"
@@ -108,15 +123,30 @@ const PaymentMethod = ({ cartTotalPrice }) => {
                   onChange={(e) => setAddress(e.target.value)}
                 />
               </Form.Group>
-
-              <Button
-                className="paybtn"
-                variant="success"
-                type="submit"
-                onClick={paywithpaystack}
-              >
-                Proceed Payment
-              </Button>
+ */           }
+              
+              {
+                payment === "online" ? (
+                                        <Button
+                                          className="paybtn"
+                                          variant="success"
+                                          type="submit"
+                                          onClick={paywithpaystack}
+                                        >
+                                          Proceed Payment
+                                        </Button>
+                                      ) : (
+                                          <Button
+                                            className="paybtn"
+                                            variant="success"
+                                            type="submit"
+                                            onClick={() => navigate('/delivery')}
+                                          >
+                                            Proceed to Delivery Tracking
+                                          </Button>
+                                        )
+              }
+              
             </Form>
           </Col>
         </Row>

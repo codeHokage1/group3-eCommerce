@@ -19,6 +19,12 @@ import { GiWheat } from "react-icons/gi";
 import { GiMilkCarton } from "react-icons/gi";
 import { FaPepperHot } from "react-icons/fa";
 import { GrContact } from "react-icons/gr";
+import { GrUserExpert } from "react-icons/gr";
+import { BiUserCheck } from "react-icons/bi";
+
+
+
+
 
 import logo from "../../images/logoAlone.png";
 import logoText from "../../images/logoText.png";
@@ -26,7 +32,7 @@ import logoText from "../../images/logoText.png";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import "./NavBar.css";
 
-const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFilteredProducts }) => {
+const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFilteredProducts, regName, isLoggedIn }) => {
   // const [menuClicked, setMenuClicked] = useState(false);
 
   const [show, setShow] = useState(false);
@@ -71,6 +77,17 @@ const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFiltered
             </Link>
           </li>
 
+          <li>
+            <Link to="/account" className="link">
+              {
+                isLoggedIn ? <BiUserCheck className="link-logo"/> : <UserLogo className="link-logo" />
+              }
+              {
+                isLoggedIn ? <span className="mobile-remove">{regName}</span> : <span className="mobile-remove">Account</span>
+              }
+              
+            </Link>
+          </li>
           <li className="mobile-remove">
             <Dropdown className="mobile-remove">
               <Dropdown.Toggle

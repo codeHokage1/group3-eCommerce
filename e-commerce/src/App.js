@@ -36,12 +36,17 @@ function App() {
   const [search, setSearch] = useState('');
   const [filteredProducts, setFilteredProducts] = useState([]);
 
+  const [regName, setRegName] = useState("");
+  const [regEmail, setRegEmail] = useState("");
+  const [regPassword, setRegPassword] = useState("");
+  const [regPassword2, setRegPassword2] = useState("");
+
   const notifyLogin = () => toast.success("Successfully Logged in !");
   const notifyAddToCart = () => toast.success("Product has been added to cart!");
   const notifyRemoveFromCart = () => toast.success("Product has been removed from cart!");
 
 
-  const handleAdd = (product) => {
+  const handleAdd = (product, itemFoundInCart) => {
     const exist = cartItems.find((item) => item.id === product.id);
     if (exist) {
       const newCart = cartItems.map((item) =>
@@ -55,7 +60,9 @@ function App() {
       localStorage.setItem("cartItems", JSON.stringify(newCart));
     }
     console.log(cartItems);
-    notifyAddToCart();
+    if (!itemFoundInCart) {
+      notifyAddToCart();
+    }
   };
 
   const handleRemove = (product) => {
@@ -90,6 +97,12 @@ function App() {
     );
   }, []);
 
+  useEffect(() => {
+    if (isLoggedIn) {
+      setRegName(localStorage.getItem('registeredUser') ? JSON.parse(localStorage.getItem('registeredUser')).name : '')
+    }
+  }, [isLoggedIn])
+
   return (
     <BrowserRouter>
       <ToastContainer position="top-center"
@@ -109,10 +122,22 @@ function App() {
         ></script>
       </Helmet>
       <BonusTop />
-      <NavBar Categoriesdata={Categoriesdata} search={search} setSearch={setSearch} setFilteredProducts={setFilteredProducts} countCartItems={cartItems.length} />
+      <NavBar Categoriesdata={Categoriesdata} search={search} setSearch={setSearch} setFilteredProducts={setFilteredProducts} countCartItems={cartItems.length} regName={regName} isLoggedIn={isLoggedIn} />
       <Routes>
         <Route path={"/"} element={<Home Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} />} />
-        <Route path={"/account"} element={<Account isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} notifyLogin={notifyLogin} />} />
+        <Route path={"/account"} element={<Account
+          isLoggedIn={isLoggedIn}
+          setIsLoggedIn={setIsLoggedIn}
+          notifyLogin={notifyLogin}
+          regName={regName}
+          regEmail={regEmail}
+          regPassword={regPassword}
+          regPassword2={regPassword2}
+          setRegName={setRegName}
+          setRegEmail={setRegEmail}
+          setRegPassword={setRegPassword}
+          setRegPassword2={setRegPassword2}
+        />} />
         <Route path={"/cartpage"} element={<CartPage Categoriesdata={Categoriesdata} cartItems={cartItems} handleAdd={handleAdd} handleRemove={handleRemove} totallyRemove={totallyRemove} setCartTotalPrice={setCartTotalPrice} cartTotalPrice={cartTotalPrice} isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>} />
         <Route path={"/help"} element={<Help />} />
         <Route
@@ -143,7 +168,7 @@ function App() {
         <Route path={"/admin"} element={<AdminDashboard />} />
         <Route
           path={"/checkout"}
-          element={<Checkout cartTotalPrice={cartTotalPrice} />}
+          element={<Checkout cartTotalPrice={cartTotalPrice} regName={regName} />}
         />
         <Route path={"*"} element={<Page404 />} />
         <Route path={"/search"} element={<SearchPage filteredProducts={filteredProducts} search={search} handleAdd={handleAdd} handleRemove={handleRemove} cartItems={cartItems} />} />

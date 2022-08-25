@@ -80,6 +80,20 @@ body{
     background: #F9F9F9;
     border: 1px solid #565956;
 }
+.logout-button{
+    border: 0;
+    outline: 0;
+    background-color: #FF7E07;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-family: 'Nunito Sans';
+    color: white;
+}
+.logout-button:hover{
+    text-decoration: underline;
+    box-shadow: 3px 3px 5px grey;
+    background-color: red;
+}
 .continue{
     background-color: #FF7E07;
     color: white;
