@@ -4,9 +4,9 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 const CheckoutHeading = ({ heading }) => {
   return (
-    <Container>
-      <Row>
-        <Col>
+    <Container className="mt-5">
+      <Row className="mt-5">
+        <Col className="mt-5">
           <p className="checkhead">{heading}</p>
         </Col>
       </Row>

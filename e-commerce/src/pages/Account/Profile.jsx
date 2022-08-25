@@ -157,7 +157,7 @@ const Profile = () => {
   ]
 
   return (
-    <main className="profile-body">
+    <main className="profile-body below-header">
       <div className="profile-container">
         <h1> User's Profile</h1>
         <p className="profile-span">

@@ -10,8 +10,8 @@ import { IoCheckmarkDoneCircleOutline as Done } from 'react-icons/io5';
 
 const DeliveryTracking = () => {
   return (
-    <main className='tracking'>
-        <div className='track-container'>
+    <main className='tracking mt-5'>
+        <div className='track-container mt-5'>
         <h1>Track Your Orders</h1>
         <Accordion defaultActiveKey="0">
                     <Accordion.Item eventKey="0" className="order-container">

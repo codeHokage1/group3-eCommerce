@@ -8,7 +8,7 @@ import PaymentMethod from '../components/paymentmethod/PaymentMethod'
 const Checkout = ({ cartTotalPrice }) => {
 
   return (
-    <div>
+    <div className="mt-5 below-header">
       <CheckoutHeading heading="checkout" />
       <CheckoutSubheading title="Address details"></CheckoutSubheading>
       <AddressDetails />

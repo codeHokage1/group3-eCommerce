@@ -71,9 +71,10 @@ const CartPage = ({
           </h3>
         </div>
       </header>
-      <div className="container-one ">
-        <div className="py-4 container w-90 px-0">
-          <div>
+      <div className="container-one mt-5">
+        <div className="py-4 container w-90 px-0 mt-5">
+
+          <div className="row">
             {cartItems.length === 0 ? (
                                   <div className="emptycart-container">
                                     <EmptyCart className="empty-cart-logo"/>
@@ -83,13 +84,13 @@ const CartPage = ({
             ) : (
               <>
                 {cartItems.map((item) => (
-                  <div className="col-sm-6">
+                  <div className="col-sm-6 mt-3">
                     <div className="card py-4 px-2">
                       <div className="row">
                         <div className="col-sm-6">
                           <img
                             src={item.image}
-                            class="img-fluid image px-4"
+                            className="img-fluid image px-4"
                             alt=""
                           />
                           <div className="clearfix">
@@ -122,7 +123,8 @@ const CartPage = ({
                               {' '}
                               +{' '}
                             </button>
-                            {item.qty}
+                            <span className="qtyno">{item.qty}</span>
+                            
                             <button
                               className="add-button"
                               onClick={() => handleRemove(item)}

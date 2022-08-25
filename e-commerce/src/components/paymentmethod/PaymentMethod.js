@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 import '../../components/paymentmethod/PaymentMethod.css'
 import PaystackPop from '@paystack/inline-js'
+import { Link, useNavigate } from 'react-router-dom'
 
 const PaymentMethod = ({ cartTotalPrice }) => {
   const [email, setEmail] = useState('')
@@ -11,7 +12,7 @@ const PaymentMethod = ({ cartTotalPrice }) => {
   const [phone, setPhone] = useState('')
   const [address, setAddress] = useState('')
 
-  console.log(cartTotalPrice)
+ const navigate = useNavigate()
 
   const paywithpaystack = (e) => {
     e.preventDefault()
@@ -24,6 +25,23 @@ const PaymentMethod = ({ cartTotalPrice }) => {
       lastname,
       phone,
       address,
+      onSuccess(transaction){ 
+        // Payment complete! Reference: transaction.reference 
+        let message = `Payment Complete! Reference ${transaction.reference}`
+        alert(message);
+        navigate('/delivery')
+         setEmail("")
+      setFirstname("")
+      setLastname("")
+      setPhone("")
+      setAddress("")
+      },
+      onCancel() {
+        // user closed popup
+        alert('canceled a transaction');
+        navigate('/products')
+
+      }
     })
   }
 

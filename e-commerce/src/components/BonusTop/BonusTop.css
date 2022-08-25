@@ -13,6 +13,10 @@ body{
     font-family: 'Nunito Sans', sans-serif;
     background-color: #FF7E07;
     padding: 5px;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    top: 0;
 }
 .bonus-top p{
     margin: 0;

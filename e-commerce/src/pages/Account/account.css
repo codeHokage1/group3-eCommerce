@@ -17,6 +17,7 @@ body{
     position: relative;
     width: 100%;
     padding: 50px;
+        margin-top: 10% !important;
 }
 .formContainer{
     background-color: #F8F7F7;
@@ -104,6 +105,7 @@ body{
 @media screen and (max-width: 768px) {
     .myBody{
         padding: 20px;
+            margin-top: 20% !important;
     }
     .formContainer{
         width: 350px;

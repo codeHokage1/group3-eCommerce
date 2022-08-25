@@ -117,7 +117,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin }) => {
   };
 
   return (
-    <main className="myBody">
+    <main className="myBody mt-5">
       <ToastContainer position="top-center"
         autoClose={3000}
         hideProgressBar={false}
@@ -127,7 +127,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin }) => {
         pauseOnFocusLoss
         draggable
         pauseOnHover />
-      <div className="formContainer">
+      <div className="formContainer mt-5">
         {isRegistered ? <h1> Welcome Back !</h1> : <h1>Get Started !</h1>}
         {isRegistered ? (
           <form onSubmit={handleLogin}>
