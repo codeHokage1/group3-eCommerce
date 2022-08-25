@@ -168,7 +168,7 @@ function App() {
         <Route path={"/admin"} element={<AdminDashboard />} />
         <Route
           path={"/checkout"}
-          element={<Checkout cartTotalPrice={cartTotalPrice} />}
+          element={<Checkout cartTotalPrice={cartTotalPrice} regName={regName} />}
         />
         <Route path={"*"} element={<Page404 />} />
         <Route path={"/search"} element={<SearchPage filteredProducts={filteredProducts} search={search} handleAdd={handleAdd} handleRemove={handleRemove} cartItems={cartItems} />} />
