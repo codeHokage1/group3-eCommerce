@@ -109,11 +109,11 @@ function App() {
     );
   }, []);
 
-  useEffect(() => {
-    if (isLoggedIn) {
-      setRegName(localStorage.getItem('registeredUser') ? JSON.parse(localStorage.getItem('registeredUser')).name : '')
-    }
-  }, [isLoggedIn])
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     setRegName(localStorage.getItem('registeredUser') ? JSON.parse(localStorage.getItem('registeredUser')).name : '')
+  //   }
+  // }, [isLoggedIn])
 
   return (
     <BrowserRouter>
@@ -182,7 +182,7 @@ function App() {
         <Route path={"/admin"} element={<AdminDashboard />} />
         <Route
           path={"/checkout"}
-          element={<Checkout cartTotalPrice={cartTotalPrice} regName={regName} firstname={firstname} lastname={lastname} phone={phone} address={address} delivery={delivery} payment={payment} email={email} />}
+          element={<Checkout cartTotalPrice={cartTotalPrice} cartItems={cartItems} regName={regName} firstname={firstname} lastname={lastname} phone={phone} address={address} delivery={delivery} payment={payment} email={email} />}
         />
         <Route path={"*"} element={<Page404 />} />
         <Route path={"/search"} element={<SearchPage filteredProducts={filteredProducts} search={search} handleAdd={handleAdd} handleRemove={handleRemove} cartItems={cartItems} />} />

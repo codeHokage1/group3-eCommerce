@@ -95,12 +95,12 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin, regName, regEmail, re
       //     }
       //   );
   
-      const registeredUser = {
-        name: regName,
-        email: regEmail,
-        password: regPassword
-      }
-      localStorage.setItem('registeredUser', JSON.stringify(registeredUser));
+      // const registeredUser = {
+      //   name: regName,
+      //   email: regEmail,
+      //   password: regPassword
+      // }
+      // localStorage.setItem('registeredUser', JSON.stringify(registeredUser));
       setRegName("");
       setRegPassword("");
       setRegPassword2("");

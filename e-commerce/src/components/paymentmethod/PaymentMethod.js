@@ -4,7 +4,7 @@ import '../../components/paymentmethod/PaymentMethod.css'
 import PaystackPop from '@paystack/inline-js'
 import { Link, useNavigate } from 'react-router-dom'
 
-const PaymentMethod = ({ cartTotalPrice, countCartItems, firstname, lastname, phone, address, delivery, payment, email }) => {
+const PaymentMethod = ({ cartTotalPrice, cartItems, firstname, lastname, phone, address, delivery, payment, email }) => {
   // const [email, setEmail] = useState('')
   const amount = cartTotalPrice
   // const [firstname, setFirstname] = useState('')
@@ -42,7 +42,7 @@ const PaymentMethod = ({ cartTotalPrice, countCartItems, firstname, lastname, ph
         // setPhone('')
         // setAddress('')
 
-        console.log(countCartItems)
+        console.log(cartItems)
       },
       onCancel() {
         // user closed popup
@@ -140,7 +140,7 @@ const PaymentMethod = ({ cartTotalPrice, countCartItems, firstname, lastname, ph
                                             className="paybtn"
                                             variant="success"
                                             type="submit"
-                                            onClick={() => navigate('/delivery')}
+                                            onClick={() => {navigate('/delivery'); console.log(cartItems)}}
                                           >
                                             Proceed to Delivery Tracking
                                           </Button>
