@@ -71,12 +71,6 @@ const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFiltered
             </Link>
           </li>
 
-          <li>
-            <Link to="/account" className="link">
-              <UserLogo className="link-logo" />
-              <span className="mobile-remove">Account</span>
-            </Link>
-          </li>
           <li className="mobile-remove">
             <Dropdown className="mobile-remove">
               <Dropdown.Toggle
@@ -105,9 +99,17 @@ const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFiltered
             <Link to="/cartpage" className="link">
               <CartLogo className="link-logo" />
               <span className="mobile-remove">Cart</span>
-           {countCartItems ? <span class="badge rounded-pill bg-danger">{countCartItems}</span> : " "} 
+              {countCartItems ? <span class="badge rounded-pill bg-danger">{countCartItems}</span> : " "}
             </Link>
           </li>
+
+          <li>
+            <Link to="/account" className="link">
+              <UserLogo className="link-logo" />
+              <span className="mobile-remove">Account</span>
+            </Link>
+          </li>
+
         </ul>
       </div>
       <div className="">
@@ -194,7 +196,7 @@ const NavBar = ({ Categoriesdata, search, setSearch, countCartItems, setFiltered
                   onClick={() => navigate("/contact")}
                   href="#/action-1"
                 >
-                  Contact Custmer Care
+                  Contact Customer Care
                 </Dropdown.Item>
                 <Dropdown.Item href="#/action-2">Live Chat</Dropdown.Item>
               </Dropdown.Menu>
