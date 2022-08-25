@@ -71,8 +71,13 @@ const CartPage = ({
           </h3>
         </div>
       </header>
+<<<<<<< HEAD
       <div className="container-one mt-5">
         <div className="py-4 container w-90 px-0 mt-5">
+=======
+      <div className="container-one ">
+        <div className="py-4 container w-90 px-0">
+>>>>>>> 2175160a31a2d95b2831457016501be707bc549d
           <div className="row">
             {cartItems.length === 0 ? (
                                   <div className="emptycart-container">

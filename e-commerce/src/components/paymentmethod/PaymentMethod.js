@@ -35,6 +35,7 @@ const PaymentMethod = ({ cartTotalPrice }) => {
         // user closed popup
         alert('canceled a transaction');
         navigate('/products')
+
       }
     })
   }
