@@ -89,6 +89,8 @@ body{
 }
 .menu-button{
     display: none;
+    position: relative;
+    top: 70%
 }
 .mobile-only{
     display: none;

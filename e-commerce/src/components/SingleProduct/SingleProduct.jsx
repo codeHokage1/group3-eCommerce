@@ -29,7 +29,7 @@ const SingleProduct = ({
   const itemFoundInCart = cartItems.find((item) => item.id === findProduct.id)
   // console.log(products)
   return (
-    <main>
+    <main className='mt-5 pt-5'>
       <section className="single-product">
         <span>
           FOOD {'>'} BEEF {'>'}
