@@ -12,14 +12,16 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin, regName, regEmail, re
 
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+ 
 
   const [isRegistered, setIsRegistered] = useState(true);
 
   const navigate = useNavigate();
   const notifyRegister = () => toast.success("Successfully Registered! Proceed to Login");
+  // const notifyLogin = () => toast.success("Successfully Logged In, Welcome!!");
   const notifyEmail = () => toast.success("Confirmation Email has been sent to your email address");
   const notifyLogout = () => toast.success("Successfully Logged out");
-  const notifyError = (err) => toast.success(err);
+  const notifyError = (err) => toast.error(err);
 
 
 
@@ -36,30 +38,33 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin, regName, regEmail, re
       if (!format.test(regPassword)) {
         setRegError('Password must include a special character');
       }
-      notifyError(regError);
+      // notifyError(regError);
       setRegPassword('')
       setRegPassword2('')
       
     } else {
 
-          // const user = {
-      //     email: regEmail,
-      //     password: regPassword,
-      //     confirmPassword: regPassword2
-      // }
-      // const postOption = {
-      //   method: "POST",
-      //   headers: {
-      //     Accept: "application/json",
-      //     "Content-Type": "application/json",
-      //     // 'Access-Control-Allow-Origin': '*',
-      //     // 'Access-Control-Allow-Method': 'methods'
-      //   },
-      //   body: JSON.stringify(user)
-      // }
-      // const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
-      // const res = await response.json()
-      // console.log(res)
+          const user = {
+          email: regEmail,
+          password: regPassword,
+          confirmPassword: regPassword2
+      }
+
+      console.log(user)
+      const postOption = {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          // 'Access-Control-Allow-Origin': '*',
+          // 'Access-Control-Allow-Method': 'methods'
+        },
+        body: JSON.stringify(user)
+      }
+      const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
+      const res = await response.json()
+      console.log(res)
+      toast.success(res)
 
 
           //email implementation
@@ -90,9 +95,6 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin, regName, regEmail, re
       //     }
       //   );
   
-
-
-      notifyRegister();
       const registeredUser = {
         name: regName,
         email: regEmail,
@@ -106,47 +108,43 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin, regName, regEmail, re
       setRegEmail("");
     }
     
-
-
-
-
-    
   };
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    // const user = {
-    //     email: loginEmail,
-    //     password: loginPassword,
+    const user = {
+        email: loginEmail,
+        password: loginPassword,
+    }
 
-    // }
-    // const postOption = {
-    //   method: "POST",
-    //   headers: {
-    //     Accept: "application/json",
-    //     "Content-Type": "application/json",
-    //     // 'Access-Control-Allow-Origin': '*',
-    //     // 'Access-Control-Allow-Method': 'methods'
-    //   },
-    //   body: JSON.stringify(user)
-    // }
-    // const response = await fetch ("https://localhost:7297/api/Auth/register", postOption)
-    // const res = await response.json()
-    // console.log(res)
-
+    const postOption = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        // 'Access-Control-Allow-Origin': '*',
+        // 'Access-Control-Allow-Method': 'methods'
+      },
+      body: JSON.stringify(user)
+    }
+    const response = await fetch ("https://localhost:7297/api/Auth/login", postOption)
+    const res = await response.json()
+  
 
     // after integration with backend, logic for login
     
-    // if (res === 'user not found') {
-    //   setRegError(res);
-    //   notifyError(res);
-    // } else {
-    //   notifyLogin();
-    //   setLoginEmail("");
-    //   setLoginPassword("");
-    //   setIsLoggedIn(!isLoggedIn);
-    //   navigate("/");  
-    // }
+    if (res === 'User not found' || res === 'Wrong password, try again') {
+      setRegError(res);
+      notifyError(res)
+    } 
+    else {
+      notifyLogin();
+      setLoginEmail("");
+      setLoginPassword("");
+      setIsLoggedIn(!isLoggedIn);
+      navigate("/");  
+    }
   };
 
   const handleLogout = () => {
@@ -204,7 +202,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin, regName, regEmail, re
                                       <p />
                                     </div>
 
-                                    <button type="submit" className="account-button continue">
+                                    <button disabled ={loginEmail === "" || loginPassword ===""} type="submit" className="account-button continue">
                                       Login
                                     </button>
                                     <p>OR</p>
@@ -296,7 +294,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin, regName, regEmail, re
                                         />
                                         <p />
                                       </div>
-                                      <button type="submit" className="account-button continue">
+                                      <button type="submit" className="account-button continue" >
                                         Register
                                       </button>
                                       <p style={{color: 'red'}}>{regError ? regError : ''}</p>
