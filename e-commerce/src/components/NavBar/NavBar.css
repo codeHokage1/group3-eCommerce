@@ -6,20 +6,16 @@ body{
 }
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Nunito+Sans:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
 
-.navbar_offset {
-    margin-bottom: 150px;
-}
+
 .navbar, .brandAndLinks, .brandAndLinks ul{
     display: flex !important;
     align-items: center;
     justify-items: center;
     margin: 0;
- 
 }
 .navbar{
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/hero.png");
     padding: 10px 50px 10px 70px!important;
-    margin-bottom: 100px;
     margin: 0;
     position: relative;
     border-bottom: #FF7E07 2px solid;
