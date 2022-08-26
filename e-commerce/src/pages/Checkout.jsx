@@ -5,7 +5,7 @@ import CheckoutSubheading from '../components/checkoutsubheading/CheckoutSubhead
 import DeliveryMethod from '../components/deliverymethod/DeliveryMethod'
 import PaymentMethod from '../components/paymentmethod/PaymentMethod'
 
-const Checkout = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEmail, delivery, setDelivery, payment, setPayment, phone, address, setPhone, setAddress}) => {
+const Checkout = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEmail, delivery, setDelivery, payment, setPayment, phone, address, setPhone, setAddress, isLoggedIn, setIsLoggedIn}) => {
 
   return (
     <div className="mt-5 below-header">
@@ -13,9 +13,9 @@ const Checkout = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEmail, 
       <CheckoutSubheading title="Delivery method"></CheckoutSubheading>
       <DeliveryMethod />
       <CheckoutSubheading title="Delivery details"></CheckoutSubheading>
-      <AddressDetails regName={regName}/>
+      <AddressDetails regName={regName} setRegName={setRegName} regEmail={regEmail} setRegEmail={setRegEmail} isLoggedIn={isLoggedIn} phone={phone} setPhone={setPhone} address={address} setAddress={setAddress} />
       <CheckoutSubheading title="Billing details"></CheckoutSubheading>
-      <PaymentMethod regName={regName} setRegName={setRegName} regEmail={regEmail} setRegEmail={setRegEmail} phone={phone} address={address} setPhone={setPhone} setAddress={setAddress} cartTotalPrice={cartTotalPrice} delivery={delivery} setDelivery={setDelivery} payment={payment} setPayment={setPayment}/>
+      <PaymentMethod isLoggedIn={isLoggedIn} regName={regName} setRegName={setRegName} regEmail={regEmail} setRegEmail={setRegEmail} phone={phone} address={address} setPhone={setPhone} setAddress={setAddress} cartTotalPrice={cartTotalPrice} delivery={delivery} setDelivery={setDelivery} payment={payment} setPayment={setPayment}/>
     </div>
   )
 }

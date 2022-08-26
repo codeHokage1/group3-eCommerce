@@ -175,7 +175,16 @@ function App() {
             />
           }
         />
-        <Route path={"/delivery"} element={<DeliveryTracking />} />
+        <Route path={"/delivery"} element={<DeliveryTracking
+                                                    cartItems={cartItems}
+                                                    cartTotalPrice={cartTotalPrice}
+                                                    regName={regName}
+                                                    regEmail={regEmail}
+                                                    phone={phone}
+                                                    address={address}
+                                                    payment={payment}
+                                          />} 
+                                          />
         <Route path={"/profile"} element={<Profile />} />
         <Route path={"/contact"} element={<Contact />} />
         <Route path={"/admin"} element={<AdminDashboard />} />
@@ -195,6 +204,8 @@ function App() {
                     setPhone={setPhone}
                     address={address}
                     setAddress={setAddress}
+                    isLoggedIn={isLoggedIn}
+                    setIsLoggedIn={setIsLoggedIn}
                   />}
           />
         <Route path={"*"} element={<Page404 />} />

@@ -161,7 +161,6 @@ const Footer2 = () => {
             />
             <li>Abdulkadir Kamaldeen: Deenabdulkadir@gmail.com​</li>
             <li>Agoro Hakeem: omotagoro@gmail.com</li>
-            <li>Ogiri Moses: ogirimoses@gmail.com</li>
             <li>Okunsebor Joan: jokunsebor@gmail.com</li>
             <li>Olayode Oluwafemi: oludareoluwafemirachael@gmail.com</li>
             <li>Onajinrin Oluwakemi: oluwakemi.mabell@gmail.com</li>

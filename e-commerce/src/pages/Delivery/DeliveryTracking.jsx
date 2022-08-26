@@ -4,11 +4,11 @@ import './delivery.css';
 import { FaLeaf } from 'react-icons/fa';
 import { BiLoaderCircle } from 'react-icons/bi';
 import { IoCheckmarkDoneCircleOutline as Done } from 'react-icons/io5';
+import numeral from 'numeral'
 
 
 
-
-const DeliveryTracking = () => {
+const DeliveryTracking = ({cartItems, cartTotalPrice, regName, regEmail, phone, address, payment}) => {
   return (
     <main className='tracking mt-5'>
         <div className='track-container mt-5'>
@@ -21,18 +21,22 @@ const DeliveryTracking = () => {
                                 <div className='order-row'>
                                     <p className='order-flag'>Items in order: </p>
                                     <ul>
-                                      <li className='order-content'>Rice := 2 bags</li>
-                                      <li className='order-content'>Vegetable Oil := 2.5 litres</li>
-                                      
+                                      {
+                                        cartItems.map((item) => (
+                                          <li key={item.id} className='order-content' >{item.name} := {item.qty}</li>
+                                        ))
+                                      }
+                                      {/* <li className='order-content'>Rice := 2 bags</li>
+                                      <li className='order-content'>Vegetable Oil := 2.5 litres</li> */}                                      
                                     </ul>
                                 </div>
                                 <div className='order-row'>
                                     <p className='order-flag'>Total Price: </p>
-                                    <p className='order-content'>N <span  className='order-content'>25,000</span></p>
+                                    <p className='order-content'>N <span  className='order-content'>{numeral(cartTotalPrice).format('0,0.000')}</span></p>
                                 </div>
                                 <div className='order-row'>
                                     <p className='order-flag'>Payment Status: </p>
-                                    <p className='order-content'>Paid</p>
+                                    <p className='order-content'>{payment === "online" ? "Paid" : "Pay On Delivery"}</p>
                                 </div>
                                 <div>
                                     <p className='order-flag'>Delivery Status: </p>
@@ -51,19 +55,23 @@ const DeliveryTracking = () => {
                                       </div>
                                   </ul>
                                 </div>
+                                <div>
+                                    <p className='order-flag'>Delivery Details: </p>
+                                    
+                                    <div className='order-row'>
+                                        <li className="stat-title order-content">Name: </li>
+                                        <p className='order-content'>{regName}</p>
+                                    </div>
+                                    <div className='order-row'>
+                                        <li className="stat-title order-content">Phone:  </li>
+                                        <p className='order-content'>{phone}</p>
+                                    </div>
+                                    <div className='order-row'>
+                                        <li className="stat-title order-content">Address: </li>
+                                        <p className='order-content'>{address}</p>
+                                    </div>                                
+                                </div>
                             </div>
-                        </Accordion.Body>
-                    </Accordion.Item>
-                    <Accordion.Item eventKey="1">
-                        <Accordion.Header>Order #1-B333</Accordion.Header>
-                        <Accordion.Body>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                            aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.
                         </Accordion.Body>
                     </Accordion.Item>
          </Accordion>

@@ -180,6 +180,17 @@ const CartPage = ({
           >
             N {numeral(totalPrice).format('0,0.000')}: CHECK OUT{' '}
           </button>
+          <button
+            onClick={() => {
+                window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' });
+                setCartTotalPrice(totalPrice);
+                navigate('/checkout');
+            }}
+            className="checkout-button p-2 price-amount"
+              style={{ height: '50px', marginTop: '30px', backgroundColor: 'white', color: '#ff7e07', border: "1px solid #ff7e07"}}
+          >
+            N {numeral(totalPrice).format('0,0.000')}: CHECK OUT AS A GUEST{' '}
+          </button>
         </div>
       )}
 

@@ -8,7 +8,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const PaymentMethod = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEmail, delivery, setDelivery, payment, setPayment, phone, address, setPhone, setAddress }) => {
+const PaymentMethod = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEmail, delivery, setDelivery, payment, setPayment, phone, address, setPhone, setAddress, isLoggedIn }) => {
 
   const notifyReceipt = () => toast.success("Thank you! A recipt has been sent to your provide email adress");
   const amount = cartTotalPrice
