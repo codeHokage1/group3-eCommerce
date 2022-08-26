@@ -180,6 +180,8 @@ const CartPage = ({
           >
             N {numeral(totalPrice).format('0,0.000')}: CHECK OUT{' '}
           </button>
+          
+            
           <button
             onClick={() => {
                 window.scrollTo({ top: 0, left: 0, behaviour: 'smooth' });

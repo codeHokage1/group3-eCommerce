@@ -82,65 +82,6 @@ const PaymentMethod = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEm
               <label htmlFor="delivery-option"><strong>Choose Delivery Option:</strong></label> <br />
               <input style={{width: "20px"}} type='radio' value='door-delivery' id="delivery-option" name="delivery" onClick={e => setDelivery(e.target.value)}/> Door Delivery 
               <input style={{width: "20px"}} type='radio' value='pick-up' id="delivery-option" name="delivery" onClick={e => setDelivery(e.target.value)}/> Pick Up <br />
-              {/* <Form.Group className="formm" controlId="formBasicEmail"> */}
-                {/* <Form.Label className="pb-0 mb-0">First Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="John"
-                  value={firstname}
-                  onChange={(e) => setFirstname(e.target.value)}
-                />
-                <Form.Text className="text-muted">
-                  Your prefered delivery first name
-                </Form.Text>
-              </Form.Group>
-              <Form.Group className="formm" controlId="formBasicEmail">
-                <Form.Label className="pb-0 mb-0">Last Name</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Doe"
-                  value={lastname}
-                  onChange={(e) => setLastname(e.target.value)}
-                />
-                <Form.Text className="text-muted">
-                  Your prefered delivery last name
-                </Form.Text>
-              </Form.Group>
-
-              <Form.Group className="formm" controlId="formBasicEmail">
-                <Form.Label className="pb-0 mb-0">Email address</Form.Label>
-                <Form.Control
-                  type="email"
-                  placeholder="johndoe@mail.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <Form.Text className="text-muted">
-                  your prefered email address
-                </Form.Text>
-              </Form.Group>
-
-              <Form.Group className="formm" controlId="formBasicPassword">
-                <Form.Label className="pb-0 mb-0">Phone no</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="08137422773"
-                  value={phone}
-                  onChange={(e) => setPhone(e.target.value)}
-                />
-              </Form.Group>
-
-              <Form.Group className="formm" controlId="formBasicPassword">
-                <Form.Label className="pb-0 mb-0">Delivery address</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="41/43 Industrial Avenue Sabo Yaba, Lagos"
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
-                />
-              </Form.Group>
- */           }
-              
               {
                 payment === "online" ? (
                                         <Button

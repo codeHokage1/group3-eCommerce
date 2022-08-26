@@ -17,6 +17,7 @@ const AddressDetails = ({ regName, setRegName, regEmail, setRegEmail, isLoggedIn
             <div className="customerdiv">
               <p className="customername">Name: {regName}</p>
               {!isLoggedIn && <p>Email: {regEmail}</p>}
+              <p>Email: {regEmail}</p>
               <p>Address: {address}</p>
               <p>Phone Number: {phone}</p>
               <form onSubmit={(e) => { e.preventDefault(); notifyAddressUpdate() }} className="address-form">

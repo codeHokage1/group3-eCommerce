@@ -81,9 +81,7 @@ const Account = ({ isLoggedIn, setIsLoggedIn, notifyLogin, regName, regEmail, re
       setRegName("");
       setRegPassword("");
       setRegPassword2("");
-      setIsRegistered(!isRegistered);
-      setRegEmail("");
-  
+      setIsRegistered(!isRegistered);  
     }
 
   };
