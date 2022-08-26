@@ -131,6 +131,11 @@ margin-bottom: 20px;
 
 .social-container a{
   font-size: 20px;
+  border-radius: 100px;
+}
+
+.social-container a:hover{
+  box-shadow: 0 0 .6rem #000;
 }
 
 .rights{

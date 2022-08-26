@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect } from 'react'
 import Hero from '../components/Hero/Hero'
 import FoodContainer from '../components/foodcontainer/FoodContainer'
