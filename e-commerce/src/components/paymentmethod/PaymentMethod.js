@@ -6,7 +6,8 @@ import { Link, useNavigate } from 'react-router-dom'
 
 const PaymentMethod = ({ cartTotalPrice, cartItems, firstname, lastname, phone, address, delivery, payment, email }) => {
   // const [email, setEmail] = useState('')
-  const amount = cartTotalPrice
+  const amount = cartTotalPrice;
+  const navigate = useNavigate()
   // const [firstname, setFirstname] = useState('')
   // const [lastname, setLastname] = useState('')
   // const [phone, setPhone] = useState('')
@@ -14,11 +15,95 @@ const PaymentMethod = ({ cartTotalPrice, cartItems, firstname, lastname, phone, 
 
   // const [delivery, setDelivery] = useState('')
   // const [payment, setPayment] = useState('')
+console.log(cartItems[0])
 
+// cartItems.map(item => {
+//     const itemToSend ={
+//       id: item.id,
+//     category: item.category,
+//     name: item.name,
+//     description: item.description,
+//     discount: item.discount,
+//     price: item.price.toString(),
+//     qty: item.qty.toString()
+//   };
+//   const sendToCartApi = async () => {
+//     const postOption = {
+//       method: "POST",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(itemToSend)
+//     }
+//     const response = await fetch("https://localhost:7297/api/Order/CreateOrder", postOption)
+//     const res = await response.json()
+//     console.log(res)
 
+//   };
+// })
 
- const navigate = useNavigate()
+const handleSendCartItem = () => {
 
+  console.log(cartItems); 
+  const sendToCartApi = async (item) => {
+    const postOption = {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item)
+    }
+    const response = await fetch("https://localhost:7297/api/Order/CreateOrder", postOption)
+    const res = await response.json()
+    console.log(res)
+  
+  };
+
+  cartItems.map(item => {
+    const itemToSend ={
+      id: item.id,
+    category: item.category,
+    name: item.name,
+    description: item.description,
+    discount: item.discount,
+    price: item.price.toString(),
+    qty: item.qty.toString()
+  };
+  sendToCartApi(itemToSend)
+  });
+
+  navigate('/delivery'); 
+
+}
+
+// const itemToSend ={
+//     id: cartItems[0].id,
+//   category: cartItems[0].category,
+//   name: cartItems[0].name,
+//   description: cartItems[0].description,
+//   discount: cartItems[0].discount,
+//   price: cartItems[0].price.toString(),
+//   qty: cartItems[0].qty.toString()
+// }
+
+//   const navigate = useNavigate()
+
+//   const sendToCartApi = async () => {
+//     const postOption = {
+//       method: "POST",
+//       headers: {
+//         Accept: "application/json",
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(itemToSend)
+//     }
+//     const response = await fetch("https://localhost:7297/api/Order/CreateOrder", postOption)
+//     const res = await response.json()
+//     console.log(res)
+
+//   };
 
   const paywithpaystack = (e) => {
     e.preventDefault()
@@ -57,17 +142,50 @@ const PaymentMethod = ({ cartTotalPrice, cartItems, firstname, lastname, phone, 
       <Container>
         <Row className="justify-content-md-center mt-5 mb-5">
           <Col xs lg="6">
-            <Form>
-              <p>Total Price: {cartTotalPrice}</p>
-              {/* <label htmlFor="payment-option"><strong>Choose Payment Option:</strong></label> <br />
-                <input style={{width: "20px"}} type='radio' value='on-delivery' id="payment-option" name="payment" onClick={e => setPayment(e.target.value)}/> Pay on Delivery
-                <input style={{width: "20px"}} type='radio' value='online' id="payment-option" name="payment" onClick={e => setPayment(e.target.value)}/> Online Payment <br />
+            <form>
+              <p className=''>Total Price: {cartTotalPrice}</p>
+              <label htmlFor="payment-option"><strong>Choose Payment Option:</strong></label> <br />
+              <input style={{ width: "20px", position: "relative", top: "15px" }} type='radio' value='on-delivery' id="payment-option" name="payment" /> Pay on Delivery
+              <input style={{ width: "20px", position: "relative", top: "15px" }} type='radio' value='online' id="payment-option" name="payment" /> Online Payment <br />
 
               <label htmlFor="delivery-option"><strong>Choose Delivery Option:</strong></label> <br />
-              <input style={{width: "20px"}} type='radio' value='door-delivery' id="delivery-option" name="delivery" onClick={e => setDelivery(e.target.value)}/> Door Delivery 
-              <input style={{width: "20px"}} type='radio' value='pick-up' id="delivery-option" name="delivery" onClick={e => setDelivery(e.target.value)}/> Pick Up <br /> */}
-              {/* <Form.Group className="formm" controlId="formBasicEmail"> */}
-                {/* <Form.Label className="pb-0 mb-0">First Name</Form.Label>
+              <input style={{ width: "20px", position: "relative", top: "15px" }} type='radio' value='door-delivery' id="delivery-option" name="delivery" /> Door Delivery
+              <input style={{ width: "20px", position: "relative", top: "15px" }} type='radio' value='pick-up' id="delivery-option" name="delivery" /> Pick Up <br />
+
+
+              {
+                payment === "online" ? (
+                  <Button
+                    className="paybtn"
+                    variant="success"
+                    type="submit"
+                    onClick={paywithpaystack}
+                  >
+                    Proceed Payment
+                  </Button>
+                ) : (
+                  <Button
+                    className="paybtn"
+                    variant="success"
+                    onClick={handleSendCartItem}
+                  >
+                    Proceed to Delivery Tracking
+                  </Button>
+                )
+              }
+            </form>
+          </Col>
+        </Row>
+      </Container>
+    </>
+  )
+}
+
+export default PaymentMethod
+
+
+ {/* <Form.Group className="formm" controlId="formBasicEmail"> */}
+              {/* <Form.Label className="pb-0 mb-0">First Name</Form.Label>
                 <Form.Control
                   type="text"
                   placeholder="John"
@@ -124,35 +242,3 @@ const PaymentMethod = ({ cartTotalPrice, cartItems, firstname, lastname, phone, 
                 />
               </Form.Group>
  */           }
-              
-              {
-                payment === "online" ? (
-                                        <Button
-                                          className="paybtn"
-                                          variant="success"
-                                          type="submit"
-                                          onClick={paywithpaystack}
-                                        >
-                                          Proceed Payment
-                                        </Button>
-                                      ) : (
-                                          <Button
-                                            className="paybtn"
-                                            variant="success"
-                                            type="submit"
-                                            onClick={() => {navigate('/delivery'); console.log(cartItems)}}
-                                          >
-                                            Proceed to Delivery Tracking
-                                          </Button>
-                                        )
-              }
-              
-            </Form>
-          </Col>
-        </Row>
-      </Container>
-    </>
-  )
-}
-
-export default PaymentMethod
