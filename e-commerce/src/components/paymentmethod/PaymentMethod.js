@@ -30,8 +30,6 @@ const PaymentMethod = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEm
         let message = `Payment Complete! Reference ${transaction.reference}`
         console.log(message)
         navigate('/delivery')
-        setPhone('')
-        setAddress('')
         var templateParams = {
           from_name: "JaraDey",
           to_name: regEmail,
