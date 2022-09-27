@@ -29,6 +29,7 @@ const PaymentMethod = ({ cartTotalPrice, regName, setRegName, regEmail, setRegEm
         // Payment complete! Reference: transaction.reference
         let message = `Payment Complete! Reference ${transaction.reference}`
         console.log(message)
+        localStorage.removeItem("cartItems")
         navigate('/delivery')
         var templateParams = {
           from_name: "JaraDey",
